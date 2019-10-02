@@ -2,8 +2,8 @@
 
 ## Resource 
 
-* [Resume](./resume.md)
-
+* [Resume](resume)
+* [$\sigma$](private)
 
 
 
