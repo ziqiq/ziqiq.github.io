@@ -1,5 +1,7 @@
 *
+!**/
 !**.md
 !**.gif
+!**.png
 !.gitignore
 !pandoc.html
