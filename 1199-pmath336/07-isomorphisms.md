@@ -1,4 +1,3 @@
-\\[ \def{\im}{{\text{im}}}  \im\\]
 # Homomorphisms and Isomorphisms
 
 Up to now we have studied the structure of individual groups very carefully. In this section we will be interested in determining wither two different group essentially have same structure. (e.g. $\Z_2$ and $(\{\pm 1\}, \times)$)

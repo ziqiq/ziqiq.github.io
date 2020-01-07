@@ -1,4 +1,4 @@
-# 2. Subgroups and Cyclic Groups
+# Subgroups and Cyclic Groups
 
 We can find even mor examples of groups with the examples we already know.
 

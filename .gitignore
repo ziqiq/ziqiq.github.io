@@ -1,8 +1,11 @@
 *
 !**/
 !**.md
+!**.def
+!**.tex
+!**.dot
 !**.gif
 !**.png
 !.gitignore
 !pandoc.tpl
-!make-html.sh
+!**.sh

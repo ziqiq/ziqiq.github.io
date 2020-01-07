@@ -1,4 +1,4 @@
-# 6. Quotients and Normal Subgroups
+# Quotients and Normal Subgroups
 
 Let $G$ be a group and $H \le G$. Let $G/H$ be the set of all left cosets of $H$ in $G$.
 

@@ -1,23 +1,23 @@
-# 1. Groups
+# Groups
 
 Informally, a group is a set in which we can “multiply” and “divide”.
 
 ## First Examples
 
-### $(\mathbb{Z}, +)$
+### $(\Z, +)$
 
 The integers $\{ ..., -2, -1, 0, 1, 2, ...\}$ form a group under addition.
 
-1. $+$ takes two elements of $\mathbb{Z}$ and spits out another element of $\mathbb{Z}$. We say $\mathbb{Z}$ is **closed** under $+$.
+1. $+$ takes two elements of $\Z$ and spits out another element of $\Z$. We say $\Z$ is **closed** under $+$.
     - e.g. $1+1=2$, $2+3=5$, $(-1)+1=0$, ...
-2. $0$ is special. $0+a=a$ and $a+0=a$ for any $a \in \mathbb{Z}$. We say $0$ is the **identity** of $(\mathbb{Z},+)$.
-    - Are there other identity in $(\mathbb{Z},+)$?
+2. $0$ is special. $0+a=a$ and $a+0=a$ for any $a \in \Z$. We say $0$ is the **identity** of $(\Z,+)$.
+    - Are there other identity in $(\Z,+)$?
 3. $a$ and $-a$ have a special relationship. $a+(-a)=0$ where $0$ is the identity. We say $a$  and $-a$ are the **inverse** of each other.
 4. $+$ is **associative**. $(a+b)+c=a+(b+c)$
-5. $+$ is commutative. $a+b=b+a$. We say $(\mathbb{Z}, +)$ is a commutative, or **Abelian** group.
+5. $+$ is commutative. $a+b=b+a$. We say $(\Z, +)$ is a commutative, or **Abelian** group.
 
 
-### $(\mathbb{Q},+)$
+### $(\Q,+)$
 
 The rational numbers under $+$ form a group.
 
@@ -28,12 +28,12 @@ The rational numbers under $+$ form a group.
    $$(\frac{a}{b} + \frac{c}{d}) + \frac{e}{f} = \frac{a}{b} + (\frac{c}{d} + \frac{e}{f})$$
 5. $+$ is commutative.
    $$\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd} = \frac{c}{d} + \frac{a}{b}$$
-   We say $(\mathbb{Q},+)$ is a Abelian group.
+   We say $(\Q,+)$ is a Abelian group.
 
 
-### $(\mathbb{Q}^*, \times)$
+### $(\Q^*, \times)$
 
-Q: Is $(\mathbb{Q}, \times)$ a group?
+Q: Is $(\Q, \times)$ a group?
 
 - Closed? Yes. $\frac{a}{b} \times \frac{c}{d} = \frac{ac}{bd}$
 - Identity? $1$. $\frac{a}{b} \times 1 = \frac{a}{b}$
@@ -44,12 +44,12 @@ Q: Is $(\mathbb{Q}, \times)$ a group?
 - Abelian? Yes.
   $\frac{a}{b} \times \frac{c}{d} = \frac{c}{d} \times \frac{a}{b}$
 
-Consider $\mathbb{Q}^* = \mathbb{Q} \setminus \{0\}$, then every $\frac{a}{b} \in \mathbb{Q}$ has an inverse $\frac{b}{a}$ now.
+Consider $\Q^* = \Q \setminus \{0\}$, then every $\frac{a}{b} \in \Q$ has an inverse $\frac{b}{a}$ now.
 
 
-### $(\mathbb{R}^*, \times)$
+### $(\R^*, \times)$
 
-$\mathbb{R}^* = \mathbb{R} \setminus \{0\}$. The non-zero real numbers form a group under $\times$.
+$\R^* = \R \setminus \{0\}$. The non-zero real numbers form a group under $\times$.
 
 - Closed? Yes.
 - Identity: $1$.
@@ -58,16 +58,16 @@ $\mathbb{R}^* = \mathbb{R} \setminus \{0\}$. The non-zero real numbers form a gr
 - Abelian? Yes.
 
 
-### $(\mathbb{C}^*,\times)$
+### $(\C^*,\times)$
 
-$\mathbb{C}^* = \mathbb{C} \setminus \{0+0i\}$. Non-zero complex numbers form a group under $\times$.
+$\C^* = \C \setminus \{0+0i\}$. Non-zero complex numbers form a group under $\times$.
 
 
-### $(\mathbb{Z},\times)$
+### $(\Z,\times)$
 
-Q: Can we do the same thing with $\mathbb{Z}$?
+Q: Can we do the same thing with $\Z$?
 
-We have to throw more elements away. e.g. $2 \times a \neq 1$. In fact, we have to throw out everything except $1$ and $-1$. Thus, $\mathbb{Z}^* = \{1, -1\}$.
+We have to throw more elements away. e.g. $2 \times a \neq 1$. In fact, we have to throw out everything except $1$ and $-1$. Thus, $\Z^* = \{1, -1\}$.
 
 This group is small, so we can write down the structure in a table.
 
@@ -86,9 +86,9 @@ This table is called the **Cayley table** of the group. We can make Cayley table
 | $g_n$   |       |       |       |       |
 
 
-### $(GL_n(\mathbb{R}), \cdot)$
+### $(GL_n(\R), \cdot)$
 
-All $n \times n$ invertible matrixes form a group under matrix multiplication. GL stands for general linear. $GL_n(\mathbb{R}) = \{A \in \mathbb{R}^{n \times n} : det(A) \neq 0 \}$.
+All $n \times n$ invertible matrixes form a group under matrix multiplication. GL stands for general linear. $GL_n(\R) = \{A \in \R^{n \times n} : det(A) \neq 0 \}$.
 
 - Closed? Yes. $det(AB) = det(A) det(B) \neq 0$
 - Identity: $I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$. $AI=IA=A$
@@ -119,9 +119,9 @@ Definition - Order
 
 For example,
 
-1. $\mathbb{Z,Q,R,C}$ have infinite order.
+1. $\Z,\Q,\R,\C$ have infinite order.
 2. $|\{1,i,-1,-i\}| = 4$
-3. $|\mathbb{Z}^*| = 2$
+3. $|\Z^*| = 2$
 
 
 ## Properties of Groups
@@ -170,7 +170,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 Definition - $a^n$
-: If $a \in G$ and $n \in \mathbb{Z}$ then
+: If $a \in G$ and $n \in \Z$ then
 	$$a^n = \begin{cases}
 	a \cdot ...\cdot a \ \text{for n times} & n > 0 \\
 	e & n = 0 \\
@@ -178,7 +178,7 @@ Definition - $a^n$
 	\end{cases}$$
 
 Proposition 1.4
-: For any $m,n \in \mathbb{Z}$, $a^m \cdot a^n = a^{m+n}$,
+: For any $m,n \in \Z$, $a^m \cdot a^n = a^{m+n}$,
   and $(a^m)^n = a^{mn}$
 
 Remark: We usually write $a \cdot b$ as $ab$
@@ -186,21 +186,21 @@ Remark: We usually write $a \cdot b$ as $ab$
 
 ## More Examples
 
-### $(\mathbb{Z}_n, +)$
+### $(\Z_n, +)$
 
-$\mathbb{Z}_n = \{[0], [1], ... ,[n-1]\}$ and $[a] = \{b \in \mathbb{Z} : n \mid b-a \}$. $[a]$ is the set of all integers with same remainder as $a$ after divided by $n$.
+$\Z_n = \{[0], [1], ... ,[n-1]\}$ and $[a] = \{b \in \Z : n \mid b-a \}$. $[a]$ is the set of all integers with same remainder as $a$ after divided by $n$.
 
-e.g. $\mathbb{Z}_3 = \{[0], [1], [2]\}$ where $[0] = \{0,3,6,9,...\}$, $[1] = \{1,4,7,10,...\}$, and $[2] = \{2,5,8,11,...\}$
+e.g. $\Z_3 = \{[0], [1], [2]\}$ where $[0] = \{0,3,6,9,...\}$, $[1] = \{1,4,7,10,...\}$, and $[2] = \{2,5,8,11,...\}$
 
-We simply write $[a]$ as $a$, that is $\mathbb{Z}_3 = \{1,2,3\}$.
+We simply write $[a]$ as $a$, that is $\Z_3 = \{1,2,3\}$.
 
-We know that for $[a], [b] \in \mathbb{Z}_n$, $[a] + [b] = [a+b] \mod n$.
+We know that for $[a], [b] \in \Z_n$, $[a] + [b] = [a+b] \mod n$.
 
 e.g. $1+2=0 \mod 3$, $2+2=1 \mod 3$
 
-With this operation, addition modulo $n$, elements in$\mathbb{Z}_n$ form a group.
+With this operation, addition modulo $n$, elements in $\Z_n$ form a group.
 
-e.g. $(\mathbb{Z}_3, +)$ 
+e.g. $(\Z_3, +)$ 
 
 | $+$ | $0$ | $1$ | $2$ |
 |:---:|:---:|:---:|:---:|
