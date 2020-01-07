@@ -1,127 +1,100 @@
 # Ziqi Qing
 
-4A Computer Science, University of Waterloo
+4B computer science student at University of Waterloo
 
 ----
 
-E-Mail: [zqing@uwaterloo.ca](mailto:zqing@uwaterloo.ca),
-Phone: 226-339-9950 650-272-1884
-
-LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/),
-Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)  
+E-mail: zqing {at} uwaterloo.ca  
+Phone: 650-272-1884, 226-339-9950  
+LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)  
+Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)
 
 ----
 
 ## Summary
 
-* Around **2 year co-op experience** in web development, operating system programming
-* Working knowledge of **object-oriented programming** and **design patterns**
-* Solid understanding of **TCP/IP network**
+* **2 years work experience** as a solid software engineer in system and web development.
+* Skill in **object-oriented programming** and **design patterns** demostrated by various C/C++, Javascript, and Java projects.
+* Creative design and cratical thinking. 
 
 ## Education
 
-**Candidate for Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization)**,
-  University of Waterloo, Ontario, May/2015 -- Apr/2020(expected)
-
-## Skills
-
-|             |                                           |
-| ----------- | ----------------------------------------- |
-| Language    | C, C++, Java, HTML, CSS, JavaScript, Bash |
-| Utilities   | Git, SVN, LXC, LaTeX, JSDoc, Markdown     |
-| Frameworks  | Node.js, React, Express.js, Android       |
-
+* [**University of Waterloo**](https://uwaterloo.ca/), Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization)  
+  May/2015 - Apr/2020, Ontario
 
 ## Work Experience
 
-* System Software Engineer, [_NVIDIA Corporation_](https://nvidia.com),
-  Santa Clara, California, Sepetember/2018 -- April/2019
+* [**NVIDIA Corporation**](https://nvidia.com/), System Software Engineer  
+  Sep/2018 - Apr/2019, California
 
-    * Contribute to camera stack for Tegra mobile platform
-    * Implement a DMA map caching mechanism to reduce number of memory mappings
-    * Develop and maitain camera driver implemented as **Linux kernel module**
+    * Optimized a **Linux** camera driver, implemented as **kernel module**, by introducing a caching algorithm that reduces the latency caused by DMA memory mappings.
+    * Refactored and simplified the request pipeline from user mode application to the camera real-time processor, which accelerates image frame capture.
 
-* Software Engineer, [_Veeva Systems_](https://veeva.com),
-  Toronto, Ontario, January/2018 -- April/2018
+* [**Veeva Systems**](https://veeva.com/), Software Engineer  
+  Jan/2018 - Apr/2018, Ontario
 
-    * Maintain a **Node.js** project, [Veeva Web2PDF](https://veevaweb2pdf.com/) website to PDF converter
-    * Implement standard sitemap recognition for the web crawler
-    * Develop user’s interface for the **Chrome extension** with **HTML/CSS/JS** web technology
+    * Developed a tool that converts a website to a PDF using **Node.js** ([Veeva Web2PDF](https://veevaweb2pdf.com/)).
+    * Improved the performance of the web crawler with **XML** sitemap recognition functionality by around 11%.
+    * Implemented a novel crawler feature that simulates user's interactions with webpages and captures dynamic web contents, including a **Chrome extension** as action editor.
 
-* Software Developer, [_IGNIS Innovation Inc._](https://ignisinnovation.com),
-  Waterloo, Ontario, April/2017 -- August/2017
+* [**IGNIS Innovation Inc.**](https://ignisinnovation.com/), Software Developer  
+  Apr/2017 - Aug/2017, Ontario
 
-    * Participate in display aging compensation project for **Android**
-    * Port Linux kernel driver for a customized MIPI-DSI panel
-    * Implement a control tool with **Unix shared memory** (`mmap`)
-    * Integrate compensation feature settings with built-in Settings application, written in **Java**
+    * Migrated and tested an algorithm that compensates for image retention on displays due to OLED aging for **Andriod** devices.
+    * Designed graphical and command line interface (UI and CLI) to enable/disable the compensation feature:
+        1. Integrated the enable checkbox with Android settings view.
+        2. Implemented a control program with **shared memory** (`mmap`).
 
-* Network Administrator, [_FundSERV Inc._](https://www.fundserv.com/),
-  Toronto, Ontario, September/2016 -- December/2016
+* [**FundSERV Inc.**](https://www.fundserv.com/), Network Administrator  
+  Sep/2016 - Dec/2016, Ontario
 
-    * Install a network monitoring system Zabbix
-    * Utilize **SNMP** to collect data from switches, servers, and power distribution units
-    * Script in bash and Perl to fetch data from Web API
+    * Wrote **shell** and **Perl** scripts that collect usage and load data from network devices, including routers, switches, load balancers, and power distribution units, via **SNMP**.
 
-## Course Work
+## Projects
 
-* **Javascript**, [Perfect Party][Perfect Party], [Introduction to Database Management][CS348], July/2019
+* **Javascript, SQL**, [Perfect Party][Perfect Party]  
+  Jul/2019
 
-    * Implement the web application in **Node.js** and **MySQL**
-    * Ultilize **Express/ejs** for page rendition and form processing
-    * Design the page and form in plain **HTML/CSS** without any generator/designer
+    * Implemented a web application managing business for a company that organizes parties, using **Node.js** and **Express/ejs**.
+    * Created the **relational database** schema that involves 10 tables.
+    * Prototyped view template in plain **HTML/CSS/Javascript**.
+    * Deployed the service to an **AWS** EC2 instance.
 
-* **C**, ARM Real-time Micro Kernel, [Real-time Programming][CS452], May/2018
+* **C**, [Train Control and Real-time Kernel][CS452]  
+  May/2018
 
-    * Develop context switch, task scheduling, and task manipulation feature for the kernel
-    * Design a command line interface with terminal control sequence
+    * Developed context switch, task scheduling, and task manipulation routine for the micro kernel.
+    * Implemented various train control functionalities including sensor attribution, navigation, track reservation, and multi-train following.
 
-* **Java - Swing, AWT**, [Lunar Lander with Terrain Editor][Lunar Lander], [User Interface][CS349], November/2017
+* **Java - Swing, AWT**, [Lunar Lander Game with Terrain Editor][Lunar Lander]  
+  Nov/2017
 
-    * Use MVC pattern to achieve shared terrain between [editor view and play view](lunar-lander.gif)
-    * Support redo and undo for terrain editor
+    * Applied MVC pattern to sync terrain in [editor view and play view](lunar-lander.gif).
 
-* **Java - Swing, AWT**, [Drawing Canvas][Drawing Canvas], [User Interface][CS349], October/2017
+* **Java - Swing, AWT**, [Drawing Canvas][Drawing Canvas]  
+  Oct/2017
 
-    * Implement [draging, rotating and scaling](canvas.gif) with affine transformation
+    * Implemented [draging, rotating and scaling](canvas.gif) with affine transformation.
 
-* **C++ - libX11**, [Simon][Simon], [User Interface][CS349], October/2017
+* **C++ - libX11**, [Simon][Simon]  
+  Oct/2017
 
-    * Write game loop that dispatch user input event and signal handler for timer event
-    * Create [simon balls](simon.gif) with animation and user interaction
-    * Enhance the work by implementing [random movement](simon-enhanced.gif) of the balls
+    * Wrote game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
 
-* **C**, OS161 Kernel, [Operating System][CS350], October/2017
+* **C**, [OS161 Kernel][CS350]  
+  Oct/2017
 
-    * Implement kernel synchronization primitives
-    * Implement `fork`, `execv`, `exit`, and `waitpid` system calls
-    * Design virtual memory system with single-level page table
+    * Implement kernel synchronization primitives, such as lock and semaphore, and various system calls including `fork`, `execv`, `exit`, and `waitpid`.
+    * Design virtual memory system with single-level page table.
 
-**Other Relevant Courses**:  
-
-* [Machine Learning][CS480]
-* [Distributed System][CS454]
-* [Theory of Computing][CS360]
-* [Algorithm][CS341]
-* [Object-Oriented Software Development][CS246]
-* Graph Theory
-* Introduction to Combinatorics
-* Introduction to Optimization
-
-[CS480]: https://cs.uwaterloo.ca/~ppoupart/teaching/cs480-spring19/
-[CS454]: https://www.student.cs.uwaterloo.ca/~cs454/
 [CS452]: https://www.student.cs.uwaterloo.ca/~cs452/
-[CS370]: https://www.student.cs.uwaterloo.ca/~cs370/
-[CS360]: https://www.student.cs.uwaterloo.ca/~cs360/
 [CS350]: https://www.student.cs.uwaterloo.ca/~cs350/
-[CS349]: https://www.student.cs.uwaterloo.ca/~cs349/
-[CS348]: https://www.student.cs.uwaterloo.ca/~cs348/
-[CS341]: https://www.student.cs.uwaterloo.ca/~cs341/
-[CS246]: https://www.student.cs.uwaterloo.ca/~cs246/
-[CS241]: https://www.student.cs.uwaterloo.ca/~cs241/
-[CS240]: https://www.student.cs.uwaterloo.ca/~cs240/
 
 [Perfect Party]: https://github.com/Irvingkk/Perfect-Party-Web-application/
 [Lunar Lander]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a3
 [Drawing Canvas]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a2
 [Simon]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a1
+
+
+
+
