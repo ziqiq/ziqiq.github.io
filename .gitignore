@@ -1,11 +1,1 @@
-*
-!**/
-!**.md
-!**.def
-!**.tex
-!**.dot
-!**.gif
-!**.png
-!.gitignore
-!pandoc.tpl
-!**.sh
+*.html

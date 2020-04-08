@@ -1,0 +1,10 @@
+image: pandoc/latex
+
+pages:
+  script:
+  - "out_dir=public; source make.sh"
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
