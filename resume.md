@@ -4,18 +4,18 @@
 
 ----
 
-E-mail: zqing {at} uwaterloo.ca  
-Phone: 650-272-1884, 226-339-9950  
-LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)  
-Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)
+- Email: zqing {at} uwaterloo.ca
+- Phone: 650-272-1884, 226-339-9950
+- LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)
+- Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)
 
 ----
 
 ## Summary
 
-* **2 years work experience** as a solid software engineer in system and web development.
-* Skill in **object-oriented programming** and **design patterns** demostrated by various C/C++, Javascript, and Java projects.
-* Creative design and cratical thinking. 
+* **2 years of work experience** as a solid software engineer in system and web development.
+* Skill in **object-oriented programming** and **design patterns** demonstrated  by various C/C++, Javascript, and Java projects.
+* Creative design and critical thinking.
 
 ## Education
 
@@ -34,7 +34,7 @@ Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing
   Jan/2018 - Apr/2018, Ontario
 
     * Developed a tool that converts a website to a PDF using **Node.js** ([Veeva Web2PDF](https://veevaweb2pdf.com/)).
-    * Improved the performance of the web crawler with **XML** sitemap recognition functionality by around 11%.
+    * Improved the performance of the web crawler with **XML** sitemap recognition functionality.
     * Implemented a novel crawler feature that simulates user's interactions with webpages and captures dynamic web contents, including a **Chrome extension** as action editor.
 
 * [**IGNIS Innovation Inc.**](https://ignisinnovation.com/), Software Developer  
