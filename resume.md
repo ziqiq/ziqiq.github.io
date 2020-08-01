@@ -1,6 +1,6 @@
 # Ziqi Qing
 
-4B computer science student at University of Waterloo
+2020 Summer computer science graduate from University of Waterloo
 
 ----
 
@@ -13,88 +13,100 @@
 
 ## Summary
 
-* **2 years of work experience** as a solid software engineer in system and web development.
-* Skill in **object-oriented programming** and **design patterns** demonstrated  by various C/C++, Javascript, and Java projects.
-* Creative design and critical thinking.
+- **2 years of work experience** as a solid software engineer in system and web development.
+- Skill in **object-oriented programming** and **design patterns** demonstrated by various C/C++, Javascript, and Java projects.
+- Creative design and critical thinking.
 
 ## Education
 
-* [**University of Waterloo**](https://uwaterloo.ca/), Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization)  
-  May/2015 - Apr/2020, Ontario
+- [**University of Waterloo**](https://uwaterloo.ca/), Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization), Average 85%  
+  May/2015 - Jun/2020, Ontario
 
 ## Work Experience
 
-* [**NVIDIA Corporation**](https://nvidia.com/), System Software Engineer  
+- [**StackAdapt**](https://stackadapt.com/), Full Stack Software Engineer<br/>
+  Jun/2020 - Current, Ontario
+
+  - Develop self-serve programatic advertising platform using **Ruby on rails** and **React**.
+
+  <br/>
+
+- [**NVIDIA Corporation**](https://nvidia.com/), System Software Engineer<br/>
   Sep/2018 - Apr/2019, California
 
-    * Optimized a **Linux** camera driver, implemented as **kernel module**, by introducing a caching algorithm that reduces the latency caused by DMA memory mappings.
-    * Refactored and simplified the request pipeline from user mode application to the camera real-time processor, which accelerates image frame capture.
+  - Optimized a **Linux** camera driver, implemented as **kernel module**, by introducing a caching algorithm that reduces the latency caused by DMA memory mappings.
+  - Refactored and simplified the request pipeline from user mode application to the camera real-time processor, which accelerates image frame capture.
 
-* [**Veeva Systems**](https://veeva.com/), Software Engineer  
+  <br/>
+
+- [**Veeva Systems**](https://veeva.com/), Software Engineer<br/>
   Jan/2018 - Apr/2018, Ontario
 
-    * Developed a tool that converts a website to a PDF using **Node.js** ([Veeva Web2PDF](https://veevaweb2pdf.com/)).
-    * Improved the performance of the web crawler with **XML** sitemap recognition functionality.
-    * Implemented a novel crawler feature that simulates user's interactions with webpages and captures dynamic web contents, including a **Chrome extension** as action editor.
+  - Developed a tool that converts a website to a PDF using **Node.js** ([Veeva Web2PDF](https://veevaweb2pdf.com/)).
+  - Improved the performance of the web crawler with **XML** sitemap recognition functionality.
+  - Implemented a novel crawler feature that simulates user's interactions with webpages and captures dynamic web contents, including a **Chrome extension** as action editor.
 
-* [**IGNIS Innovation Inc.**](https://ignisinnovation.com/), Software Developer  
+  <br/>
+
+- [**IGNIS Innovation Inc.**](https://ignisinnovation.com/), Software Developer<br/>
   Apr/2017 - Aug/2017, Ontario
 
-    * Migrated and tested an algorithm that compensates for image retention on displays due to OLED aging for **Andriod** devices.
-    * Designed graphical and command line interface (UI and CLI) to enable/disable the compensation feature:
-        1. Integrated the enable checkbox with Android settings view.
-        2. Implemented a control program with **shared memory** (`mmap`).
+  - Migrated and tested an algorithm that compensates for image retention on displays due to OLED aging for **Andriod** devices.
+  - Designed graphical and command line interface (UI and CLI) to enable/disable the compensation feature:
+    1. Integrated the enable checkbox with Android settings view.
+    2. Implemented a control program with **shared memory** (`mmap`).
 
-* [**FundSERV Inc.**](https://www.fundserv.com/), Network Administrator  
+  <br/>
+
+- [**FundSERV Inc.**](https://www.fundserv.com/), Network Administrator<br/>
   Sep/2016 - Dec/2016, Ontario
 
-    * Wrote **shell** and **Perl** scripts that collect usage and load data from network devices, including routers, switches, load balancers, and power distribution units, via **SNMP**.
+  - Wrote **shell** and **Perl** scripts that collect usage and load data from network devices, including routers, switches, load balancers, and power distribution units, via **SNMP**.
+
+  <br/>
 
 ## Projects
 
-* **Javascript, SQL**, [Perfect Party][Perfect Party]  
+- **Javascript, SQL**, [Perfect Party][Perfect Party]<br/>
   Jul/2019
 
-    * Implemented a web application managing business for a company that organizes parties, using **Node.js** and **Express/ejs**.
-    * Created the **relational database** schema that involves 10 tables.
-    * Prototyped view template in plain **HTML/CSS/Javascript**.
-    * Deployed the service to an **AWS** EC2 instance.
+  - Implemented a web application managing business for a company that organizes parties, using **Node.js** and **Express/ejs**.
+  - Created the **relational database** schema that involves 10 tables.
+  - Prototyped view template in plain **HTML/CSS/Javascript**.
+  - Deployed the service to an **AWS** EC2 instance.
 
-* **C**, [Train Control and Real-time Kernel][CS452]  
+  <br/>
+
+- **C**, [Real-time Programming][CS452]<br/>
   May/2018
+  - Developed context switch, task scheduling, and task manipulation routine/system calls for the micro kernel.
+  - Implemented various features that controls model trains through serial port, including sensor attribution, navigation, track reservation, and multi-train following.
 
-    * Developed context switch, task scheduling, and task manipulation routine for the micro kernel.
-    * Implemented various train control functionalities including sensor attribution, navigation, track reservation, and multi-train following.
+  <br/>
 
-* **Java - Swing, AWT**, [Lunar Lander Game with Terrain Editor][Lunar Lander]  
+- **Java - Swing, AWT**, [Lunar Lander Game with Terrain Editor][Lunar Lander]<br/>
   Nov/2017
+  - Applied MVC pattern to sync terrain in [editor view and play view](lunar-lander.gif).
 
-    * Applied MVC pattern to sync terrain in [editor view and play view](lunar-lander.gif).
+  <br/>
 
-* **Java - Swing, AWT**, [Drawing Canvas][Drawing Canvas]  
+- **Java - Swing, AWT**, [Drawing Canvas][Drawing Canvas]<br/>
   Oct/2017
 
-    * Implemented [draging, rotating and scaling](canvas.gif) with affine transformation.
+  - Implemented [draging, rotating and scaling](canvas.gif) with affine transformation.
 
-* **C++ - libX11**, [Simon][Simon]  
+  <br/>
+
+- **C++ - libX11**, [Simon][Simon]<br/>
   Oct/2017
 
-    * Wrote game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
+  - Wrote game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
 
-* **C**, [OS161 Kernel][CS350]  
-  Oct/2017
-
-    * Implement kernel synchronization primitives, such as lock and semaphore, and various system calls including `fork`, `execv`, `exit`, and `waitpid`.
-    * Design virtual memory system with single-level page table.
+  <br/>
 
 [CS452]: https://www.student.cs.uwaterloo.ca/~cs452/
-[CS350]: https://www.student.cs.uwaterloo.ca/~cs350/
 
 [Perfect Party]: https://github.com/Irvingkk/Perfect-Party-Web-application/
 [Lunar Lander]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a3
 [Drawing Canvas]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a2
 [Simon]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a1
-
-
-
-
