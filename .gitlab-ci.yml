@@ -1,8 +1,15 @@
-image: pandoc/latex
+stages:
+  - deploy
 
 pages:
+  stage: deploy
+  image:
+    name: pandoc/latex
+    entrypoint: [""]
+  variables:
+    OUT_DIR: public
   script:
-  - "out_dir=public; source make.sh"
+    - ". ./make.sh"
   artifacts:
     paths:
     - public
