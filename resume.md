@@ -13,7 +13,7 @@
 
 ## Summary
 
-- **2 years of work experience** as a solid software engineer in system and web development.
+- **2.5 years of work experience** as a solid software engineer in system and web development.
 - Skill in **object-oriented programming** and **design patterns** demonstrated by various C/C++, Javascript, and Java projects.
 - Creative design and critical thinking.
 
@@ -27,7 +27,8 @@
 - [**StackAdapt**](https://stackadapt.com/), Full Stack Software Engineer<br/>
   Jun/2020 - Current, Ontario
 
-  - Develop self-serve programatic advertising platform using **Ruby on rails** and **React**.
+  - Develop self-serve programmatic advertising platform using **Ruby on Rails** + **GraphQL** and **React.js** + **Material-UI**.
+  - Exposed to the real-time bidding service implemented in *Golang*.
 
   <br/>
 
