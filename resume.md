@@ -1,10 +1,13 @@
 # Ziqi Qing
 
-2020 Summer computer science graduate from University of Waterloo
+Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer Computer Science Graduate from [University of Waterloo](https://uwaterloo.ca/admissions/)
 
 ----
 
-- Email: zqing {at} uwaterloo.ca
+- Email:
+  - (personal) zqing {at} pm.me
+  - (business) ziqi {at} stackadapt.com
+  - (alumni) zqing {at} uwaterloo.ca
 - Phone: 650-272-1884, 226-339-9950
 - LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)
 - Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)
@@ -13,9 +16,9 @@
 
 ## Summary
 
-- **2.5 years of work experience** as a solid software engineer in system and web development.
-- Skill in **object-oriented programming** and **design patterns** demonstrated by various C/C++, Javascript, and Java projects.
-- Creative design and critical thinking.
+- **1 year of full-time** and **1.5 years of intern** experience as a solid software engineer in system and web development.
+- Skilled in **object-oriented programming** and **design patterns** demonstrated by various C/C++, Javascript, and Java projects.
+- Familiar with IP network, socket programming, and fundamental cryptographic primitives.
 
 ## Education
 
@@ -27,8 +30,10 @@
 - [**StackAdapt**](https://stackadapt.com/), Full Stack Software Engineer<br/>
   Jun/2020 - Current, Ontario
 
-  - Develop self-serve programmatic advertising platform using **Ruby on Rails** + **GraphQL** and **React.js** + **Material-UI**.
-  - Exposed to the real-time bidding service implemented in *Golang*.
+  - Designed database models and endpoints for features on a self-serve programmatic advertising platform using **Ruby on Rails** and **GraphQL**
+  - Built UI for the platform under **React**, **Redux**, and **Material-UI** and negotiated UX with product managers.
+  - Contributed to Javascript-to-**Typescript** code refactoring.
+  - Exposed to the real-time bidding service implemented in **Golang**.
 
   <br/>
 
@@ -101,7 +106,7 @@
 - **C++ - libX11**, [Simon][Simon]<br/>
   Oct/2017
 
-  - Wrote game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
+  - Practiced game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
 
   <br/>
 
