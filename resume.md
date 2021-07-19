@@ -10,7 +10,7 @@ Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer C
   - (alumni) zqing {at} uwaterloo.ca
 - Phone: 650-272-1884, 226-339-9950
 - LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)
-- Web: [student.cs.uwaterloo.ca/~zqing](https://www.student.cs.uwaterloo.ca/~zqing)
+- Web: [ziqiq.gitlab.io](https://ziqiq.gitlab.io/)
 
 ----
 
