@@ -2,23 +2,13 @@
 
 Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer Computer Science Graduate from [University of Waterloo](https://uwaterloo.ca/admissions/)
 
-----
-
-- Email:
-  - (personal) zqing {at} pm.me
-  - (business) ziqi {at} stackadapt.com
-  - (alumni) zqing {at} uwaterloo.ca
-- Phone: 650-272-1884, 226-339-9950
-- LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)
-- Web: [ziqiq.gitlab.io](https://ziqiq.gitlab.io/)
-
-----
+Email: zqing {at} pm.me | Phone: 650-272-1884 | Github: [ziqiq](https://github.com/ziqiq) | Web: [ziqiq.gitlab.io](https://ziqiq.gitlab.io/)
 
 ## Summary
 
 - **1 year of full-time** and **1.5 years of intern** experience as a solid software engineer in system and web development.
 - Skilled in **object-oriented programming** and **design patterns** demonstrated by various C/C++, Javascript, and Java projects.
-- Familiar with IP network, socket programming, and fundamental cryptographic primitives.
+- Familiar with network, socket programming, and fundamental cryptographic primitives.
 
 ## Education
 
@@ -68,51 +58,3 @@ Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer C
   Sep/2016 - Dec/2016, Ontario
 
   - Wrote **shell** and **Perl** scripts that collect usage and load data from network devices, including routers, switches, load balancers, and power distribution units, via **SNMP**.
-
-  <br/>
-
-## Projects
-
-- **Javascript, SQL**, [Perfect Party][Perfect Party]<br/>
-  Jul/2019
-
-  - Implemented a web application managing business for a company that organizes parties, using **Node.js** and **Express/ejs**.
-  - Created the **relational database** schema that involves 10 tables.
-  - Prototyped view template in plain **HTML/CSS/Javascript**.
-  - Deployed the service to an **AWS** EC2 instance.
-
-  <br/>
-
-- **C**, [Real-time Programming][CS452]<br/>
-  May/2018
-  - Developed context switch, task scheduling, and task manipulation routine/system calls for the micro kernel.
-  - Implemented various features that controls model trains through serial port, including sensor attribution, navigation, track reservation, and multi-train following.
-
-  <br/>
-
-- **Java - Swing, AWT**, [Lunar Lander Game with Terrain Editor][Lunar Lander]<br/>
-  Nov/2017
-  - Applied MVC pattern to sync terrain in [editor view and play view](lunar-lander.gif).
-
-  <br/>
-
-- **Java - Swing, AWT**, [Drawing Canvas][Drawing Canvas]<br/>
-  Oct/2017
-
-  - Implemented [draging, rotating and scaling](canvas.gif) with affine transformation.
-
-  <br/>
-
-- **C++ - libX11**, [Simon][Simon]<br/>
-  Oct/2017
-
-  - Practiced game loop that dispatches user input event and drives ball [animation](simon.gif)/[movement](simon-enhanced.gif)
-
-  <br/>
-
-[CS452]: https://www.student.cs.uwaterloo.ca/~cs452/
-
-[Perfect Party]: https://github.com/Irvingkk/Perfect-Party-Web-application/
-[Lunar Lander]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a3
-[Drawing Canvas]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a2
-[Simon]: https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a1
