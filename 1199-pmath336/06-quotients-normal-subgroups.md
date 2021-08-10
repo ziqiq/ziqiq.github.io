@@ -51,11 +51,11 @@ Our next result gives us an easier way to check if a subgroup is normal.
 Theorem 6.1 - Normal Subgroup Test
 : Let $G$ be a group and $H \le G$. Then $H \trianglelefteq G$
   if and only if $xHx^{-1} \subseteq H$ for all $x \in G$.
-  
+
 > Proof:
-> 
+>
 > If $H \trianglelefteq G$, then $xHx^{-1}=H$ for all $x \in G$, by (6) of Proposition 5.1. In particular, $xHx^{-1} \subseteq H$
-> 
+>
 > Conversely, suppose that $xHx^{-1} \subseteq H$ for all $x \in G$.
 > If $a \in G$, then for $x=a$, we have $aHa^{-1} \subseteq H$,
 > and hence by multiplying on the right by $a$, $aH \subseteq Ha$.
@@ -115,10 +115,10 @@ Theorem 6.3 - Quotient Group
 : We call this group the **quotient** of $G$ by $H$ (or “ $G \mod H$ ”).
 
 > Proof:
-> 
+>
 > We first check that this operation is well-defined. That is we will
 > show that if $aH = a’H$ and $bH = b’H$, then $(aH)(bH) = (a’H)(b’H)$.
-> 
+>
 > We can write $a=a’h_1$ and $b=b’h_2$ for some $h_1 h_2 \in H$. Then
 > $(aH)(bH) = abH = a’h_1 b’h_2 H = a’h_1 b’ H$. Since $H$ is normal,
 > there exists $h_3 \in H$ such that $h_1 b’ = b’ h_3$. Thus, $(aH)(bH)
@@ -140,8 +140,10 @@ Remarks:
 2. If an element $aH \in G/H$ has order $n$, this means that $a^n \in H$.
 3. The order of $G/H$ is $|G:H|$, the number of left cosets. If $G$ is finite, by Lagrange’s theorem, $|G/H| = \frac{|G|}{|H|}$.
 
-e.g. Let $G=\Z$ and $H=3\Z$. Is $H$ a normal subgroup? Yes, since $\Z$ is Abelian and $aH = Ha$. The quotient is $\Z / 3\Z = \{ a + 3\Z : a \in 
-\Z \} = \{0+3\Z, 1+3\Z, 2+3\Z\}$. Recall that in the section 1, $a+3\Z = \{ a+3k: k \in Z\} = \{b \in \Z : 3 \mid (b-a)\} = [a]$.  Also, $(a+3\Z)(b+3\Z) = (a+b)+ 3\Z$. As groups, $\Z / 3\Z = \{[0], [1], [2]\} = \Z_3$.
+e.g. Let $G=\Z$ and $H=3\Z$. Is $H$ a normal subgroup? Yes, since $\Z$ is Abelian and $aH = Ha$.
+The quotient is $\Z / 3\Z = \{ a + 3\Z : a \in \Z \} = \{0+3\Z, 1+3\Z, 2+3\Z\}$.
+Recall that in the section 1, $a+3\Z = \{ a+3k: k \in Z\} = \{b \in \Z : 3 \mid (b-a)\} = [a]$.
+Also, $(a+3\Z)(b+3\Z) = (a+b)+ 3\Z$. As groups, $\Z / 3\Z = \{[0], [1], [2]\} = \Z_3$.
 
 In general, $\Z/ n\Z = Z_n$.
 
@@ -154,13 +156,13 @@ e.g. Last time we showed that $\{e, r_1, r_2, r_3\} = \langle r_1 \rangle$ is a 
 
 We can see the Cayley table for $D_4/ \langle r_1 \rangle$ inside the table for $D_4$.
 
-![Cayley table of $D_4/ \langle r_1 \rangle$](image/cayley-table-D4-r1.png)
-‌![Cayley table of $D_4$](image/cayley-table-D4.png)
+![Cayley table of $D_4/ \langle r_1 \rangle$](./image/cayley-table-D4-r1.png)
+‌![Cayley table of $D_4$](./image/cayley-table-D4.png)
 
 e.g. Last time we said that $Z(G) \trianglelefteq G$ (recall $Z(G)$ is the center of $G$) and that $Z(D_4) = \{r_0, r_2\}$. Let’s investigate $D_4/Z(D_4)$. For convenience, let $\mathcal{K} = Z(D_4)$. $|D_4/\mathcal{K}| = \frac{|D_4|}{|\mathcal{K}|} = \frac{8}{2} = 4$. The elements are $\mathcal{K}$, $r_1\mathcal{K} = \{r_1, r_3\}$, $s_3\mathcal{K} = \{ s_3, s_1\}$, and $s_0\mathcal{K} = \{s_0, s_2\}$. Again we can write the Cayley table:
 
-![Cayley table of $D_4/ Z(D_4)$](image/cayley-table-D4-ZD4.png)
-![Cayley table of $D_4$](image/cayley-table-D4-2.png)
+![Cayley table of $D_4/ Z(D_4)$](./image/cayley-table-D4-ZD4.png)
+![Cayley table of $D_4$](./image/cayley-table-D4-2.png)
 
 Once again, by rewriting the table for $D_4$ starting with $e$, we can see that Cayley table for $D_4/K$ as “block” in the Cayley table for $D_4$.
 
@@ -174,7 +176,7 @@ Theorem 6.4
 : If $G$ is a group and $G/Z(G)$ is cyclic, then $G$ is Abelian.
 
 > Proof:
-> 
+>
 > Suppose that $G/Z(G)$ is cyclic. Then $G/Z(G) = \langle gZ(G) \rangle = \{ g^iZ(G): i \in \Z\}$ for some $g \in G$. Let $a, b \in G$. Since $a$ and $b$ are in some cosets (possibly different ones), we can write $a=g^i z_1$ and $b=g^j z_2$ where $i,j \in \Z$ and $z_1, z_2 \in Z(G)$. Then $ab = (g^i z_1) (g^j z_2) = g^i g^j z_2 z_1 = (g^j z_2)(g^i z_1) = ba$. Hence $G$ is Abelian.
 
 Exercise: Let $p$ be a prime and consider the group $D_p$. What is $Z(D_p)$?
@@ -204,24 +206,24 @@ Theorem 6.5 - Cauchy’s Theorem for Abelian Groups
 : If $G$ is a finite Abelian group and $p$ is prime that divides $|G|$, then there is an element in $G$ of order $p$.
 
 > Proof: (induction on quotient groups)
-> 
+>
 > This result holds for any groups of order $2$. Assume that the result holds for all groups of order $< |G|$.
-> 
+>
 > First, we claim that $G$ has an element of prime order. Indeed, let $x\in G \setminus \{e\}$. Since $|x|>1$, we can write $|x|=m=qn$ where $q$ is a prime. Note that $|x^n| = \frac{|x|}{\gcd(|x|,n)} = \frac{qn}{\gcd(qn,n)} = \frac{qn}{n} = q$, so we have same element of prime order. It is safe to asusume that $|x|=q$.
-> 
+>
 > If $q=p$, then we are done. Otherwise, assume $q \neq p$. Consider the quotient group $G/\langle x \rangle$ (This is indeed a group, as $G$ is Abelian so $x \trianglelefteq G$). Note that $|G/\langle x \rangle|= \frac{|G|}{|x|} = \frac{|G|}{q}$, so $G/\langle x\rangle$ is a group with order smaller than $G$ and $p \mid |G/\langle x \rangle|$.
-> 
+>
 > Thus, by induction, there is some element $y\langle x \rangle$
 > in $G\setminus\langle x\rangle$ of order $p$.
 > That is, $y^p \langle x\rangle = \langle x \rangle$,
 > so $y^p \in \langle x \rangle = \{e, x, x^2,... x^{q-1}\}$.
 > Note that $y \neq e$, otherwise $|y\langle x \rangle|=1$.
-> 
+>
 > Case 1: If $y^p = e$, then $|y|$ divides $p$.
 > Since $p$ is prime and $|y| \neq 1$, we have $|y|=p$. Done.
-> 
+>
 > Case 2: If $y^p \neq e$, then $y^p = x^k$ for some
-> $k \in \{1,2,...,q-1\}$. $|y^p|=q$ as $|x|=q$ and $q$ is prime.  
+> $k \in \{1,2,...,q-1\}$. $|y^p|=q$ as $|x|=q$ and $q$ is prime.
 > We claim that $|y^q|=p$.
 > Certainly, $(y^q)^p=(y^p)^q=e$, then $|y^q|$ divides $p$,
 > and it is either $1$ or $p$ .
@@ -237,7 +239,7 @@ Solution:
 
 By Cauchy, there are elements $a,b \in G$ such that $|a| = 3$ and $|b| = 11$.
 
-Since $G$ is Abelian, 
+Since $G$ is Abelian,
 $$(ab)^{33} = a^{33} b^{33} = (a^3)^{11} (b^{11})^3 = e^{11} e^{3} = e$$
 Thus, $|ab|$ divides $33$.
 

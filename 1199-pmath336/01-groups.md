@@ -102,9 +102,9 @@ All $n \times n$ invertible matrixes form a group under matrix multiplication. G
 Formally, what is a group?
 
 Definition - Group
-: A **Group** is a set $G$ together with a binary operation $\cdot : G \times G \to G$ satisfies:   
-1. $\cdot$ is associative. $\forall a, b, c \in G \; (a \cdot b) \cdot c = a \cdot (b \cdot c)$.   
-2. $G$ contains an element $e$ such that $\forall a \in G \; a \cdot e = e \cdot a = a$.   
+: A **Group** is a set $G$ together with a binary operation $\cdot : G \times G \to G$ satisfies:
+1. $\cdot$ is associative. $\forall a, b, c \in G \; (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+2. $G$ contains an element $e$ such that $\forall a \in G \; a \cdot e = e \cdot a = a$.
 3. For any element $a \in G$, there exists an element $a^{-1} \in G$ such that $a \cdot a^{-1} = a^{-1} \cdot a = e$.
 
 Note we are implicitly saying that a group is closed under the operation by writing $\cdot : G \times G \to G$.
@@ -131,7 +131,8 @@ Let $G$ be a group under operation $\cdot$. Then the following properties hold.
 Proposition 1.1
 : The identity element $e \in G$ is unique.
 
-> Proof:   
+> Proof:
+>
 > Suppose there are two identities $e, f \in G$.
 > Then $e = e \cdot f = f \cdot e = f$.
 > Hence $e=f$ is unique.
@@ -139,7 +140,8 @@ Proposition 1.1
 Proposition 1.2
 : If $a \in G$, then the inverse of $a$, $a^{-1}$ is unique.
 
-> Proof:   
+> Proof:
+>
 > Suppose $a \cdots b = b \cdots a = e$ and
 > $a \cdot a = c \cdot a = e$.
 > Then $c = c \cdot e = c \cdot (a \cdot b) =
@@ -149,7 +151,8 @@ Proposition 1.2
 Proposition 1.3
 : If $a, b, c \in G$ and $ab = ac$, then $b=c$
 
-> Proof:   
+> Proof:
+>
 > Since $a$ has an inverse, $a^{-1} \in G$,
 > $$\begin{aligned}
 > ab &= ac  \\
@@ -171,7 +174,7 @@ $$\begin{aligned}
 
 Definition - $a^n$
 : If $a \in G$ and $n \in \Z$ then
-	$$a^n = \begin{cases}
+  $$a^n = \begin{cases}
 	a \cdot ...\cdot a \ \text{for n times} & n > 0 \\
 	e & n = 0 \\
 	a^{-1} \cdot ...\cdot a^{-1} \ \text{for -n times} & n < 0 \\
@@ -200,7 +203,7 @@ e.g. $1+2=0 \mod 3$, $2+2=1 \mod 3$
 
 With this operation, addition modulo $n$, elements in $\Z_n$ form a group.
 
-e.g. $(\Z_3, +)$ 
+e.g. $(\Z_3, +)$
 
 | $+$ | $0$ | $1$ | $2$ |
 |:---:|:---:|:---:|:---:|
@@ -321,7 +324,7 @@ What is the order of $S_n$? $|S_n| = n \times (n-1) \times ... \times 1 = n!$.
 
 The set $D_n$ ($n \ge 3$) is the set of symmetries of a regular n-gon. Here a symmetry is any movement that can be comes to the object while you’re looking away, that you won’t know has happened. Let’s start by looking at $D_4$, the symmetries of a square $\Box$. We will put imaginary labels on the square to keep track of the symmetries.
 
-![Elements in D4](image/elements-in-D4.png)
+![Elements in D4](./image/elements-in-D4.png)
 
 There are at most $8$ symmetries ($|D_4|=8$). Why? We have 4 choice for the top-left corner (a fixed vertex), then 2 choices for the “direction” of A, B, C, D, (an orientation). In general, $|D_n| = 2n$.
 
@@ -351,14 +354,17 @@ $D_4$ is non-Abelian. $r_3 s_3 = s_2$, but $s_3 r_3 = s_0$. In general, $D_n$ is
 - Inverse: $s_i^{-1}=s_i$, $r_i^{-1} = r_{-i}$
 - Associative? Yes
 - Abelian? No, for all $n \ge 3$.
-- Order: $2n$ 
+- Order: $2n$
 
 
 
 ## Direct Product
 
 Definition - Direct Product
-: Let $(G,*)$, $(H, \star)$ be groups. We define the direct product of $G$ and $H$ by $(G \times H, \cdot)$ where $$G \times H = \{(g,h) : g \in G, h \in H\}$$ and $$(g,h) \cdot (g’,h,) = (g * g’, h \star h’)$$.
+: Let $(G,*)$, $(H, \star)$ be groups. We define the direct product of $G$ and $H$ by $(G \times H, \cdot)$ where
+$$G \times H = \{(g,h) : g \in G, h \in H\}$$
+and
+$$(g,h) \cdot (g’,h,) = (g * g’, h \star h’)$$
 
 e.g. $GL_2(\R) \times \Z_2$
 $$(\begin{bmatrix}1 & 1 \\ 0 & 1 \end{bmatrix}, 0) \cdot (\begin{bmatrix}1 & 0 \\ 1 & 1\end{bmatrix}, 1) = (\begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}, 1)$$

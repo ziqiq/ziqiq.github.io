@@ -45,7 +45,9 @@ Definition - Homomorphism and Isomorphism
 
 e.g. Consider the group $(\R, +)$ and $(\R_{>0}, \times)$, where $R_{>0}=\{x \in \R: x > 0\}$. We claim that they are isomorphic.
 
-Let’s take $\phi: \R \to \R_{>0}$ by $\phi(a) = 2^a$. We know from calculus that this is a bijection. Is it operation preserving? $$\phi(a+b) = 2^{a+b} = 2^a 2^b = \phi(a) \phi(b)$$. Thus $\phi$ is an isomorphism.
+Let’s take $\phi: \R \to \R_{>0}$ by $\phi(a) = 2^a$. We know from calculus that this is a bijection. Is it operation preserving?
+$$\phi(a+b) = 2^{a+b} = 2^a 2^b = \phi(a) \phi(b)$$
+Thus $\phi$ is an isomorphism.
 
 e.g. If $G = \lang a \rang$ is any infinite cyclic group, then $G \cong \Z$.
 
@@ -62,12 +64,12 @@ Consequences:
 - $n\Z \cong \Z$ for any $n \neq 0$.
 
 Proposition 7.1
-: Let $G,H,K$ be groups.  
-1. If $G \cong H$, then $H \cong G$.  
+: Let $G,H,K$ be groups.<br/>
+1. If $G \cong H$, then $H \cong G$.<br/>
 2. If $G \cong H$ and $H \cong K$, then $G \cong K$.
 
 > Proof:
-> 
+>
 > (1)
 > If $\phi: G \to H$ is an isomorphism, then $\phi^{-1}: H \to G$
 > is an isomorphism.
@@ -81,19 +83,19 @@ Proposition 7.1
 
 Theorem 7.2 - Properties of Isomorphism
 : Let $G,H$ be groups and $\phi: G \to H$ is an isomorphism.
-  Let $a,b\in G$.  
-  1. $\phi(e) = e’$ where $e$ is the identity for $G$ and $e’$ is the identity for $H$.  
-  2. $\phi(a^{-1}) = [\phi(a)]^{-1}$  
-  3. For all $n \in \Z$, $\phi(a^n) = [\phi(a)]^n$  
+  Let $a,b\in G$.<br/>
+  1. $\phi(e) = e’$ where $e$ is the identity for $G$ and $e’$ is the identity for $H$.<br/>
+  2. $\phi(a^{-1}) = [\phi(a)]^{-1}$<br/>
+  3. For all $n \in \Z$, $\phi(a^n) = [\phi(a)]^n$<br/>
   4. $a, b$ commute if and only if $\phi(a), \phi(b)$ commute.
-  5. $|a|=|\phi(a)|$  
-  6. $G$ is Abelian if and only if $H$ is Abelian.  
-  7. $G$ is cyclic if and only if $H$ is cyclic.  
-  8. If $K \le G$ then $\phi(K) = \{\phi(x): x \in G\} \le H$.  
+  5. $|a|=|\phi(a)|$<br/>
+  6. $G$ is Abelian if and only if $H$ is Abelian.<br/>
+  7. $G$ is cyclic if and only if $H$ is cyclic.<br/>
+  8. If $K \le G$ then $\phi(K) = \{\phi(x): x \in G\} \le H$.<br/>
   9. $\phi(Z(G)) = Z(H)$
 
 > Proof:
-> 
+>
 > (1)
 > $\phi(e) = \phi(ee) = \phi(e) \phi(e)$. By cancellation,
 > $\phi(e) = e’$.
@@ -101,29 +103,29 @@ Theorem 7.2 - Properties of Isomorphism
 > (2)
 > $e’ = \phi(e) = \phi(aa^{-1}) = \phi(a)\phi(a^{-1})$. Thus,
 > $\phi(a^{-1}) = [\phi(a)]^{-1}$.
-> 
+>
 > (3)
-> If $n=0$, we’re done by (1).  
-> If $n>0$, $$\phi(a^n) = \phi(aa...a) =
-> \phi(a)\phi(a)...\phi(a) = [\phi(a)]^{n}$$
-> If $n<0$, then $$e’ = \phi(a^n a^{-n}) = \phi(a^n) \phi(a^{-n}) =
-> \phi(a^n) [\phi(a)]^{-n}$$
+> If $n=0$, we’re done by (1).<br/>
+> If $n>0$,
+> $$\phi(a^n) = \phi(aa...a) = \phi(a)\phi(a)...\phi(a) = [\phi(a)]^{n}$$
+> If $n<0$, then
+> $$e’ = \phi(a^n a^{-n}) = \phi(a^n) \phi(a^{-n}) = \phi(a^n) [\phi(a)]^{-n}$$
 > So $\phi(a^n) = [\phi(a)]^{n}$.
-> 
+>
 > (4)
-> Suppose that $ab=ba$, then $\phi(ab) = \phi(a)\phi(b) = \phi(b)\phi(a) 
+> Suppose that $ab=ba$, then $\phi(ab) = \phi(a)\phi(b) = \phi(b)\phi(a)<br/>
 > = \phi(ba)$. For the other direction use the inverse isomorphism
 > $\phi^{-1}: H \to G$ and argue the same way.
-> 
+>
 > (5)
 > Note that $a^n = e$, $\phi(a^n) = \phi(e)$, $[\phi(a)]^n = e’$. Thus
-> the smallest $n$ such that $a^n=e$ is the same as the smallest such 
+> the smallest $n$ such that $a^n=e$ is the same as the smallest such<br/>
 > $n$ that $[\phi(a)]^n = e$, so $|a| = |\phi(a)|$.
-> 
+>
 > (6) Follows from (4).
-> 
+>
 > (7)(8) Exercise.
-> 
+>
 > (9) Follows from (4).
 
 Understanding there properties allow one to prove that certain groups are not isomorphic
@@ -157,7 +159,8 @@ e.g. For the absolute value $|\cdot|: \R^* \to \R^*$, $\ker(|\cdot|) = \{\pm 1\}
 
 e.g. A vector space $V$ (e.g. $R^n$ or $\mathbb{C}^n$) is a group under addition. What are the homomorphisms $phi: V\to W$? It should satisfies $\phi(x+y) = \phi(x) + \phi(y)$. For example, all linear transformation $A:V\to W$ are homomorphisms. We can think of $\phi(x)=Ax$, multiplication by matrix. The image is $\{Ax: x\in V\} = \Range(A)$ and the kernel is $\{x\in V : Ax=0\} = \Null(A)$.
 
-e.g. Consider the map $\sgn: S_n \to \Z_2$ given by $$\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\ 1 & \sigma \text{ is odd} \end{cases}$$
+e.g. Consider the map $\sgn: S_n \to \Z_2$ given by
+$$\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\ 1 & \sigma \text{ is odd} \end{cases}$$
 
 Note that $\sgn$ is a homomorphism because
 $$\begin{aligned}
@@ -171,24 +174,24 @@ $$\begin{aligned}
 Here $\ker(\sgn) = A_n$, the even permutations and $\im(\sgn)=\Z_2$
 
 Theorem 7.3 - Properties of Homomorphism
-: Let $\phi: G \to H$ be a group homomorphism and $a,b \in G$  
-1. $\phi(e) = e$  
-2. $\phi(a^n) = [\phi(a)]^n$ for any $n \in \Z$  
-3. $|\phi(a)|$ divides $|a|$, if $|a| < \infty$  
-4. $\ker(\phi) \trianglelefteq G$  
-5. $\phi(a) = \phi(b)$ if and only if $a \ker(\phi) = b \ker(\phi)$  
-6. $\phi$ is injective if and only if $\ker(\phi) = \{e\}$  
-7. $\im(\phi) \le H$  
+: Let $\phi: G \to H$ be a group homomorphism and $a,b \in G$<br/>
+1. $\phi(e) = e$<br/>
+2. $\phi(a^n) = [\phi(a)]^n$ for any $n \in \Z$<br/>
+3. $|\phi(a)|$ divides $|a|$, if $|a| < \infty$<br/>
+4. $\ker(\phi) \trianglelefteq G$<br/>
+5. $\phi(a) = \phi(b)$ if and only if $a \ker(\phi) = b \ker(\phi)$<br/>
+6. $\phi$ is injective if and only if $\ker(\phi) = \{e\}$<br/>
+7. $\im(\phi) \le H$<br/>
 8. $\phi$ is subjective if and only if $\im(\phi) = H$
 
 > Proof:
-> 
+>
 > (1)(2)
 > Proven in the same way as theorem 7.2.
-> 
+>
 > (3)
 > If $|a|=n$, then by (1) and (2), $[\phi(a)]^n = \phi(a^n) = \phi(e) = e$. Thus $|\phi(a)|$ divides $n=|a|$.
-> 
+>
 > (4)
 > As an exercise, prove that $\ker(\phi) \le G$. To see that $\ker(\phi) \trianglelefteq G$, we’ll use the normal subgroup test.
 > Let $a \in G$ and $b\in \ker(\phi)$. Is $aba^{-1} \in \ker(\phi)$?
@@ -202,7 +205,9 @@ Just like with isomorphism, knowing the properties of homomorphisms allows you t
 
 Q: What are the homomorphisms $\phi:\Z_8 \to \Z_6$?
 
-Note $\Z_8 = \langle 1 \rangle$, so if we know that $\phi(1)=a \in \Z_6$, then for any $k$, $$\phi(1^k) = \phi(1 \cdot ...\cdot 1) = \phi(1) ... \phi(1) = a^k$$ The question becomes, what is $\phi(1)$?
+Note $\Z_8 = \langle 1 \rangle$, so if we know that $\phi(1)=a \in \Z_6$, then for any $k$,
+$$\phi(1^k) = \phi(1 \cdot ...\cdot 1) = \phi(1) ... \phi(1) = a^k$$
+The question becomes, what is $\phi(1)$?
 
 We know that $|\phi(1)|$ divides $|1| = 8$. But also, since $\phi(1) \in \Z_6$, by Lagrange’s theorem, $|\phi(1)|$ divides $|Z_6|=6$. Thus $|\phi(1)|$ divides $\gcd(6,8)$, so it is either $1$ or $2$.
 
@@ -219,7 +224,7 @@ $$\begin{aligned}
           &= \phi(k) \phi(m)
 \end{aligned}$$
 
-We also must check that $\phi$ is well-defined in the sense that “ $x= y \mod 8 \Leftarrow \phi(x) = \phi(y) \mod 6$ “. To see that it is, suppose that $k=m \mod 8$. Then $8 \mid k-m$, so $k=m+8z$ for some $z\in\Z$. We have that 
+We also must check that $\phi$ is well-defined in the sense that “ $x= y \mod 8 \Leftarrow \phi(x) = \phi(y) \mod 6$ “. To see that it is, suppose that $k=m \mod 8$. Then $8 \mid k-m$, so $k=m+8z$ for some $z\in\Z$. We have that<br/>
 $$\begin{aligned}
 \phi(k) &= \phi(m+8z) \\
         &= 3(m+8z) \mod 6 \\
@@ -246,9 +251,9 @@ Theorem 7.4
 : Let $G$ be a group and $N \trianglelefteq G$. Then there is a group $H$ and homomorphism $\phi: G \to H$ such that $\ker(\phi) = N$.
 
 > Proof:
-> 
+>
 > Let $H = G/N$ and define $\phi: G \to G/N$ by $\phi(a) = aN$.
-> Then $\phi(ab) = (ab)N = (aN)(bN) = \phi(a) \phi(b)$. Thus $\phi$ is a 
+> Then $\phi(ab) = (ab)N = (aN)(bN) = \phi(a) \phi(b)$. Thus $\phi$ is a<br/>
 > homomorphism.
 > $$\ker\phi = \{a\in G: \phi(a) = N\} = \{a\in G: aN = N\} = N$$
 
@@ -268,15 +273,15 @@ Theorem 7.5 - First Isomorphism Theorem
 : If $\phi: G \to H$ is a group homomorphism, then $G / \ker \phi \cong \im \phi$.
 
 > Proof:
-> 
+>
 > Define a map $\psi: G / \ker \phi \to \im \phi$ by $\psi(a \ker \phi) = \phi(a)$. We claim that $\psi$ is a isomorphism.
-> 
+>
 > First, note that $\psi(a \ker \phi) = \psi(b \ker \phi) \iff \phi(a) = \phi(b) \iff a \ker \phi = b \ker \phi$. Thus $\psi$ is well-defined and injective.
-> 
+>
 > To see that $\psi$ is surjective, note that $\im \psi = \{\psi(a \ker \phi): a\in G\} = \{\phi(a): a \in G\} = \im \phi$. Thus, $\psi$ is surjective.
 > Finally we check that $\psi$ is a homomorphism: $\psi((a \ker \phi)(b \ker \phi)) = \psi(ab \ker \phi) = \phi(ab) = \phi(a)\phi(b) =\psi(a \ker \phi)\psi(b \ker \phi)$.
 > Thus $\psi$ is a homomorphism.
-> 
+>
 > Thus $\psi$ is an isomorphism, so $G / \ker \phi \cong \im \phi$.
 
 
@@ -295,7 +300,8 @@ Corollary 7.6
 >
 > By the first isomorphism theorem, $G / \ker \phi \cong \im \phi$. Thus $|G / \ker \phi| = | \im \phi|$, and hence by Lagrange, $\frac{|G|}{|\ker \phi|} = |\im \phi|$.
 
-e.g. We showed that $S_n/A_n \cong \Z_2$ and thus $|S_n| = |A_n||\Z_2|$. $$|A_n| = \frac{n!}{2}$$
+e.g. We showed that $S_n/A_n \cong \Z_2$ and thus $|S_n| = |A_n||\Z_2|$.
+$$|A_n| = \frac{n!}{2}$$
 
 e.g. What homomorphism can we have from $G$ to $H$ if $|G| = 9$ and $|H|= 4$?
 
@@ -358,11 +364,11 @@ Theorem 7.8
 : Let $G$ be a group. Then $\Aut(G)$ is a group under composition of automorphisms. Moreover, $\Inn(G) \trianglelefteq \Aut(G)$.
 
 > Proof:
-> 
+>
 > First we need to show $\Inn(G) \le \Aut(G)$.
 > Since $\phi_e = (x \mapsto exe^{-1}) \in \Inn(G)$,
 > $\Inn(G)$ is not empty.
-> 
+>
 > - $\phi_a \phi_b = (x \mapsto axa^{-1})(x \mapsto bxb^{-1})
 >   = (x \mapsto abxb^{-1}a^{-1}) = \phi_{ab} \in \Inn(G)$
 > - Consider $\phi_a^{-1} = \phi_{a^{-1}} \in \Inn(G)$.
@@ -370,7 +376,7 @@ Theorem 7.8
 >   = (x \mapsto a^{-1}axa^{-1}a) = \phi_{e}$
 >
 > Thus, $\Inn(G) \le \Aut(G)$ by the subgroup test.
-> 
+>
 > Let $\phi_a \in \Inn(G)$ be a inner automorphism and
 > $\psi \in \Aut(G)$ be any automorphism.
 > Then check $\psi \phi_a \psi^{-1}$ is an inner automorphism.
@@ -392,27 +398,25 @@ Recall A homomorphism $\phi: \Z_n \to \Z_m$ is of form $\phi(1^k) = a^k$ where $
 
 These maps $\phi: \Z_6 \to \Z_6$ are well-defined as $a^6 = 0$. Thus $\Aut(Z_6) = \{x \mapsto x, 1^k \mapsto 5^k\}$
 
-Note: this example suggests that there is a correspondence between $\Aut (\Z_n$)$ and the elements of $\Z_n^*$. Namely, $\phi \in \Aut(\Z_n) \iff \phi(1) \in \Z_n^*$.
+Note: this example suggests that there is a correspondence between $\Aut (\Z_n)$ and the elements of $\Z_n^*$. Namely, $\phi \in \Aut(\Z_n) \iff \phi(1) \in \Z_n^*$.
 
 Theorem 7.9
 : For any $n \ge 2$, $\Aut(Z_n) \cong \Z_n^*$.
 
 > Proof:
-> 
+>
 > Define $\psi: \Aut(Z_n) \to \Z_n^*$ by $\psi(\phi) = \phi(1)$. Observe that since $|\psi(\phi)| = |\phi(1)| = |1| = n$, we have that $\psi(\phi)$ is a generator of $\Z_n$ and hence $\psi(\phi) \in \Z_n^*$
 > Thus, the codon ain’t is correct.
-> 
+>
 > To see that $\psi$ is a homomorphism, let $\phi_1 \phi_2 \in \Aut(G_n)$. $\psi(\phi_1 \phi_2) = (\phi_1 \circ \phi_2)(1) = \phi_1(\phi_2(1)) = \phi_1(1^{\phi_2(1)}) = phi_1(1)^{\phi_2(1)} = \phi_1(1)\phi_2(1) = \psi(\phi_1) \psi(\psi_2)$
->  
+>
 > Let’s show that $\psi$ is injective. If $\psi(\phi_1) = \psi(\phi_2)$, then $\phi_1(1) = \phi_2(1)$. It follows that $\phi_1(k) = k \phi_1(1) = k \phi_2(1) = \phi_2(k)$ for all $k \in \Z_n$. Hence $\phi_1 = \phi_2$, so $\psi$ is injective.
 >
-> To see that $\psi$ is surjective, let $a \in \Z_n^*$. Consider the map $\phi: \Z_n \to \Z_n$ given by $\phi(k) = ak \mod n$. 
->  
+> To see that $\psi$ is surjective, let $a \in \Z_n^*$. Consider the map $\phi: \Z_n \to \Z_n$ given by $\phi(k) = ak \mod n$.
+>
 > Exercise: verify that $\phi$ is an automorphism of $\Z_n$ and $\psi(\phi) = a$ (so $\psi$ is surjective).
->  
+>
 
 Exercise: show that if $G \cong H$ then $\Aut(G) \cong \Aut(H)$
 
 In particular, if $G = \Z_n$ and $H$ is a cyclic group of order $n$, then $G \cong H$, and hence $\Aut(H) \cong \Aut(\Z_n) \cong \Z_n^*$
-
- 

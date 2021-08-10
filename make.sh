@@ -18,7 +18,7 @@ for file in `find -type f -name '*.md'`; do
     file=${file%.*}
     echo "Pandoc: " $file
 
-    def_files=$(echo ${dir}/*.def)
+    def_files=$(echo ${dir}/*.tex)
     if [ ! -f $def_files ]; then
         def_files=""
     fi

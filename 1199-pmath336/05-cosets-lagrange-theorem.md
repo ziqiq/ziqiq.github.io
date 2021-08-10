@@ -45,17 +45,17 @@ Definition - Coset
 : Finally, the index of $H$ in $G$ is the number of distinct left or right cosets of $H$ in $G$, denoted $|G:H|$.
 
 Proposition 5.1
-: Let $a, b \in G$ and $H \le G$.  
-1. $a \in aH$.  
-2. $aH = bH \iff b \in aH$.  
-3. $aH = bH \iff a^{-1}b \in H$.  
-4. $aH = bH$ or $aH \cap bH = \emptyset$.  
-5. $|aH| = |H|$.  
-6. $aH = Ha \iff aHa^{-1} = H$.  
+: Let $a, b \in G$ and $H \le G$.<br/>
+1. $a \in aH$.<br/>
+2. $aH = bH \iff b \in aH$.<br/>
+3. $aH = bH \iff a^{-1}b \in H$.<br/>
+4. $aH = bH$ or $aH \cap bH = \emptyset$.<br/>
+5. $|aH| = |H|$.<br/>
+6. $aH = Ha \iff aHa^{-1} = H$.<br/>
 : Also, analogous statements hold for right cosets.
 
 > Proof:
-> 
+>
 > 1. Since $H \le G$, $e \in H$. Then $a = ae \in aH$.
 > 2. If $aH = bH$, by 1, $b \in bH = aH$. If $b \in aH$, then $b=ah$
 >    for some $h \in H$, so $bH = (ah)H = a(hH) = aH$.
@@ -162,7 +162,7 @@ Which one contains $\sigma^2$?
 - If $\sigma^2 \in H$, then $(\sigma^2)^2 = \sigma^{3+1}= \sigma \in H$, contradiction.
 - If $\sigma^2 \in \sigma H$, then there exists $h\in H$ such that $\sigma^2 = \sigma h$, so $h = \sigma \in H$ contradiction.
 
-Therefore, there is no such subgroup. 
+Therefore, there is no such subgroup.<br/>
 
 Q: How many different legal operation can be done to the Rubik’s cube? Call this group of operations $R$?
 
@@ -184,13 +184,13 @@ Theorem 5.7
 : Let $G$ be a finite group and $H,K \le G$. Consider set $HK = \{hk: h \in H, k\in K\}$. Then $|HK| = \frac{|H||K|}{|H \cap K|}$
 
 > Proof:
-> 
+>
 > In total, we can build an element of $HK$ by choosing $h \in H$ and $k \in K$, in $|H||K|$ many ways. However, we may overcount as it could be that $hk=h’k’$ for some $h’ \in H, k’ \in K$.
 >
-> Suppose $hk = h’k’$, then $h’^{-1}h = k’k^{-1} = b$. Since $H, K$ are closed, $b \in H\cap K$. Then $h’ = hb^{-1},  k’ =bk$ 
-> 
+> Suppose $hk = h’k’$, then $h’^{-1}h = k’k^{-1} = b$. Since $H, K$ are closed, $b \in H\cap K$. Then $h’ = hb^{-1},  k’ =bk$
+>
 > Thus for each pair of $h, k$, we can rewrite them as $(hb^{-1})(bk)$ in exactly $|H \cap K|$ ways. Hence $|HK| = \frac{|H||K|}{|H \cap K|}$
-> 
+>
 
 Caution: In general $HK$ is just a set, not necessarily a subgroup.
 

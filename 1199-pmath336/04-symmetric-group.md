@@ -6,7 +6,7 @@ Now that we have seen more about groups in general, we can take a closer look at
 
 Recall every $\sigma \in S_n$ can be describe using an array. e.g. $\sigma = \begin{pmatrix} 1&2&3&4&5&6 \\ 2&1&4&6&5&3 \end{pmatrix}$. If we look closely at $\sigma$, we notice something interesting.
 
-![Cycle 214653](image/cycle-214653.png)
+![Cycle 214653](./image/cycle-214653.png)
 
 Each of these cycle can be written very compactly. $\sigma = (1 2)(3 4 6)(5)$.
 
@@ -75,7 +75,7 @@ Lemma 4.3
 : Disjoint cycles commutes
 
 > Proof:
-> 
+>
 > Let $\alpha = (a_1 a_2 ... a_m)$ and $\beta = (b_1 b_2 ... b_m)$
 > Let $x \in \{1, ..., n\}$
 > If $x\in \alpha$, then $x \notin \beta$, so
@@ -94,15 +94,15 @@ e.g. If $\sigma = (1 4 7)(3 8)(2 9 10)$, then $|\sigma| = \lcm(3, 2 ,3) = 6$.
 e.g. If $\sigma = (1 2 3)(1 4)(2 4 3)(1 3 2)$, then $\sigma = (1 3 2 4)$ and $\sigma = \lcm(4) = 4$
 
 > Proof:
-> 
+>
 > Suppose that $\sigma = \beta_1 ... \beta_k$. We will prove this result for $k=2$.
-> 
+>
 > Let $m = |\sigma|$ and $l = \lcm(|\beta_1|, |\beta_2|)$. It is sufficient to show that $m$ divides $l$ and $l$ divides $m$.
-> 
+>
 > First, $e = \sigma^m = (\beta_1 \beta_2)^m = \beta_1^m \beta_2^m$. Since they are disjoint, $|\beta_1| \mid m$ and $|\beta_2| \mid m$. Hence, $l = \lcm(|\beta_1|, |beta_2|)$ divides $m$.
 >
 > Also $\sigma^l = (\beta_1 \beta_2)^l = \beta_1^l \beta_2^l = e e = e$.Hence $m$ divides $l$.
-> 
+>
 
 
 
@@ -145,11 +145,11 @@ Theorem 4.5
 : Every $\sigma \in S_n$ can be written as a product of transposition.
 
 > Proof:
->   
+>
 > It is sufficient to prove this for $\sigma$ a cycle in $S_n$, since every permutation is a product of cycles.
 >
 > $$(a_1 a_2 a_3... a_m) = (a_1 a_2)(a_2 a_3)...(a_{m-1} a_m)$$
-> 
+>
 
 e.g. $(1 3 2)(1 4 3) = (1 3)(3 2)(1 4)(4 3)$.
 If we convert it to disjoint representation first, we have $(1 3 2)(1 4 3) = (1 4 2)(3) = (1 4)(4 2)$
@@ -160,15 +160,15 @@ Lemma 4.7
 : If $\beta_1 ... \beta_m = e$ where $\beta_i$ is a transposition, then $m$ is even.
 
 > Proof:
-> 
+>
 > We cannot have $m=1$ transpositions.
 > If we have $m=2$ transpositions then we are done.
-> 
+>
 > Suppose $m>2$ is a fixed and the result holds for $k<m$.
-> 
+>
 > Let $e = \beta_1 ... \beta_m$ where $\beta_m = (a b)$. Now look at $\beta_{m-1}\beta_m$. There are 3 possibilities:
 > $$\beta_{m-1}\beta_m = \begin{cases} (a b)(a b) = e & \text{case 1}\\ (a c)(a b) = (a b c) = (a b)(b c) & \text{case 2}\\ (c d)(a b) = (a b)(c d) & \text{case 3}\end{cases}$$
-> 
+>
 > For case 1, $\beta_1 ... \beta_{m-2} = e$ and $m-2$ is even by induction, so $m$ is also even.
 >
 > For case 2 and 3, we can move the last occurrence of $a$ to the left. Repeat this process. Eventually, we either delete two transpositions $(a x)(a y) = (a y)(y x)$ or we move the last occurrence of $a$ all the way to the left. If we delete it, we get $m-2$ transpositions and $m$ is even. Otherwise, $e = (a x_0)(x_1 y_1) ... (x_m y_m)$ where all $x$ and $y$ ’s are not $a$. This is a contradiction since $ea = x_0 \neq a$.
@@ -177,7 +177,7 @@ Theorem 4.6
 : If $\sigma \in S_n$ is given by $\sigma = \beta_1 \beta_2 ... \beta_k = \gamma_1 \gamma_2 ... \gamma_m$ where $\beta_i$ and $\gamma_i$ are transpositions. Then either $k$ and $m$ are both even or they are both odd.
 
 > Proof
-> 
+>
 > Suppose $\sigma = \beta_1 \beta_2 ... \beta_k = \gamma_1 \gamma_2 ... \gamma_m$. Then $e = \beta_1^{-1} \beta_2^{-1} ... \beta_k^{-1} = \gamma_1 \gamma_2 ... \gamma_m$ There are $k+m$ transpositions. By lemma 4.7 $k+m$ is even. Thus, $k$ and $m$ are either both even or both odd.
 
 We can now safely make the following definition.
@@ -194,5 +194,3 @@ Exercise: Show that
 1. An $m$ -cycle is even if and only if $m$ is odd.
 2. A product $\sigma = \sigma_1 \sigma_2$ is even if and only if $\sigma_1$ and $\sigma_2$ are both even or odd.
 3. The set $A_n = \{ \sigma \in S_n : \sigma \text{ is even}\}$ forms a subgroup of $S_n$. $A_n$ is known as the **alternating group**.
-
- 

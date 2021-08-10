@@ -15,8 +15,8 @@ For instance how should the group identity $e$ permute the elements of $X$? We w
 It would also be reasonable to ask that for elements $g_1, g_2 \in G$, if we permute $X$ using $g_2$ and then permute using $g_1$, that this be same as permitting with the product $g_1 g_2$.
 
 Definition - Group Action
-: Let $G$ be a group and $X$ be a set. An action of $G$ on $X$ is map $\cdot: G \times X \to X$ that satisfied the following properties.  
-1. $e\cdot x = x$ for all $x \in X$.  
+: Let $G$ be a group and $X$ be a set. An action of $G$ on $X$ is map $\cdot: G \times X \to X$ that satisfied the following properties.<br/>
+1. $e\cdot x = x$ for all $x \in X$.<br/>
 2. Given $g_1 g_2 \in G$, then $g_1 \cdot (g_2 \cdot x) = (g_1 g_2) \cdot x$ for all $x \in X$.
 : We write $G \curvearrowright X$ to indicate that $G$ is acting on $X$.
 
@@ -35,7 +35,7 @@ So this is indeed a action.
 
 e.g.(3) The group $D_4$ acts on the set $X= \{1,2,3,4\}$ by thinking of the elements of $X$ as the corner of a square.
 
-For instance if $v \in D_4$ is the vertical flip then $v \cdot 2 = 1$. 
+For instance if $v \in D_4$ is the vertical flip then $v \cdot 2 = 1$.
 
 ![D4 acts on corner](./image/D4-acts-on-corner.png)
 
@@ -77,7 +77,7 @@ Theorem 8.1 - Cayley Theorem
 : Every group $G$ is isomorphic to a group of permutations. In particular, if $|G|=n < \infty$, then $G$ is isomorphic to a subgroup of $S_n$.
 
 > Proof:
-> 
+>
 > Consider the action of $G$ on itself by left multiplication: given $g \in G$ then $g \cdot a = ga$. Consider the homomorphism $\Phi: G \to S_G$ where $\Phi(g) = \psi_g$. Note: $g\in \ker \Phi \iff \psi_g$ is the identity of $S_G$, so
 > $$\ker \Phi = \{ g \in G: \psi_g(a) = a \quad \forall a\in G \} = \{ g \in G : g \cdot a = a \quad \forall a\in G\} = \{g \in G : ga = a \quad \forall a\in G\} = \{e\}$$
 > Thus, by the first isomorphism theorem $G/\ker \Phi \cong \im \Phi \le S_G$. So $G \cong \im \Phi$ which is a group of permutations. The final claim follows from the fact the $S_G \cong S_n$ when $|G| = n < \infty$.
@@ -91,8 +91,8 @@ Let $G \curvearrowright X$ be a group action and fix $x \in X$.
 - Which elements of $G$ leave $x$ unchanged?
 
 Definition - Orbit and Stabilizer
-: Let $G \curvearrowleft X$ be a group action and fix $x \in X$. Define:  
-1. The orbit of $x$ to be the set $\orb_x \{g \cdot x \in X: g \in G\}$.  
+: Let $G \curvearrowleft X$ be a group action and fix $x \in X$. Define:<br/>
+1. The orbit of $x$ to be the set $\orb_x \{g \cdot x \in X: g \in G\}$.<br/>
 2. The stabilizers of $x$ to be the set $\stab_x = \{g \in G: g\cdot x =x\}$
 
 Remark $\stab_x \subseteq G$ and $\orb_x \subseteq X$
@@ -108,7 +108,7 @@ Note: $X$ may not be a group, so $\orb_x$ is not a subgroup of $X$.
 
 Consider the action of $S_n$ on $X=\{1,...,n\}$ given by $\sigma \cdot i= \sigma(i)$. Fix $i\in X$.
 
-The orbit $\orb_i = X$. You can send $i$ to anywhere. In particular, if $j\in X$, then $(i j)\cdot (i) = j$. 
+The orbit $\orb_i = X$. You can send $i$ to anywhere. In particular, if $j\in X$, then $(i j)\cdot (i) = j$.
 
 The stabilizer $\stab_i = \{ \sigma \in S_n : \sigma(i) = i\} \cong S_{n-1}$.
 
@@ -132,7 +132,7 @@ Second, consider the action of $G$ on the set of all edges of the cube. Pick a p
 
 Last, consider the action of $G$ on the set of all faces of the cube. Choose any $F\in X$. Now $|\orb_F| = 6$ and $|\stab_F| = 4$.
 
-In all cases, we saw that if $x \in X$ the $|\orb_x| \cdot |\stab_x| = 24$. It turns out that $24$ is the number of rotations in $G$. 
+In all cases, we saw that if $x \in X$ the $|\orb_x| \cdot |\stab_x| = 24$. It turns out that $24$ is the number of rotations in $G$.
 
 ## Orbit-Stabilizer Theorem
 
@@ -140,10 +140,10 @@ Theorem 8.3 - Orbit-Stabilizer Theorem
 : Let $G \curvearrowright X$ be a group action. Given any $x\in X$ then |G:\stab_x| = $\orb_x$. In particular, if $|G| < \infty$, then $|G|=|\stab_x| \cdot |\orb_x|$.
 
 > Proof:
-> 
+>
 > We claim that $|G/\stab_x| = |\orb_x|$.
 > We must find a bijection $f: G/\stab_x \to \orb_x$.
-> 
+>
 > Define $f: G/\stab_x \to \orb_X$ by $f(g\stab_x) = g \cdot x$.
 > First, given $g_1, g_2 \in G$, then
 > $$g_1 \stab_x = g_2 \stab_x \\
@@ -152,11 +152,11 @@ Theorem 8.3 - Orbit-Stabilizer Theorem
 > \iff g_1 \cdot x = g_2 \cdot x \\
 > \iff f(g_1 \stab_x) = f(g_2 \stab_x)$$
 > So $f$ is well-defined and injective.
->  
+>
 > Finally, given $y \in \orb_x$, we can write $y = g \cdot x$ for some
 > $g \in G$. Thus, $f(g \stab_x) = g \cdot x = y$, so $f$ is surjective,
 > and thus bijective as claimed.
-> 
+>
 > The final statement is now immediate from Lagrange’s theorem.
 
 e.g.
@@ -195,14 +195,14 @@ But wait... We should consider two boards to be the same if we can rotated one i
 ![Same chess board](./image/same-chess-board.png)
 
 Let $G$ be the rotational symmetry group of a square, and the $G$ acts on the set $X$ of all $2^4 = 16$ possible boards.
- 
+
 We consider two boards to be the same if they’re in the same orbit. So we want to know the number of orbit of this action.
 
 We will accomplish this using Burnsides’s lemma, but first we need a proposition.
 
 Proposition 8.4 - Orbit Partitioning
-: If $G \curvearrowright X$ is a group action, then the orbits of the action partition $X$. That is:  
-1. $X = \cup_{x\in X} \orb_x$, and  
+: If $G \curvearrowright X$ is a group action, then the orbits of the action partition $X$. That is:<br/>
+1. $X = \cup_{x\in X} \orb_x$, and<br/>
 2. Given $x,y \in X$ either $\orb_x = \orb_y$ or $\orb_x \cap \orb_y = \emptyset$
 
 Lemma 8.5 - Burside’s Lemma
@@ -215,29 +215,30 @@ Back to our example, the group is $G = \{e, R_{90}, R_{180}, R_{270}\}$. For eac
 1. $|\fix(e)| = 2^4$. All boards are fixed.
 2. $|\fix(R_{90})| = 2$. Either all white or all black.
 3. $|\fix(R_{270})| = 2$. Similar to (2).
-4. $|\fix(R_{180})| = 2^2$. Both pairs of diagonal tiles have to be same. Choose one of two colors for each pair. 
+4. $|\fix(R_{180})| = 2^2$. Both pairs of diagonal tiles have to be same. Choose one of two colors for each pair.
 
-Then by lemma 8.5, the number of board is $$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{1}{4} (16 + 2 + 2 + 4) = 6$$.
+Then by lemma 8.5, the number of board is
+$$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{1}{4} (16 + 2 + 2 + 4) = 6$$
 
 To prove lemma 8.5, we use the proposition 8.4.
 
 > Proof:
-> 
+>
 > Let $n$ be the number of pairs $(g,x) \in G \times X$ such that
 > $g \cdot x = x$. Given a fixed $g \in G$, the number of such pairs
 > $(g,x)$ is $|\fix(g)|$. Thus $n = \sum_{g\in G} |\fix(g)|$.
-> 
+>
 > Alternatively, given $x \in X$ the number of such pairs $(g,x)$ is
 > $|\stab_x|$, so
 > $$n = \sum_{x\in X}|\stab_x| = \sum_{x \in X}\frac{|G|}{|\orb_x|} =
 > |G| \sum_{x\in X}\frac{1}{\orb_x}$$
 >
-> By proposition 8.4, $X$ is the union of its disjoint orbits, so we can 
+> By proposition 8.4, $X$ is the union of its disjoint orbits, so we can
 > sum over $1$ orbit at a time. Consider $\orb_x$. Given $y\in \orb_x$,
 > we have $\orb_y = \orb_x$, and hence
 > $$\sum_{y\in \orb_x} \frac{1}{|\orb_y|} = \frac{1}{|\orb_x|} + ... +
 > \frac{1}{|\orb_x|} = \frac{|\orb_x|}{|\orb_x|} = 1$$
-> Thus, 
+> Thus,<br/>
 > $$n = |G| \sum_{x\in X} \frac{1}{|\orb_x|} = |G|N$$
 > and
 > $$\sum_{g \in G} |\fix(g)| = n = |G|N$$
@@ -254,22 +255,23 @@ e.g.(1) How many 6-bead necklaces can be made using $3$ black beads and $3$ whit
 1. Choose $3$ locations for the black beads in $\begin{pmatrix}6\\3\end{pmatrix} = 20$ ways. $|X| = 20$
 2. Let $G = D_6$. We need to know the number of orbits when $G \curvearrowright X$.
 
-	|$g$  |$\fix(g)$|
-	|:---:|:-------:|
-	|$r_0$|$20$|
-	|$r_1$|$0$ |
-	|$r_2$|$2$ |
-	|$r_3$|$0$ |
-	|$r_4$|$2$ |
-	|$r_5$|$0$ |
-	|$s_0$|$4$ |
-	|$s_1$|$0$ |
-	|$s_2$|$4$ |
-	|$s_3$|$0$ |
-	|$s_4$|$4$ |
-	|$s_5$|$0$ |
+	| $g$   | $\fix(g)$ |
+	|:-----:|:---------:|
+	| $r_0$ | $20$ |
+	| $r_1$ | $0$ |
+	| $r_2$ | $2$ |
+	| $r_3$ | $0$ |
+	| $r_4$ | $2$ |
+	| $r_5$ | $0$ |
+	| $s_0$ | $4$ |
+	| $s_1$ | $0$ |
+	| $s_2$ | $4$ |
+	| $s_3$ | $0$ |
+	| $s_4$ | $4$ |
+	| $s_5$ | $0$ |
 
-3. Thus, $$N = \frac{1}{|D_6|}\sum_{g\in G}|\fix(g)| = \frac{1}{12} (20+2+2+4+4+4) = 3$$
+3. Thus,
+   $$N = \frac{1}{|D_6|}\sum_{g\in G}|\fix(g)| = \frac{1}{12} (20+2+2+4+4+4) = 3$$
 
 
 e.g.(2) How many ways can one label the faces of a six-sided die using the numbers 1-6 exactly once?
@@ -277,7 +279,8 @@ e.g.(2) How many ways can one label the faces of a six-sided die using the numbe
 1. Let $X$ be the set of all possible labelings of a cube using 1-6, ignoring symmetry. We choose one face for each number. $|X| = 6! = 720$.
 2. Let $G$ be the group of rotation of a cube . By the orbit-stabilizer theorem $|G| = 24$. We want to know the number of orbits when $G \curvearrowright X$.
 3. By Burnside, we must compute $|\fix(g)|$ for each $g \in G$. First, $|\fix(e)| = |X| = 720$. However, every other rotation will not fix some faces, and since all faces are distinct $|\fix(g)| = 0$ for any $g \ne e$.
-4. Thus, $$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{720}{24} = 30$$
+4. Thus,
+   $$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{720}{24} = 30$$
 
 
 e.g.(3) How many ways can you color the edges of a tetrahedron using red, blue, and green?
@@ -286,9 +289,10 @@ e.g.(3) How many ways can you color the edges of a tetrahedron using red, blue, 
 2. Let $G$ be the group of all rotations of the tetrahedron. By Orbit-Stabilizer, $|G| = 12$
 3. What do the rotations in $G$ actually look like?
 	- First, there are 1 identity $e$. $|\fix(e)| = 3^6$.
-	- Then, for each face there are 2 rotations $\tau$ through the face and opposite vertex. For every such $\tau$, $|\fix(\tau)$ = 3^2$. In total there are $8$ such rotations. ![Face-Vertex Rotation](image/tetra-face-vertex-rotation.png)
-	- There are rotation $\sigma$ about an axis through two opposite edges. $|\fix(\sigma)| = 3^4$. There are $3$ such rotations in total. ![Edge-Edge Rotation](image/tetra-edge-edge-rotation.png)
-4. Thus, $$N = \frac{1}{12}(1\times 3^6 + 8 \times 3^2+ 3 \times 3^4) = 87$$
+	- Then, for each face there are 2 rotations $\tau$ through the face and opposite vertex. For every such $\tau$, $|\fix(\tau) = 3^2$. In total there are $8$ such rotations. ![Face-Vertex Rotation](./image/tetra-face-vertex-rotation.png)
+	- There are rotation $\sigma$ about an axis through two opposite edges. $|\fix(\sigma)| = 3^4$. There are $3$ such rotations in total. ![Edge-Edge Rotation](./image/tetra-edge-edge-rotation.png)
+4. Thus,
+   $$N = \frac{1}{12}(1\times 3^6 + 8 \times 3^2+ 3 \times 3^4) = 87$$
 
 ## Class Equation
 
@@ -308,13 +312,15 @@ $$\begin{aligned}
 &= C(g_i)
 \end{aligned}$$
 
-We call $C(g_i)$ the **centralizer** of $g_i$. And the equation $$|G| = |Z(G)| + \sum_{i=1}^{r}|G:C(g_i)|$$ is called the **class equation**.
+We call $C(g_i)$ the **centralizer** of $g_i$. And the equation
+$$|G| = |Z(G)| + \sum_{i=1}^{r}|G:C(g_i)|$$
+is called the **class equation**.
 
 There are many important applications.
 
 Corollary 8.6
-: Let $p$ be a prime.  
-1. If $G$ is a group of order $p^k$ for some $k \ge 1$, then $\Z(G) \ne \{e\}$.  
+: Let $p$ be a prime.<br/>
+1. If $G$ is a group of order $p^k$ for some $k \ge 1$, then $\Z(G) \ne \{e\}$.<br/>
 2. If $G$ is a group of order $p^2$, then $G$ is Abelian.
 
 The details are left for A5.
@@ -324,20 +330,20 @@ Theorem 8.7 - Cauchy’s Theorem
 
 > Proof:
 > (By induction on $|G|$)
-> 
-> Assume that the result holds for all group of order $<|G|$.  
-> 
+>
+> Assume that the result holds for all group of order $<|G|$.
+>
 > Case 1: $p$ divides $|Z(G)|$. By the Cauchy’s theorem in Abelian case.
 > $Z(G)$ contains an element of order $p$, and hence so too does $G$.
 >
 > Case 2: $p$ does not divide $|Z(G)|$. Consider the class equation.
 > $$|G| = |Z(G)| + \sum_{i=1}^{r}|G:C(g_i)|$$
-> We have that $|Z(G)| = |G| - \sum_{i=1}^{r}\frac{|G|}{|C(g_i)|}$ by 
+> We have that $|Z(G)| = |G| - \sum_{i=1}^{r}\frac{|G|}{|C(g_i)|}$ by
 > Lagrange theorem.
 > Since $p$ divides $|G|$, but $p$ does not divide $|Z(G)|$, it must be
 > that $p$ does not divide $\frac{|G|}{|C(g_k)}$ for some $k$.
-> Thus, since $p$ divides $|G|$, but $p$ does not divides 
+> Thus, since $p$ divides $|G|$, but $p$ does not divides
 > $\frac{|G|}{|C(g_k)}$, $p$ must divide $|C(g_k)|$.
 > Since $g_k \notin Z(G)$, we have that $C(g_k) \neq G$.
-> By induction hypothesis, $C(g_k)$ has an element of order $p$, so too 
+> By induction hypothesis, $C(g_k)$ has an element of order $p$, so too
 > does $G$.

@@ -3,7 +3,7 @@
 Theorem 9.1 - The Fundamental Theorem of Finite Abelian Groups
 : Every finite Abelian group $G$ is isomorphic to
 $$\Z_{{p_1}^{n_1}} \times \Z_{{p_2}^{n_2}} \times ... \times \Z_{{p_k}^{n_k}}$$
-where $p_1, p_2, ..., p_k$ are (not necessarily distinct) primes dividing $|G|$, and $n_1, n_2, ..., n_k$ are positive integers.  
+where $p_1, p_2, ..., p_k$ are (not necessarily distinct) primes dividing $|G|$, and $n_1, n_2, ..., n_k$ are positive integers.<br/>
 Moreover, the group $G$ is uniquely determines the number of terms ($k$), as well as the intergers $n_1, n_2, ..., n_k$.
 
 ### Example 1

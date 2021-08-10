@@ -34,7 +34,7 @@ Proposition 2.1
 : If $G$ is a group and $H$ is a subgroup of $G$ then the identity of $G$ is the identity of $H$.
 
 > Proof:
-> 
+>
 > Suppose $e$ is the identity of $G$ and $f$ is the identity of $H$,
 > then $f = ff$. Since $f \in G$, it has inverse $f^{-1} \in G$ and
 > $ff^{-1} = e$. Then $e = ff^{-1} = (ff)f^{-1} = f(ff^{-1}) = fe = f$
@@ -43,41 +43,41 @@ Proposition 2.1
 ## Subgroup Test
 
 Theorem 2.2 - Subgroup Test
-: Let $(G, \cdot)$ be a group. A non-empty subset $H$ of $G$ is a subgroup of $G$ if and only if:  
-1. $\forall a,b \in H \; a \cdot b \in H$  
+: Let $(G, \cdot)$ be a group. A non-empty subset $H$ of $G$ is a subgroup of $G$ if and only if:<br/>
+1. $\forall a,b \in H \; a \cdot b \in H$<br/>
 2. $\forall a \in H \; a^{-1} \in H$
 
 > Proof:
 >
 > Let $H \subseteq G$.
-> 
+>
 > ($\Rightarrow$)
 > Suppose $H$ is a subgroup of $(G, \cdot)$. Since $H$ is a group, by
 > definition, $\cdot$ is closed in $H$, so (1) holds. And the inverse
 > exists for all elements in $H$, so (2) holds.
-> 
+>
 > ($\Leftarrow$)
 > Suppose $H \neq \emptyset$ and (1), (2) holds.
->  
+>
 > - Closure: (1) shows that $\cdot$ is closed in $H$
 > - Associativity: Since $(G, \dot)$ is a group, $\cdot$ is associative.
 > - Identity: Let $a \in H$. By (2), $a^{-1} \in H$.
 >   By (1), $a \cdot a^{-1} = e \in H$.
 > - Inverse: (2) shows that $a^{-1} \in H$ for any $a \in H$.
-> 
+>
 > Thus $H$ is a group and hence a subgroup of $G$.
 
 
 e.g. Show that $SL_n(\R)=\{A \in M_{n \times n}(\R) : \det(A) = 1 \}$ is a subgroup of $GL_n(\R)=\{A \in M_{n \times n}(\R) : \det(A) \neq 0 \}$
 
 > Proof:
-> 
-> Let $A \in SL_n(R)$, then $\det(A) = 1 \neq 0$. Thus $A \in GL_n(\R)$, 
+>
+> Let $A \in SL_n(R)$, then $\det(A) = 1 \neq 0$. Thus $A \in GL_n(\R)$,<br/>
 > and $SL_n(\R) \subseteq GL_n$.
-> 
+>
 > Consider $I_{n \times n}$. $\det(I)=1$. Thus $I \in SL_n(\R)$, and
 > $SL_n(\R) \neq \emptyset$.
-> 
+>
 > Let $A, B \in SL_n(\R)$, then $\det(A)=\det(B)=1$.
 > $\det(AB) = \det(A)\det(B) = 1 \times 1 = 1$.
 > Hence, $AB \in SL_n(\R)$. (1) holds.
@@ -134,13 +134,13 @@ e.g. In $\Z$, for $n \neq 0$, we have $|n|=\infty$.
 
 e.g. In $\Z_6$, $|4|=3$, and $|5|=6$.
 
-e.g. In $\Z_{10}^*$ $|3|=|7|=4$, and $|9|=2$. 
+e.g. In $\Z_{10}^*$ $|3|=|7|=4$, and $|9|=2$.<br/>
 
 It looks like $|a|=|\langle a\rangle|$. This is actually true in general.
 
 Lemma 2.4
-: Let $G$ be a group and $a \in G$.  
-1. If $|a|=\infty$, then $a^i = a^j$ if and only of $i=j$.  
+: Let $G$ be a group and $a \in G$.<br/>
+1. If $|a|=\infty$, then $a^i = a^j$ if and only of $i=j$.<br/>
 2. If $|a|=n$, then $\langle a \rangle = \{e, a, a^2, ..., a^{n-1}\}$, and $a^i=a^j$ if and only if $n \mid (i-j)$.
 
 > Proof:
@@ -168,7 +168,7 @@ Lemma 2.4
 > Suppose $a^i = a^j$, then $e = a^{i-j}$. There exists $q\in \Z$
 > and $r \in \{0,...,n-1\}$ such that $i-j=nq+r$.
 > Then $e=(a^n)^q a^r = a^r$.
-> But $n$ is the smallest positive number for $a^{\Box}=0$, so $r=0$. 
+> But $n$ is the smallest positive number for $a^{\Box}=0$, so $r=0$.<br/>
 > Hence, $n \mid i-j$.
 
 
@@ -179,7 +179,7 @@ Corollary 2.6
 : Let $G$ be a group and $a \in G$. If an integer $k$ satisfies $a^k=e$, then $|a| \mid k$.
 
 > Proof:
-> 
+>
 > Assume $a^k=e$. Then $a^k=a^0$. By lemma 2.4 (2), $|a|$ divides $k-0=k$.
 
 e.g. In $\Z_6$, consider $4$. $4^6=0$. Then $|4| \mid 6$.
@@ -206,7 +206,7 @@ Proposition 2.7
 : If a group $G$ is cyclic, it is also Abelian.
 
 > Proof:
-> 
+>
 > Let $G=\langle a \rangle$ and $a^i, a^j \in G$. Then $a^i a^j = a^{i+j} = a^j a^i$.
 
 
@@ -224,9 +224,9 @@ Theorem 2.8
 : If a group is cyclic, then its subgroup are also cyclic.
 
 > Proof:
-> 
+>
 > Let $H$ be a subgroup of $G = \langle a \rangle$.
-> 
+>
 > If $H=\{e\}$, then $H = \langle e \rangle$ is cyclic.
 >
 > Let $H \supseteq \{e\}$. Then there exists $a^t \in H$ and
@@ -274,14 +274,14 @@ For $n=8$, they are:
 We observed that the content and order of subgroups are related with $\gcd$.
 
 Theorem 2.9
-: Let $G$ be a group and $a \in G$. If $|a| = n < \infty$, then for any $k\in \N$:  
-1. $\langle a^k \rangle = \langle a^{\gcd(k,n)} \rangle$  
-2. $|a^k| = \frac{n}{\gcd(k,n)}$  
+: Let $G$ be a group and $a \in G$. If $|a| = n < \infty$, then for any $k\in \N$:<br/>
+1. $\langle a^k \rangle = \langle a^{\gcd(k,n)} \rangle$<br/>
+2. $|a^k| = \frac{n}{\gcd(k,n)}$<br/>
 
 > Proof:
-> 
+>
 > Let $|a| = n$ and $d = \gcd(k,n)$.
-> 
+>
 > (1)
 > Since $d \mid k$, $k = dt$ for some $t\in \Z$.
 > Then $a^k = a^{dt} = (a^d)^t \in \langle a^d \rangle$
@@ -290,7 +290,7 @@ Theorem 2.9
 > Then $a^d = a^{xk+yn} = (a^k)^x (a^n)^y= (a^k)^x e^y = (a^k)^x
 > \in \langle a^k \rangle$.
 > Therefore, $\langle a^d \rangle \subseteq \langle a^k \rangle$.
-> 
+>
 > (2)
 > Consider $|a^d|$. Let $j$ be the smallest integer such that
 > $(a^d)^j = a^{dj} = e$. Observe that $(a^d)^\frac{n}{d} = a^n = e$,
@@ -302,11 +302,11 @@ Corollary 2.10
 : Let $G$ be a group, $a \in G$, and $|a|=n < \infty$. Then for any $i,j \in \Z$, $\langle a^i \rangle = \langle a^j \rangle$ if and only if $\gcd(i,n) = \gcd(j,n)$
 
 > Proof:
-> 
+>
 > ($\Leftarrow$) Assume $\gcd(i,n) = \gcd(j,n)$. By theorem 2.9 (1),
 > $\langle a^i \rangle = \langle a^{\gcd(i,n)} \rangle =
-> \langle a^{\gcd(j,n)} \rangle = \langle a^j \rangle$. 
-> 
+> \langle a^{\gcd(j,n)} \rangle = \langle a^j \rangle$.<br/>
+>
 > ($\Rightarrow$) Assume $\langle a^i \rangle = \langle a^j \rangle$.
 > By theorem 2.9 (2), $\gcd(i,n) = \frac{n}{|a^i|} = \frac{n}{|a^j|} =
 > \gcd(j,n)$.
@@ -326,23 +326,23 @@ $|5^k|=3=\frac{6}{\gcd(k,6)}$. Thus, $\gcd(k,6)=2$, which implies $k=4$ or $k=2$
 Using previous result, we can prove a useful theorem about subgroups of cyclic groups.
 
 Theorem 2.11 - the Fundamental Theorem of Cyclic Group
-: Let $G=\langle a \rangle$ be a cyclic group and $|G|=n < \infty$. Then:  
-1. If $H \le G$, then $|H| \mid n$.  
+: Let $G=\langle a \rangle$ be a cyclic group and $|G|=n < \infty$. Then:<br/>
+1. If $H \le G$, then $|H| \mid n$.<br/>
 2. For each positive divisor $k$ of $n$, there is a unique subgroup $\langle a^{\frac{n}{k}} \rangle$ of $G$ of order $k$.
 
 
 > Proof:
-> 
+>
 > (1)
 > Let $H \le G$. Then $H$ is cyclic, so $H=\langle a^k\rangle$ for some
 > $k \in \N$. By theorem 2.9 (2), $|H|=|a^k|=\frac{n}{\gcd(k,n)}$.
 > Thus, $|H| \mid n$.
-> 
+>
 > (2a)
 > Consider subgroup $\langle a^{\frac{n}{k}} \rangle$ where $k \mid n$.
 > By theorem 2.9 (1), $|\langle a^{\frac{n}{k}} \rangle| =
 > |a^{\frac{n}{k}}| = \frac{n}{\gcd(n,n/k)}= \frac{n}{n/k} = k$.
->   
+>
 > (2b)
 > Let $H$ be another subgroup of order $k$. Then $H$ is also cyclic,
 > so $H=\langle a^j \rangle$ for some $j \in N$. By theorem 2.9 (2),
