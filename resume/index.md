@@ -1,6 +1,6 @@
 # Ziqi Qing
 
-Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer Computer Science Graduate from [University of Waterloo](https://uwaterloo.ca/admissions/)
+Software Engineer at [StackAdapt](https://stackadapt.com/careers)
 
 Email: zqing {at} pm.me | Phone: 650-272-1884 | Github: [ziqiq](https://github.com/ziqiq) | Web: [ziqiq.gitlab.io](https://ziqiq.gitlab.io/)
 
@@ -12,7 +12,7 @@ Email: zqing {at} pm.me | Phone: 650-272-1884 | Github: [ziqiq](https://github.c
 
 ## Education
 
-- [**University of Waterloo**](https://uwaterloo.ca/), Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization), Average 85%  
+- [**University of Waterloo**](https://uwaterloo.ca/), Bachelor of Mathematics (Computer Science, joint Combinatorics and Optimization), Average 85%<br/>
   May/2015 - Jun/2020, Ontario
 
 ## Work Experience

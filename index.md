@@ -1,22 +1,21 @@
 # Ziqi's Index
 
-Software Engineer at [StackAdapt](https://stackadapt.com/careers), 2020 Summer Computer Science Graduate from [University of Waterloo](https://uwaterloo.ca/admissions/)
+Software Engineer at [StackAdapt](https://stackadapt.com/careers)
+
+I graduated from [University of Waterloo](https://uwaterloo.ca/admissions/) with Mathematics/Computer Science degree in 2020
 
 ## Contact
 
 - Email:
   - (personal) zqing {at} pm.me
-  - (business) ziqi {at} stackadapt.com
-  - (alumni) zqing {at} uwaterloo.ca
-- Phone: 650-272-1884, 226-339-9950
 - Github: [ziqiq](https://github.com/ziqiq)
 - LinkedIn: [ziqi-qing](https://www.linkedin.com/in/ziqi-qing/)
 - Web: [ziqiq.gitlab.io](https://ziqiq.gitlab.io/)
 
-## Resource 
+## Resource
 
-* [Resume](resume)
-* [Course Projects](course-work)
+* [Resume](resume/)
+* [Course Projects](course-work/)
 * Course Note
-    * [PMATH 336 - Group Theory](1199-pmath336)
-    * [CS 454 - Distributed System](1185-cs454)
+    * [PMATH 336 - Group Theory](1199-pmath336/)
+    * [CS 454 - Distributed System](1185-cs454/)

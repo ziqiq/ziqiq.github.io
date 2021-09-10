@@ -4,7 +4,7 @@ We can find even mor examples of groups with the examples we already know.
 
 e.g. $\Z \subseteq \mathbb{Q} \subseteq \R \subseteq \mathbb{C}$. All of them form groups under $+$, addition.
 
-e.g. Recall $\Z^*=\{1,-1\}$, $\Z^* \subseteq \{ \pm 1, pm i\} \subseteq \mathbb{C}^*$. They form groups under $\times$ multiplication.
+e.g. Recall $\Z^*=\{1,-1\}$, $\Z^* \subseteq \{ \pm 1, \pm i\} \subseteq \mathbb{C}^*$. They form groups under $\times$ multiplication.
 
 e.g. $\{r_0, r_1, r_2, r_3\} \subseteq D_4$. It is a group under composition of symmetries (movements).
 
