@@ -1,0 +1,22 @@
+title = 'Ziqi'
+languageCode = 'en-us'
+relativeurls = true
+
+theme = "researcher"
+[params]
+  [params.style]
+    fontFamily = "Helvetica, sans-serif"
+#    pageWidth = "750px"
+#    avatarSize = "90px"
+    colorBlack = "#00171f"
+    colorRed = "#007ea7"
+
+[menu]
+  [[menu.main]]
+  name = "Notes"
+  url = "/notes"
+  weight = 1
+  [[menu.main]]
+  name = "Resume"
+  url = "/resume"
+  weight = 2

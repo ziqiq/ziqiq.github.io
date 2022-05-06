@@ -1,4 +1,8 @@
-# Groups
+---
+title: Groups
+date: 2019-10-29
+math: true
+---
 
 Informally, a group is a set in which we can “multiply” and “divide”.
 
@@ -91,7 +95,7 @@ This table is called the **Cayley table** of the group. We can make Cayley table
 All $n \times n$ invertible matrixes form a group under matrix multiplication. GL stands for general linear. $GL_n(\R) = \{A \in \R^{n \times n} : det(A) \neq 0 \}$.
 
 - Closed? Yes. $det(AB) = det(A) det(B) \neq 0$
-- Identity: $I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$. $AI=IA=A$
+- Identity: $I = \begin{bmatrix} 1 & 0 \\\\ 0 & 1 \end{bmatrix}$. $AI=IA=A$
 - Inverse: $AA^{-1} = I$
 - Associative? Yes. $(AB)C=A(BC)$ by linear algebra theorem.
 - Abelian? No. $AB \neq BA$, so it is NOT an Abelian group.
@@ -155,29 +159,29 @@ Proposition 1.3
 >
 > Since $a$ has an inverse, $a^{-1} \in G$,
 > $$\begin{aligned}
-> ab &= ac  \\
-> a^{-1}(ab) &= a^{-1}(ac)  & \text{inverse}  \\
-> (a^{-1}a)b &= (a^{-1}a)c  & \text{associativity}  \\
-> eb &= ec  & \text{inverse}  \\
-> b &= c  & \text{identity}  \\
+> ab &= ac  \\\\
+> a^{-1}(ab) &= a^{-1}(ac)  & \text{inverse}  \\\\
+> (a^{-1}a)b &= (a^{-1}a)c  & \text{associativity}  \\\\
+> eb &= ec  & \text{inverse}  \\\\
+> b &= c  & \text{identity}  \\\\
 > \end{aligned}$$
 
 Q: What is $(a^{-1})^{-1}$?
 $$\begin{aligned}
 (a^{-1})^{-1}
-  &= (a^{-1})^{-1} \cdot e \\
-	&= (a^{-1})^{-1} \cdot (a^{-1} \cdot a) \\
-	&= ((a^{-1})^{-1} \cdot a^{-1}) \cdot a \\
-	&= e \cdot a \\
-  &= a \\
+  &= (a^{-1})^{-1} \cdot e \\\\
+	&= (a^{-1})^{-1} \cdot (a^{-1} \cdot a) \\\\
+	&= ((a^{-1})^{-1} \cdot a^{-1}) \cdot a \\\\
+	&= e \cdot a \\\\
+  &= a \\\\
 \end{aligned}$$
 
 Definition - $a^n$
 : If $a \in G$ and $n \in \Z$ then
   $$a^n = \begin{cases}
-	a \cdot ...\cdot a \ \text{for n times} & n > 0 \\
-	e & n = 0 \\
-	a^{-1} \cdot ...\cdot a^{-1} \ \text{for -n times} & n < 0 \\
+	a \cdot ...\cdot a \ \text{for n times} & n > 0 \\\\
+	e & n = 0 \\\\
+	a^{-1} \cdot ...\cdot a^{-1} \ \text{for -n times} & n < 0 \\\\
 	\end{cases}$$
 
 Proposition 1.4
@@ -238,8 +242,8 @@ From the table we observe that:
 > Why $[a] \times [b] = [ab] \mod n$?
 > $$\begin{aligned}
 > (q_1 n + r_1)(q_2 n + r_2)
-> &= k_1 k_2 n^2 + k_1 r_2 n + k_2 r_1 n + r_1 r_2 \\
-> &= s n + r_1 r_2 \\
+> &= k_1 k_2 n^2 + k_1 r_2 n + k_2 r_1 n + r_1 r_2 \\\\
+> &= s n + r_1 r_2 \\\\
 > \end{aligned}$$
 
 Corollary
@@ -248,8 +252,8 @@ Corollary
 We can turn $\Z_n$ into a multiplicative group by keeping those coprime to $n$. Thus,
 $$\begin{aligned}
 \Z_n^*
-&= \{a \in \Z_n : ax = 1 \mod n \; \exists x \in \Z_n \} \\
-&= \{a \in \Z_n : gcd(a,n) = 1\} \\
+&= \{a \in \Z_n : ax = 1 \mod n \; \exists x \in \Z_n \} \\\\
+&= \{a \in \Z_n : gcd(a,n) = 1\} \\\\
 \end{aligned}$$
 
 e.g. $\Z_{12}^* = \{1, 5, 7, 11\}$ where $|\Z_{12}^*| = 4$
@@ -303,10 +307,10 @@ e.g. Consider $\sigma \cdot \tau$
 | $3$ | $2$                 |
 
 A more compact way to write $\sigma$ and $\tau$ is to use an array.
-$$\sigma = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix} \qquad
-\tau = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{pmatrix}$$
+$$\sigma = \begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 1 & 3 \end{pmatrix} \qquad
+\tau = \begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 3 & 1 \end{pmatrix}$$
 In general,
-$$\pi = \begin{pmatrix} 1 & 2 & ... & n \\ \pi(1) & \pi(2) & ... & \pi(n) \end{pmatrix}$$
+$$\pi = \begin{pmatrix} 1 & 2 & ... & n \\\\ \pi(1) & \pi(2) & ... & \pi(n) \end{pmatrix}$$
 
 $(S_n, \cdot)$ is not Abelian for all $n \ge 3$. We already have $n=3$. To see $n > 3$, let $\sigma, \tau$ be permutations in $S_n$ that fix $4,5,..,n$ (i.e. $\sigma(4)=\tau(4)=4, ..., \sigma(n)=\tau(n)=n$). Since we know that these are permutations on $\{1,2,3\}$ that don’t commute, we can pick values for $\sigma(1), \sigma(2), \sigma(3), \tau(1), \tau(2), \tau(3)$ so that $\sigma$ and $\tau$ don’t commute.
 
@@ -324,7 +328,7 @@ What is the order of $S_n$? $|S_n| = n \times (n-1) \times ... \times 1 = n!$.
 
 The set $D_n$ ($n \ge 3$) is the set of symmetries of a regular n-gon. Here a symmetry is any movement that can be comes to the object while you’re looking away, that you won’t know has happened. Let’s start by looking at $D_4$, the symmetries of a square $\Box$. We will put imaginary labels on the square to keep track of the symmetries.
 
-![Elements in D4](./image/elements-in-D4.png)
+![Elements in D4](elements-in-D4.png)
 
 There are at most $8$ symmetries ($|D_4|=8$). Why? We have 4 choice for the top-left corner (a fixed vertex), then 2 choices for the “direction” of A, B, C, D, (an orientation). In general, $|D_n| = 2n$.
 
@@ -367,5 +371,5 @@ and
 $$(g,h) \cdot (g’,h,) = (g * g’, h \star h’)$$
 
 e.g. $GL_2(\R) \times \Z_2$
-$$(\begin{bmatrix}1 & 1 \\ 0 & 1 \end{bmatrix}, 0) \cdot (\begin{bmatrix}1 & 0 \\ 1 & 1\end{bmatrix}, 1) = (\begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}, 1)$$
+$$(\begin{bmatrix}1 & 1 \\\\ 0 & 1 \end{bmatrix}, 0) \cdot (\begin{bmatrix}1 & 0 \\\\ 1 & 1\end{bmatrix}, 1) = (\begin{bmatrix} 2 & 1 \\\\ 1 & 1 \end{bmatrix}, 1)$$
 

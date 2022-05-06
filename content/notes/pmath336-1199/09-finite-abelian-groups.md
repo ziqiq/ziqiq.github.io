@@ -1,4 +1,8 @@
-# Finite Abelian Groups
+---
+title: Finite Abelian Groups
+date: 2019-12-02
+math: true
+---
 
 Theorem 9.1 - The Fundamental Theorem of Finite Abelian Groups
 : Every finite Abelian group $G$ is isomorphic to

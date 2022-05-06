@@ -1,4 +1,8 @@
-# Homomorphisms and Isomorphisms
+---
+title: Homomorphisms and Isomorphisms
+date: 2019-12-18
+math: true
+---
 
 Up to now we have studied the structure of individual groups very carefully. In this section we will be interested in determining wither two different group essentially have same structure. (e.g. $\Z_2$ and $(\{\pm 1\}, \times)$)
 
@@ -113,7 +117,7 @@ Theorem 7.2 - Properties of Isomorphism
 > So $\phi(a^n) = [\phi(a)]^{n}$.
 >
 > (4)
-> Suppose that $ab=ba$, then $\phi(ab) = \phi(a)\phi(b) = \phi(b)\phi(a)<br/>
+> Suppose that $ab=ba$, then $\phi(ab) = \phi(a)\phi(b) = \phi(b)\phi(a)
 > = \phi(ba)$. For the other direction use the inverse isomorphism
 > $\phi^{-1}: H \to G$ and argue the same way.
 >
@@ -160,14 +164,14 @@ e.g. For the absolute value $|\cdot|: \R^* \to \R^*$, $\ker(|\cdot|) = \{\pm 1\}
 e.g. A vector space $V$ (e.g. $R^n$ or $\mathbb{C}^n$) is a group under addition. What are the homomorphisms $phi: V\to W$? It should satisfies $\phi(x+y) = \phi(x) + \phi(y)$. For example, all linear transformation $A:V\to W$ are homomorphisms. We can think of $\phi(x)=Ax$, multiplication by matrix. The image is $\{Ax: x\in V\} = \Range(A)$ and the kernel is $\{x\in V : Ax=0\} = \Null(A)$.
 
 e.g. Consider the map $\sgn: S_n \to \Z_2$ given by
-$$\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\ 1 & \sigma \text{ is odd} \end{cases}$$
+$$\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\\\ 1 & \sigma \text{ is odd} \end{cases}$$
 
 Note that $\sgn$ is a homomorphism because
 $$\begin{aligned}
 	\sgn(\sigma\tau) &=
-\begin{cases} 0 & \sigma\tau \text{ is even} \\ 1 & \sigma\tau \text{ is odd} \end{cases} \\
-&= \begin{cases} 0 & \sigma, \tau \text{ both even or odd} \\ 1 & \sigma,\tau \text{ have different parity} \end{cases} \\
-&= \begin{cases} 0 & \sgn(\sigma)= \sgn(\tau) \\ 1 & \sgn(\sigma) \neq \sgn(\tau) \end{cases} \\
+\begin{cases} 0 & \sigma\tau \text{ is even} \\\\ 1 & \sigma\tau \text{ is odd} \end{cases} \\\\
+&= \begin{cases} 0 & \sigma, \tau \text{ both even or odd} \\\\ 1 & \sigma,\tau \text{ have different parity} \end{cases} \\\\
+&= \begin{cases} 0 & \sgn(\sigma)= \sgn(\tau) \\\\ 1 & \sgn(\sigma) \neq \sgn(\tau) \end{cases} \\\\
 &=\sgn(\sigma) + \sgn(\tau)
 \end{aligned}$$
 
@@ -218,19 +222,19 @@ Is the second case really a homomorphism?
 
 If $k, m \in\Z_8$, then
 $$\begin{aligned}
-\phi(km) &= 3(k+m) \mod 6 \\
-          &= 3k+ 3m \mod 6 \\
-          &= 3k \mod 6 + 3m \mod 6 \\
+\phi(km) &= 3(k+m) \mod 6 \\\\
+          &= 3k+ 3m \mod 6 \\\\
+          &= 3k \mod 6 + 3m \mod 6 \\\\
           &= \phi(k) \phi(m)
 \end{aligned}$$
 
 We also must check that $\phi$ is well-defined in the sense that “ $x= y \mod 8 \Leftarrow \phi(x) = \phi(y) \mod 6$ “. To see that it is, suppose that $k=m \mod 8$. Then $8 \mid k-m$, so $k=m+8z$ for some $z\in\Z$. We have that<br/>
 $$\begin{aligned}
-\phi(k) &= \phi(m+8z) \\
-        &= 3(m+8z) \mod 6 \\
-        &= 3m+24z \mod 8 \\
-        &= 3m \mod 6 \\
-        &= \phi(m) \\
+\phi(k) &= \phi(m+8z) \\\\
+        &= 3(m+8z) \mod 6 \\\\
+        &= 3m+24z \mod 8 \\\\
+        &= 3m \mod 6 \\\\
+        &= \phi(m) \\\\
 \end{aligned}$$
 
 This $\phi$ is indeed a homomorphism, but $\psi: \Z_8 \to \Z_6$ such that $\psi(1^k) = 2^k$ is NOT. You can check that $\psi(km) = \psi(k)\psi(m)$, but $\psi$ is not well-defined. Consider in $\Z_8$, $1^9 = 1$, but $\psi(1) = 2$, $\psi(1^9) = 2^9 = 1^{18} = 0$.
@@ -285,7 +289,7 @@ Theorem 7.5 - First Isomorphism Theorem
 > Thus $\psi$ is an isomorphism, so $G / \ker \phi \cong \im \phi$.
 
 
-e.g. Let $G=S_n$ and consider the normal subgroup $A_n \trianglelefteq G$. Recall that the map $\sgn: S_n \to \Z_2$ given by $\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\ 1 & \sigma \text{ is odd} \end{cases}$ is a homomorphism. $\ker \sgn = A_n$ and $\im \sgn = \Z_2$. By the first isomorphism theorem, $S_n / \ker \sgn \cong \im \sgn$.
+e.g. Let $G=S_n$ and consider the normal subgroup $A_n \trianglelefteq G$. Recall that the map $\sgn: S_n \to \Z_2$ given by $\sgn(\sigma) = \begin{cases} 0 & \sigma \text{ is even} \\\\ 1 & \sigma \text{ is odd} \end{cases}$ is a homomorphism. $\ker \sgn = A_n$ and $\im \sgn = \Z_2$. By the first isomorphism theorem, $S_n / \ker \sgn \cong \im \sgn$.
 
 e.g. Prove that $\R^* / \{\pm1\} \cong \R_{>0}^*$.
 
@@ -380,11 +384,11 @@ Theorem 7.8
 > Let $\phi_a \in \Inn(G)$ be a inner automorphism and
 > $\psi \in \Aut(G)$ be any automorphism.
 > Then check $\psi \phi_a \psi^{-1}$ is an inner automorphism.
-> $$\psi \phi_a \psi^{-1} = \psi (x \mapsto axa^{-1}) \psi^{-1} \\
-> = \psi (x \mapsto a\psi^{-1}(x)a^{-1}) \\
-> = x \mapsto \psi(a\psi^{-1}(x)a^{-1}) \\
-> = x \mapsto \psi(a)\psi(\psi^{-1}(x))\psi(a^{-1}) \\
-> = x \mapsto \psi(a)x\psi(a^{-1}) \\
+> $$\psi \phi_a \psi^{-1} = \psi (x \mapsto axa^{-1}) \psi^{-1} \\\\
+> = \psi (x \mapsto a\psi^{-1}(x)a^{-1}) \\\\
+> = x \mapsto \psi(a\psi^{-1}(x)a^{-1}) \\\\
+> = x \mapsto \psi(a)\psi(\psi^{-1}(x))\psi(a^{-1}) \\\\
+> = x \mapsto \psi(a)x\psi(a^{-1}) \\\\
 > = \phi_{\psi(a)}$$
 > Therefore, the composition $\psi \phi_a \psi^{-1}$ is also an inner automorphism $\in \Inn(G)$. Thus, $\psi \Inn(G) \psi^{-1} \subseteq \Inn(G)$, so $\Inn(G) \trianglelefteq \Aut(G)$ by the normal subgroup test.
 

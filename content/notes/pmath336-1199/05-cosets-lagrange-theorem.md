@@ -1,4 +1,8 @@
-# Cosets and Lagrange’s Theorem
+---
+title: Cosets and Lagrange’s Theorem
+date: 2020-01-05
+math: true
+---
 
 Recall in A1 we proved the following theorem.
 
@@ -15,24 +19,24 @@ A coset of a subgroup $H$ of group $G$ is a set obtained by “translating” $H
 
 e.g.(1) $3\Z \le \Z$
 $$\begin{aligned}
-0+3\Z &= \{ ..., -6, -3, 0, 3, 6, ...\} \\
-1+3\Z &= \{ ..., -5, -2, 1, 4, 7, ...\} \\
-2+3\Z &= \{ ..., -4, -1, 2, 5, 8, ...\} \\
+0+3\Z &= \{ ..., -6, -3, 0, 3, 6, ...\} \\\\
+1+3\Z &= \{ ..., -5, -2, 1, 4, 7, ...\} \\\\
+2+3\Z &= \{ ..., -4, -1, 2, 5, 8, ...\} \\\\
 \end{aligned}$$
 In total there are exactly $3$ different cosets of $3\Z$ in $\Z$. Note that two cosets are either identical or disjoint.
 
 e.g.(2) $\lang 3 \rang = \{0,3\} \le \Z_6$
 $$\begin{aligned}
-0+\lang 3 \rang &= \{0, 3\} \\
-1+\lang 3 \rang &= \{1, 4\} \\
-2+\lang 3 \rang &= \{2, 5\} \\
+0+\lang 3 \rang &= \{0, 3\} \\\\
+1+\lang 3 \rang &= \{1, 4\} \\\\
+2+\lang 3 \rang &= \{2, 5\} \\\\
 \end{aligned}$$
 The cosets cover all of $\Z_6$. We also see that all cosets have the same size. However, cosets are not necessarily subgroups.
 
 e.g.(3) $H = \lang (1 2 3) \rang = \{e, (1 2 3), (1 3 2)\} \le S_3$
 $$\begin{aligned}
-(1 2 3)H &= \{(1 2 3), (1 3 2), e\} = H \\
-(1 2) H &= \{(1 2), (2 3), (1 3)\} \\
+(1 2 3)H &= \{(1 2 3), (1 3 2), e\} = H \\\\
+(1 2) H &= \{(1 2), (2 3), (1 3)\} \\\\
 \end{aligned}$$
 
 Exercise: Show $eH = (1 2 3)H = (1 3 2)H = H$ and $(1 2)H=\{(1 2), (2 3), (1 3)\}$.
@@ -78,9 +82,9 @@ From proposition 5.1 we know:
 Let $G$ be a finite group and $H \le G$. If $a_1 H, a_2 H,..., a_k H$ are distinct left cosets of $H$, then by 1, $G = a_1 H \cup a_2 H \cup ...\cup a_k H$. Since they are distinct,
 $$\begin{aligned}
 |G|
-&= |a_1 H|+ |a_2 H|+...+ |a_k H| \\
-&= |H|+|H|+...+|H| \\
-&= k|H| \\
+&= |a_1 H|+ |a_2 H|+...+ |a_k H| \\\\
+&= |H|+|H|+...+|H| \\\\
+&= k|H| \\\\
 &= |G:H||H|
 \end{aligned}$$
 where $|G:H|$ is the index of $H$.
@@ -204,9 +208,9 @@ Solution:
 
 Suppose we have two subgroups $H,K$ and $|H| = |K| = 25$. We know that $H \cap K \le H, K$. By Lagrange, $|H \cap K|$ divides $25$, so it is one of $1, 5, 25$. Then,
 $$|HK| = \frac{|H||K|}{|H \cap K|} = \begin{cases}
-625 & |H\cap K| = 1 \\
-125 & |H\cap K| = 5 \\
-25 & |H\cap K| = 25 \\
+625 & |H\cap K| = 1 \\\\
+125 & |H\cap K| = 5 \\\\
+25 & |H\cap K| = 25 \\\\
 \end{cases}$$
 Since $HK \subseteq G$, $|HK| \le |G| = 100$. Thus, $|H \cap K| = 25$, and $H = K = H \cap K$. That is, there is at most one subgroup of order $25$.
 
@@ -216,9 +220,9 @@ Solution:
 
 Let $H,K \le G$ and $|H| = |K| = 33$. By lagrange, since $H \cap K \le H, K$, $|H \cap K|$ is one of $1, 3, 11, 33$. Then,
 $$|HK| = \frac{33 \times 33}{|H \cap K|} = \begin{cases}
-1089 & |H \cap K|=1 \\
-363 & |H \cap K|=3 \\
-99 & |H \cap K|=11 \\
-33 & |H \cap K|=33 \\
+1089 & |H \cap K|=1 \\\\
+363 & |H \cap K|=3 \\\\
+99 & |H \cap K|=11 \\\\
+33 & |H \cap K|=33 \\\\
 \end{cases}$$
 Since $HK \subseteq G$, $|HK| \le |G| = 66$. $|H \cap K|=33$, and $H = K = H \cap K$. Thus, there is at most one subgroup of order $33$.

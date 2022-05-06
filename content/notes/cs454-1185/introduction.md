@@ -1,4 +1,7 @@
-# Introduction
+---
+title: Introduction
+author: Ziqi Qing
+---
 
 ## Distributed System
 
@@ -10,7 +13,7 @@ Problems:
  - Group membership management and authorization
 
 _Overlay network_ is the organization of the distributed system. Nodes only
-communicates with its neighbours. There are 2 types of overlay network: 
+communicates with its neighbours. There are 2 types of overlay network:
 _structured_ and _unstructured_.
 
 > Example: peer-to-peer system

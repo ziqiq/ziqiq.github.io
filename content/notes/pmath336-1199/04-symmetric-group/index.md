@@ -1,20 +1,24 @@
-# The Symmetric Group
+---
+title: The Symmetric Group
+date: 2019-12-18
+math: true
+---
 
 ## The Cycle Notation
 
 Now that we have seen more about groups in general, we can take a closer look at $S_n$.
 
-Recall every $\sigma \in S_n$ can be describe using an array. e.g. $\sigma = \begin{pmatrix} 1&2&3&4&5&6 \\ 2&1&4&6&5&3 \end{pmatrix}$. If we look closely at $\sigma$, we notice something interesting.
+Recall every $\sigma \in S_n$ can be describe using an array. e.g. $\sigma = \begin{pmatrix} 1&2&3&4&5&6 \\\\ 2&1&4&6&5&3 \end{pmatrix}$. If we look closely at $\sigma$, we notice something interesting.
 
-![Cycle 214653](./image/cycle-214653.png)
+![Cycle 214653](cycle-214653.png)
 
 Each of these cycle can be written very compactly. $\sigma = (1 2)(3 4 6)(5)$.
 
 e.g.
 
-$\sigma = \begin{pmatrix} 1&2&3&4 \\ 4&3&2&1 \end{pmatrix} = (1 4)(2 3)$
+$\sigma = \begin{pmatrix} 1&2&3&4 \\\\ 4&3&2&1 \end{pmatrix} = (1 4)(2 3)$
 
-$\tau = \begin{pmatrix} 1&2&3&4&5 \\ 4&5&3&2&1 \end{pmatrix} = (1 4 2 5)(3)$
+$\tau = \begin{pmatrix} 1&2&3&4&5 \\\\ 4&5&3&2&1 \end{pmatrix} = (1 4 2 5)(3)$
 
 Remark:
 
@@ -27,12 +31,12 @@ e.g. Write all element of $S_3$ in cycle notation. Note $|S_3| = 3! = 6$.
 
 | Array | Cycle |
 |:-----:|:-----:|
-|$\begin{pmatrix}1&2&3\\1&2&3\end{pmatrix}$| $(1)(2)(3)$ |
-|$\begin{pmatrix}1&2&3\\1&3&2\end{pmatrix}$| $(1)(2 3)$ |
-|$\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}$| $(1 2)(3)$ |
-|$\begin{pmatrix}1&2&3\\2&3&1\end{pmatrix}$| $(1 2 3)$ |
-|$\begin{pmatrix}1&2&3\\3&1&2\end{pmatrix}$| $(1 3 2)$ |
-|$\begin{pmatrix}1&2&3\\3&2&1\end{pmatrix}$| $(1 3)(2)$ |
+|$\begin{pmatrix}1&2&3\\\\1&2&3\end{pmatrix}$| $(1)(2)(3)$ |
+|$\begin{pmatrix}1&2&3\\\\1&3&2\end{pmatrix}$| $(1)(2 3)$ |
+|$\begin{pmatrix}1&2&3\\\\2&1&3\end{pmatrix}$| $(1 2)(3)$ |
+|$\begin{pmatrix}1&2&3\\\\2&3&1\end{pmatrix}$| $(1 2 3)$ |
+|$\begin{pmatrix}1&2&3\\\\3&1&2\end{pmatrix}$| $(1 3 2)$ |
+|$\begin{pmatrix}1&2&3\\\\3&2&1\end{pmatrix}$| $(1 3)(2)$ |
 
 Definition - Cycle, Transposition, and Disjoint Cycles
 : A permutation $\sigma \in S_n$ of the form $(a_1, a_2, ..., a_m)$ is called a cycle of length $m$ or **$m$ -cycle**.
@@ -79,7 +83,7 @@ Lemma 4.3
 > Let $\alpha = (a_1 a_2 ... a_m)$ and $\beta = (b_1 b_2 ... b_m)$
 > Let $x \in \{1, ..., n\}$
 > If $x\in \alpha$, then $x \notin \beta$, so
-> $$(\alpha\beta)(x) = \alpha(\beta(x))= \alpha(x) \\
+> $$(\alpha\beta)(x) = \alpha(\beta(x))= \alpha(x) \\\\
 > (\beta\alpha)(x) = \beta(\alpha(x))= \alpha(x)$$
 > Hence, $(\alpha\beta)(x) = (\beta\alpha)(x)$.
 > Similarly, if $x \in \beta$, then also
@@ -167,7 +171,7 @@ Lemma 4.7
 > Suppose $m>2$ is a fixed and the result holds for $k<m$.
 >
 > Let $e = \beta_1 ... \beta_m$ where $\beta_m = (a b)$. Now look at $\beta_{m-1}\beta_m$. There are 3 possibilities:
-> $$\beta_{m-1}\beta_m = \begin{cases} (a b)(a b) = e & \text{case 1}\\ (a c)(a b) = (a b c) = (a b)(b c) & \text{case 2}\\ (c d)(a b) = (a b)(c d) & \text{case 3}\end{cases}$$
+> $$\beta_{m-1}\beta_m = \begin{cases} (a b)(a b) = e & \text{case 1}\\\\ (a c)(a b) = (a b c) = (a b)(b c) & \text{case 2}\\\\ (c d)(a b) = (a b)(c d) & \text{case 3}\end{cases}$$
 >
 > For case 1, $\beta_1 ... \beta_{m-2} = e$ and $m-2$ is even by induction, so $m$ is also even.
 >
