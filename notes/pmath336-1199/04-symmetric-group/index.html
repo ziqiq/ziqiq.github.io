@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>The Symmetric Group</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <h2 id="the-cycle-notation">The Cycle Notation</h2>
+<p>Now that we have seen more about groups in general, we can take a closer look at $S_n$.</p>
+<p>Recall every $\sigma \in S_n$ can be describe using an array. e.g. $\sigma = \begin{pmatrix} 1&amp;2&amp;3&amp;4&amp;5&amp;6 \\ 2&amp;1&amp;4&amp;6&amp;5&amp;3 \end{pmatrix}$. If we look closely at $\sigma$, we notice something interesting.</p>
+<p><img src="cycle-214653.png" alt="Cycle 214653"></p>
+<p>Each of these cycle can be written very compactly. $\sigma = (1 2)(3 4 6)(5)$.</p>
+<p>e.g.</p>
+<p>$\sigma = \begin{pmatrix} 1&amp;2&amp;3&amp;4 \\ 4&amp;3&amp;2&amp;1 \end{pmatrix} = (1 4)(2 3)$</p>
+<p>$\tau = \begin{pmatrix} 1&amp;2&amp;3&amp;4&amp;5 \\ 4&amp;5&amp;3&amp;2&amp;1 \end{pmatrix} = (1 4 2 5)(3)$</p>
+<p>Remark:</p>
+<ol>
+<li>There are many ways to write a cycle. e.g. $(1 4 2 5) = (4 2 5 1)$. Our convention will be to start with the smallest integer.</li>
+<li>Since out cycle are disjoint, we may switch them.</li>
+<li>If a number is fixed, we often don’t write it. e.g. $(1 4 2 5)(3) = (1 4 2 5)$ in $S_5$.</li>
+</ol>
+<p>e.g. Write all element of $S_3$ in cycle notation. Note $|S_3| = 3! = 6$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Array</th>
+<th style="text-align:center">Cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\1&amp;2&amp;3\end{pmatrix}$</td>
+<td style="text-align:center">$(1)(2)(3)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\1&amp;3&amp;2\end{pmatrix}$</td>
+<td style="text-align:center">$(1)(2 3)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\2&amp;1&amp;3\end{pmatrix}$</td>
+<td style="text-align:center">$(1 2)(3)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;1\end{pmatrix}$</td>
+<td style="text-align:center">$(1 2 3)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\3&amp;1&amp;2\end{pmatrix}$</td>
+<td style="text-align:center">$(1 3 2)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\begin{pmatrix}1&amp;2&amp;3\\3&amp;2&amp;1\end{pmatrix}$</td>
+<td style="text-align:center">$(1 3)(2)$</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>Definition - Cycle, Transposition, and Disjoint Cycles</dt>
+<dd>A permutation $\sigma \in S_n$ of the form $(a_1, a_2, &hellip;, a_m)$ is called a cycle of length $m$ or <strong>$m$ -cycle</strong>.</dd>
+<dd>A $2$ -cycle $(a_1,a_2)$ is called a <strong>transposition</strong>.</dd>
+<dd>Two cycle are disjoint if $\forall a_i \in C_1 , \forall b_j \in C_2 ; a_i \neq b_j$.</dd>
+</dl>
+<p>We can compose permutation in cycle notation by listing them one after the other and reading right to left.</p>
+<p>e.g. If $\sigma = (1 2 4)(3 5) \in S_5$ and $\tau = (1 5)(2 3) \in S_5$, we have $\sigma \tau = (1 2 4)(3 5)(1 5)(2 3)$. We may simplify this by tracing the path of each element.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$x$</th>
+<th style="text-align:center">$(\sigma\circ\tau)(x)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1 \to 5 \to 3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2 \to 3 \to 5$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$3 \to 2 \to 4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$4 \to 1$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$5 \to 1 \to 2$</td>
+</tr>
+</tbody>
+</table>
+<p>Thus the disjoint representation is $\sigma\tau = (1 3 4)(2 5)$</p>
+<dl>
+<dt>Theorem 4.1</dt>
+<dd>Every permutation can be written as a product of disjoint cycles.</dd>
+</dl>
+<p>The proof is just like the example but more abstract.</p>
+<p>In a disjoint cycle decomposition for some $\sigma \in S_n$, we can identify many important properties of $\sigma$.</p>
+<p>e.g. What is the order of $\sigma = (1 2 3)$?</p>
+<p>We see that $\sigma = (1 2 3)$, $\sigma^2 = (1 3 2)$ $\sigma^3 = (1)(2)(3)$. It’s the length of $\sigma$.</p>
+<dl>
+<dt>Proposition 4.2</dt>
+<dd>If $\sigma$ is an $m$ -cycle the $|\sigma| = m$.</dd>
+</dl>
+<p>Proof left as exercise.</p>
+<p>e.g. If $\sigma = (1 3 2 4)$, $|\sigma| = 4$</p>
+<dl>
+<dt>Lemma 4.3</dt>
+<dd>Disjoint cycles commutes</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Let $\alpha = (a_1 a_2 &hellip; a_m)$ and $\beta = (b_1 b_2 &hellip; b_m)$
+Let $x \in {1, &hellip;, n}$
+If $x\in \alpha$, then $x \notin \beta$, so
+$$(\alpha\beta)(x) = \alpha(\beta(x))= \alpha(x) \\
+(\beta\alpha)(x) = \beta(\alpha(x))= \alpha(x)$$
+Hence, $(\alpha\beta)(x) = (\beta\alpha)(x)$.
+Similarly, if $x \in \beta$, then also
+$(\alpha\beta)(x) = (\beta\alpha)(x)$.</p>
+</blockquote>
+<dl>
+<dt>Theorem 4.4</dt>
+<dd>If $\beta_1 &hellip; \beta_k$ are disjoint cycles in $S_n$ and $\sigma = \beta_1 &hellip; \beta_k$, then $|\sigma| = \lcm (|\beta_1|, &hellip;, |\beta_k|)$.</dd>
+</dl>
+<p>e.g. If $\sigma = (1 4 7)(3 8)(2 9 10)$, then $|\sigma| = \lcm(3, 2 ,3) = 6$.</p>
+<p>e.g. If $\sigma = (1 2 3)(1 4)(2 4 3)(1 3 2)$, then $\sigma = (1 3 2 4)$ and $\sigma = \lcm(4) = 4$</p>
+<blockquote>
+<p>Proof:</p>
+<p>Suppose that $\sigma = \beta_1 &hellip; \beta_k$. We will prove this result for $k=2$.</p>
+<p>Let $m = |\sigma|$ and $l = \lcm(|\beta_1|, |\beta_2|)$. It is sufficient to show that $m$ divides $l$ and $l$ divides $m$.</p>
+<p>First, $e = \sigma^m = (\beta_1 \beta_2)^m = \beta_1^m \beta_2^m$. Since they are disjoint, $|\beta_1| \mid m$ and $|\beta_2| \mid m$. Hence, $l = \lcm(|\beta_1|, |beta_2|)$ divides $m$.</p>
+<p>Also $\sigma^l = (\beta_1 \beta_2)^l = \beta_1^l \beta_2^l = e e = e$.Hence $m$ divides $l$.</p>
+</blockquote>
+<p>Q: What are the possible order for elements in $S_7$?</p>
+<p>It all comes down to the length of the cycles in the disjoint cycle decomposition for $\sigma in S_7$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Cycle length configuration</th>
+<th style="text-align:center">Order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">$7$</td>
+</tr>
+<tr>
+<td style="text-align:center">$6, 1$</td>
+<td style="text-align:center">$6$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5, 2$</td>
+<td style="text-align:center">$10$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5, 1, 1$</td>
+<td style="text-align:center">$5$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4, 3$</td>
+<td style="text-align:center">$12$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4, 2, 1$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4, 1, 1, 1$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3, 3, 1$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3, 2, 2$</td>
+<td style="text-align:center">$6$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3, 2, 1, 1$</td>
+<td style="text-align:center">$6$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3, 1, 1, 1, 1$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2, 2, 2, 1$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2, 2, 1, 1, 1$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2, 1, 1, 1, 1, 1$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1, 1, 1, 1, 1, 1, 1$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<p>Q: How many elements of order $3$ in $S_7$?</p>
+<p>There are two possible configuration $3 3 1$ and $3 1 1 1 1$. For the first one, we can partition $7$ numbers in $\frac{1}{2} Cn(7,3) Cn(4,3) = 70$ ways. For the second one, it’s just $Cn(7,3) = 35$. Also, given $3$ distinct numbers, they can form $(3-1)! = 2$ different $3$ -cycles. Thus, in total we have $2 \times 2 \times 70 + 2 \times 35 = 350$.</p>
+<h2 id="even-and-odd-permutation">Even and Odd Permutation</h2>
+<p>Here is a cool observation:</p>
+<ul>
+<li>$(1 2 3 4 5) = (1 2)(2 3)(3 4)(4 5)$</li>
+<li>$(1 2 3)(4 5 6) = (1 2)(2 3)(4 5)(5 6)$</li>
+</ul>
+<p>We see that these permutations can be written as products of non-disjoint transpositions.</p>
+<dl>
+<dt>Theorem 4.5</dt>
+<dd>Every $\sigma \in S_n$ can be written as a product of transposition.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>It is sufficient to prove this for $\sigma$ a cycle in $S_n$, since every permutation is a product of cycles.</p>
+<p>$$(a_1 a_2 a_3&hellip; a_m) = (a_1 a_2)(a_2 a_3)&hellip;(a_{m-1} a_m)$$</p>
+</blockquote>
+<p>e.g. $(1 3 2)(1 4 3) = (1 3)(3 2)(1 4)(4 3)$.
+If we convert it to disjoint representation first, we have $(1 3 2)(1 4 3) = (1 4 2)(3) = (1 4)(4 2)$</p>
+<p>This shows that unlike the disjoint cycle decomposition, the break down into a product of transposition is SUPER NOT unique. However the same is the parity (odd/even) of the number of transposition.</p>
+<dl>
+<dt>Lemma 4.7</dt>
+<dd>If $\beta_1 &hellip; \beta_m = e$ where $\beta_i$ is a transposition, then $m$ is even.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>We cannot have $m=1$ transpositions.
+If we have $m=2$ transpositions then we are done.</p>
+<p>Suppose $m&gt;2$ is a fixed and the result holds for $k&lt;m$.</p>
+<p>Let $e = \beta_1 &hellip; \beta_m$ where $\beta_m = (a b)$. Now look at $\beta_{m-1}\beta_m$. There are 3 possibilities:
+$$\beta_{m-1}\beta_m = \begin{cases} (a b)(a b) = e &amp; \text{case 1}\\ (a c)(a b) = (a b c) = (a b)(b c) &amp; \text{case 2}\\ (c d)(a b) = (a b)(c d) &amp; \text{case 3}\end{cases}$$</p>
+<p>For case 1, $\beta_1 &hellip; \beta_{m-2} = e$ and $m-2$ is even by induction, so $m$ is also even.</p>
+<p>For case 2 and 3, we can move the last occurrence of $a$ to the left. Repeat this process. Eventually, we either delete two transpositions $(a x)(a y) = (a y)(y x)$ or we move the last occurrence of $a$ all the way to the left. If we delete it, we get $m-2$ transpositions and $m$ is even. Otherwise, $e = (a x_0)(x_1 y_1) &hellip; (x_m y_m)$ where all $x$ and $y$ ’s are not $a$. This is a contradiction since $ea = x_0 \neq a$.</p>
+</blockquote>
+<dl>
+<dt>Theorem 4.6</dt>
+<dd>If $\sigma \in S_n$ is given by $\sigma = \beta_1 \beta_2 &hellip; \beta_k = \gamma_1 \gamma_2 &hellip; \gamma_m$ where $\beta_i$ and $\gamma_i$ are transpositions. Then either $k$ and $m$ are both even or they are both odd.</dd>
+</dl>
+<blockquote>
+<p>Proof</p>
+<p>Suppose $\sigma = \beta_1 \beta_2 &hellip; \beta_k = \gamma_1 \gamma_2 &hellip; \gamma_m$. Then $e = \beta_1^{-1} \beta_2^{-1} &hellip; \beta_k^{-1} = \gamma_1 \gamma_2 &hellip; \gamma_m$ There are $k+m$ transpositions. By lemma 4.7 $k+m$ is even. Thus, $k$ and $m$ are either both even or both odd.</p>
+</blockquote>
+<p>We can now safely make the following definition.</p>
+<dl>
+<dt>Definition - Even and Odd Permutation</dt>
+<dd>A permutation $\sigma \in S_n$ is even if it can be written as a product of an even number of transpositions, and odd if it can be written as a product of an odd number of transpositions.</dd>
+</dl>
+<p>e.g.</p>
+<ul>
+<li>$(1 2 3 4) = (1 2)(2 3)(3 4)$ is an odd permutation.</li>
+<li>$(1 2 3 4 5) = (1 2)(2 3)(3 4)(4 5)$ is an even permutation.</li>
+</ul>
+<p>Exercise: Show that</p>
+<ol>
+<li>An $m$ -cycle is even if and only if $m$ is odd.</li>
+<li>A product $\sigma = \sigma_1 \sigma_2$ is even if and only if $\sigma_1$ and $\sigma_2$ are both even or odd.</li>
+<li>The set $A_n = { \sigma \in S_n : \sigma \text{ is even}}$ forms a subgroup of $S_n$. $A_n$ is known as the <strong>alternating group</strong>.</li>
+</ol>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

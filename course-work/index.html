@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <h1 id="course-work">Course Work</h1>
+<ul>
+<li>
+<p><strong>Javascript, SQL</strong>, <a href="https://github.com/Irvingkk/Perfect-Party-Web-application/">Perfect Party</a><!-- raw HTML omitted -->
+Jul/2019</p>
+<p>Perfect Party is a company that organizes parties.
+It receives orders from customers who are willing to hold events and fulfills them with venues and foods/decors from suppliers.
+This project is about building a database web application for the business.
+We chose to develop with the most popular database <strong>MySQL</strong> and server-side runtime <strong>Node.js</strong>, which connects to the database through <code>mysql</code> Javascript driver and handles requests through <strong>Express.js</strong>.
+For simplicity, the runtime also serves <strong>HTML</strong> pages, including query tables and forms, using <code>ejs</code> template engine.</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p><strong>C, ARM</strong>, <a href="https://www.student.cs.uwaterloo.ca/~cs452/">Real-time Programming</a><!-- raw HTML omitted -->
+May/2018</p>
+<p>Real-time programming is a course focusing on building an efficient kernel and completing a few time-sensitive train control tasks on it.
+The system was running on an ARM single-board computer(TS-7200).
+It has one serial port connected to a train model controller and another serial port connected to a console where humans input instructions and check system status.
+By communicating with the model controller, the system may set the power level for trains, change switch status, and receive value array for track sensors.</p>
+<p>The kernel implements context switch, prioritized task scheduling, inter-task messaging, and event response (UART and timer events).
+Those core functions run in kernel space, and tasks interact with them through several system calls.
+There are also a few user-space system daemon tasks such as idle task - running when no other tasks to do, name server - to help find task ids of other servers, clock server + notifier - to allow tasks to get the absolute time and sleep for a desired amount of time, and UART servers - to input or output characters to serial ports.
+To measure the efficiency of the message passing mechanism and compare the effect of different factors, we&rsquo;ve also introduced a simple rock-paper-scissors test scenario where multiple clients (tasks) play RPS through a server.</p>
+<p>The first portion of the train project requires the system to move a train precisely from a random location to a sensor.
+Due to inertia, we have to figure out when to send a stop command before the train hits the target sensor.
+Hence, we developed helpers based on the kinematics model and measured trains&rsquo; information such as length, wheels positions, acceleration, deceleration, and command latency, etc.</p>
+<p>In the second milestone, sensor attribution and track reservation system are built.
+Sensor attribution solves an issue that some sensors on the track are broken, are being broken, or are triggered by humans (accidentally or intentionally) and consequently the system loses the status of the trains.
+It is designed to dynamically determine and memorize unresponding sensors while trains are running.
+It can also filter out those unexpected sensor events so that the system is immune to naughty TAs.
+One feature we didn&rsquo;t make but personally very important is to support the export and import of attribution data, which could have saved us a lot of effort.
+The track reservation system enables multiple trains to run on the track simultaneously.
+It divides the entire track into segments.
+Each train needs to make sure that it is the only one in its segment at any time.
+While running, they will reserve the upcoming segment, which might be changed by switch status.
+When they cannot reserve the forward segment, they may stop and wait until it is cleared.</p>
+<p>In the final project, we implemented train following and tried to minimize space between them.
+We&rsquo;ve also demostrated a stunt where multiple trains in a row split into two rows at a switch and then merge back at another switch.</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p><strong>Java - Swing, AWT</strong>, <a href="https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a3">Lunar Lander Game with Terrain Editor</a><!-- raw HTML omitted -->
+Nov/2017</p>
+<p>MVC pattern is used to sync terrain in <a href="lunar-lander.gif">editor view and play view</a>.</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p><strong>Java - Swing, AWT</strong>, <a href="https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a2">Drawing Canvas</a><!-- raw HTML omitted -->
+Oct/2017</p>
+<p><a href="canvas.gif">draging, rotating and scaling</a> with affine transformation.</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p><strong>C++ - libX11</strong>, <a href="https://git.uwaterloo.ca/zqing/1179-cs349/tree/master/assignments/a1">Simon</a><!-- raw HTML omitted -->
+Oct/2017</p>
+<p>Game loop is used to dispatch user input event and drive ball <a href="simon.gif">animation</a>/<a href="simon-enhanced.gif">movement</a></p>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Group Actions</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>(see Papantonopoulou, Chapter 4)</p>
+<p>We can see the dull power of group theory by studying how a group acts on a set of objects.</p>
+<p>e.g. Consider the group $G = GL_n(\R)$, and the set $X = \R_n$. The group $G$ acts on $X$ by multiplying a vector $x \in X$ by a matrix $A\in G$. Moreover, we can see the group structure of $GL_n(\R)$ in the action.</p>
+<hr>
+<p>Up to now our study of groups has been largely focused on the groups themselves. Now we will see how a group $G$ can describe the symmetries of a set $X$. Essentially, we would like the group to permutations the elements of $X$ in a “structured” way.</p>
+<p>For instance how should the group identity $e$ permute the elements of $X$? We would hope that $e$ does nothing to the elements of $X$.</p>
+<p>It would also be reasonable to ask that for elements $g_1, g_2 \in G$, if we permute $X$ using $g_2$ and then permute using $g_1$, that this be same as permitting with the product $g_1 g_2$.</p>
+<dl>
+<dt>Definition - Group Action</dt>
+<dd>Let $G$ be a group and $X$ be a set. An action of $G$ on $X$ is map $\cdot: G \times X \to X$ that satisfied the following properties.</dd>
+</dl>
+<ol>
+<li>$e\cdot x = x$ for all $x \in X$.</li>
+<li>Given $g_1 g_2 \in G$, then $g_1 \cdot (g_2 \cdot x) = (g_1 g_2) \cdot x$ for all $x \in X$.
+: We write $G \curvearrowright X$ to indicate that $G$ is acting on $X$.</li>
+</ol>
+<p>e.g.(1) Let $G = S_n$ and $X={1,2,&hellip;,n}$. Then $G$ acts on $X$ in the natural way: given $\sigma \in S_n$ and $i \in X$, then $\sigma \cdot i = \sigma(i)$. Let’s check that this is an action.</p>
+<ol>
+<li>$e \cdot i = e(i) = i$ for all $i \in X$</li>
+<li>Given $\sigma, \tau \in S_n$ and $i \in X$, then $\sigma \cdot (\tau \cdot i) = \sigma \cdot \tau(i) = \sigma(\tau(i)) = (\sigma \circ \tau)(i) = (\sigma \circ \tau) \cdot i$.</li>
+</ol>
+<p>e.g.(2) The group $G = GL_n(\R)$ acts on the set $\R^n$ by multiplication: given $A \in GL_n(\R)$ and $x \in \R^n$, then $A \cdot x= Ax$. Again we see that:</p>
+<ol>
+<li>$I \cdot x = Ix = x$ for all $x \in \R^n$</li>
+<li>If $A, B \in GL_n(\R)$, then $A\cdot (B \cdot x) = A \cdot (Bx) = A(Bx) = (AB)x = (AB) \cdot x$ for all $x \in \R^n$.</li>
+</ol>
+<p>So this is indeed a action.</p>
+<p>e.g.(3) The group $D_4$ acts on the set $X= {1,2,3,4}$ by thinking of the elements of $X$ as the corner of a square.</p>
+<p>For instance if $v \in D_4$ is the vertical flip then $v \cdot 2 = 1$.</p>
+<p><img src="D4-acts-on-corner.png" alt="D4 acts on corner"></p>
+<p>We could also interpret this as the action of $D_4$ on the edges of the square.</p>
+<p><img src="D4-acts-on-edge.png" alt="D4 acts on edge"></p>
+<p>e.g.(4) Let $G$ be a group and consider the set $X = G$ itself $G$ acts on $X$ be left multiplication. Given $a,b \in G$, we define $a \cdot b = ab$. Exercise: check this is an action.</p>
+<p>e.g.(5) A group $G$ can act on itself (i.e. $X = G$) by conjugation. Given $a,b \in G$ then $a \cdot b = aba^{-1}$. To see that this is an action note that</p>
+<ol>
+<li>$e \cdot a = eae^{-1} = a$ for all $a\in G$.</li>
+<li>Let $a,b\in G$, then for $g \in G$, we have $a \cdot (b \cdot g)= a \cdot (bgb^{-1}) = a(bgb^{-1})a^{-1} = (ab)g(b^{-1}a^{-1}) = (ab) g(ab)^{-1} = (ab) \cdot g$.</li>
+</ol>
+<p>Suppose $G$ is a group acting on a set $X$. Given $g \in G$, consider the map $\psi_g: X \to X$ such that $\psi_g(x) = g \cdot x$. This map is a bijection or permutations of $X$.</p>
+<p>Indeed, given $x \in X$ we have that $\psi_x(g^{-1} \cdot x) = g \cdot (g^{-1} \cdot x) = (gg^{-1}) \cdot x = e \cdot x = x$. So it is surjective.</p>
+<p>To see that $\psi_g$ is injective, suppose that $\psi_g(x) = \psi_g(y)$, then $g\cdot x = g \cdot y$, $g^{-1}\cdot(g \cdot x) = g^{-1}\cdot(g \cdot y)$, $(g^{-1}g) \cdot x = (g^{-1}g) \cdot y$, $e \cdot x = e \cdot y$, $x=y$.</p>
+<p>This means that $\psi_g$ is bijective. Stated differently, $\psi_g$ belongs to $S_X = { \text{bijections} f: X \to X}$.</p>
+<p>Note: $S_X$ is a group under function composition. Furthermore if $|X| = n &lt; \infty$, then $S_X \cong S_n$ (after all, both are permutations on a set of $n$ elements).</p>
+<p>Now consider the map $\Phi: G \to S_X$ such that $\Phi(g) = \psi_g$. Turns out $\Phi$ is a homomorphism from $G$ to $S_X$. Indeed, we show that if $g_1, g_2 \in G$, then $\Phi(g_1 g_2) = \Phi(g_1) \circ \Phi(g_2)$ (i.e. $\psi_{g_1 g_2} = \psi_{g_1} \circ \psi_{g_2}$).</p>
+<p>If $x \in X$, then
+$$\psi_{g_1 g_2} = (g_1 g_2) \cdot x = g_1 \cdot (g_2 \cdot x) = g_1 \cdot (\psi_{g_2}(x)) = \psi_{g_1}(\psi_{g_2}(x)) = (\psi_{g_1}\circ\psi_{g_2})(x)$$
+Thus $\psi_{g_1 g_2} = \psi_{g_1}\circ\psi_{g_2}$, i.e. $\Phi(g_1 g_2) = \Phi(g_1) \Phi(g_2)$. This shows an action $G \curvearrowright X$ gives rise to a homomorphism $\Phi: G \to S_X$.</p>
+<hr>
+<p>Given an action $G \curvearrowright X$ and a group element $g \in G$, we proved that $\psi_g: X\to X$ such that $\psi_g(x) = g\cdot x$ is bijective.</p>
+<p>In other words $\psi_g \in S_X = { f:X \to X : f \text{ is bijective}}$. We showed that the map $\Phi: G \to S_X$ such that $\Phi(g) = \psi_g$ is a homomorphism. So every action $G \curvearrowright X$ gives rise to a homomorphism $\Phi: G \to S_X$.</p>
+<dl>
+<dt>Theorem 8.1 - Cayley Theorem</dt>
+<dd>Every group $G$ is isomorphic to a group of permutations. In particular, if $|G|=n &lt; \infty$, then $G$ is isomorphic to a subgroup of $S_n$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Consider the action of $G$ on itself by left multiplication: given $g \in G$ then $g \cdot a = ga$. Consider the homomorphism $\Phi: G \to S_G$ where $\Phi(g) = \psi_g$. Note: $g\in \ker \Phi \iff \psi_g$ is the identity of $S_G$, so
+$$\ker \Phi = { g \in G: \psi_g(a) = a \quad \forall a\in G } = { g \in G : g \cdot a = a \quad \forall a\in G} = {g \in G : ga = a \quad \forall a\in G} = {e}$$
+Thus, by the first isomorphism theorem $G/\ker \Phi \cong \im \Phi \le S_G$. So $G \cong \im \Phi$ which is a group of permutations. The final claim follows from the fact the $S_G \cong S_n$ when $|G| = n &lt; \infty$.</p>
+</blockquote>
+<h2 id="orbits-and-stabilizers">Orbits and Stabilizers</h2>
+<p>Let $G \curvearrowright X$ be a group action and fix $x \in X$.</p>
+<ul>
+<li>Where can we send $x$?</li>
+<li>Which elements of $G$ leave $x$ unchanged?</li>
+</ul>
+<dl>
+<dt>Definition - Orbit and Stabilizer</dt>
+<dd>Let $G \curvearrowleft X$ be a group action and fix $x \in X$. Define:</dd>
+</dl>
+<ol>
+<li>The orbit of $x$ to be the set $\orb_x {g \cdot x \in X: g \in G}$.</li>
+<li>The stabilizers of $x$ to be the set $\stab_x = {g \in G: g\cdot x =x}$</li>
+</ol>
+<p>Remark $\stab_x \subseteq G$ and $\orb_x \subseteq X$</p>
+<dl>
+<dt>Proposition 8.2</dt>
+<dd>If $G \curvearrowright X$ is a group action and $x \in X$, then $\stab_x \le G$.</dd>
+</dl>
+<p>Exercise: Prove proposition 8.2.</p>
+<p>Note: $X$ may not be a group, so $\orb_x$ is not a subgroup of $X$.</p>
+<h3 id="example-1">Example 1</h3>
+<p>Consider the action of $S_n$ on $X={1,&hellip;,n}$ given by $\sigma \cdot i= \sigma(i)$. Fix $i\in X$.</p>
+<p>The orbit $\orb_i = X$. You can send $i$ to anywhere. In particular, if $j\in X$, then $(i j)\cdot (i) = j$.</p>
+<p>The stabilizer $\stab_i = { \sigma \in S_n : \sigma(i) = i} \cong S_{n-1}$.</p>
+<h3 id="example-2">Example 2</h3>
+<p>Let $G = { e^{i\theta} : \theta \in \R } \le \mathbb{C}^*$, the unit circle. And $X = \mathbb{C}$. $G$ acts on $X$ by multiplication: if $z \in \mathbb{C}$, then $e^{i\theta} \cdot z = e^{i\theta}z$. Fix $z\in \mathbb{C}$.</p>
+<p>The orbit
+$$\orb_z = { e^{i\theta}\cdot z: \theta \in \R} = { e^{i\theta}z : \theta \in \R} = {w\in \mathbb{C} : |w| = |z|}$$</p>
+<p>The stabilizer: exercise</p>
+<h3 id="example-3">Example 3</h3>
+<p>Let $G$ be the group of all rotations of a cube.</p>
+<p>First, consider the action of $G$ on the set of all vertices of the cube. Let $v \in X$ be a particular vertex. What is $\orb_i$? What is $\stab_i$? Here $\orb_i = X$ (so $|\orb_i|=8$) also $|\stab_i|=3$</p>
+<p>Second, consider the action of $G$ on the set of all edges of the cube. Pick a particular edge $E \in X$. Here $|\orb_E| = 12$ (i.e. all of $X$), and $|\stab_E| = 2$.</p>
+<p>Last, consider the action of $G$ on the set of all faces of the cube. Choose any $F\in X$. Now $|\orb_F| = 6$ and $|\stab_F| = 4$.</p>
+<p>In all cases, we saw that if $x \in X$ the $|\orb_x| \cdot |\stab_x| = 24$. It turns out that $24$ is the number of rotations in $G$.</p>
+<h2 id="orbit-stabilizer-theorem">Orbit-Stabilizer Theorem</h2>
+<dl>
+<dt>Theorem 8.3 - Orbit-Stabilizer Theorem</dt>
+<dd>Let $G \curvearrowright X$ be a group action. Given any $x\in X$ then $|G:\stab_x| = \orb_x$. In particular, if $|G| &lt; \infty$, then $|G|=|\stab_x| \cdot |\orb_x|$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>We claim that $|G/\stab_x| = |\orb_x|$.
+We must find a bijection $f: G/\stab_x \to \orb_x$.</p>
+<p>Define $f: G/\stab_x \to \orb_X$ by $f(g\stab_x) = g \cdot x$.
+First, given $g_1, g_2 \in G$, then
+$$g_1 \stab_x = g_2 \stab_x \\
+\iff g_2^{-1}g_1 \in \stab_x \\
+\iff (g_2^{-1}g_1)\cdot x = x \\
+\iff g_1 \cdot x = g_2 \cdot x \\
+\iff f(g_1 \stab_x) = f(g_2 \stab_x)$$
+So $f$ is well-defined and injective.</p>
+<p>Finally, given $y \in \orb_x$, we can write $y = g \cdot x$ for some
+$g \in G$. Thus, $f(g \stab_x) = g \cdot x = y$, so $f$ is surjective,
+and thus bijective as claimed.</p>
+<p>The final statement is now immediate from Lagrange’s theorem.</p>
+</blockquote>
+<p>e.g.
+By the orbit-stabilizer theorem, there are indeed 24 rotational symmetries of a cube.</p>
+<p>e.g.
+How many rotational symmetries does a soccer ball have?</p>
+<p><img src="soccer-ball.png" alt="Soccer Ball"></p>
+<p>Let $G$ be the group of rotations of this soccer ball, and let $G$ act on the set of all the black pentagon faces $X$. Note that $|X| = 12$.</p>
+<p>Given $x \in X$, $|\orb_x| = 12$ and $|\stab_x|=5$, by the orbit-stabilizer theorem, $|G| = 12 \times 5 = 60$.</p>
+<p>e.g.
+How many action does the group $G = \Z_5$ have on the set $X = {1,2,3}$?</p>
+<p>Suppose $G \curvearrowright X$ is any action. Given $x \in X$, we know that $|\stab_x| \cdot |\orb_x| = |\Z_5| = 5$. Thus $|\orb_x| = 1, 5$. However $|X| = 3$ and $\orb_x \subseteq X$, it must be $|\orb_x| = 1$.
+Thus $g\cdot x = x$ for all $g\in \Z_5$. Since we assumed that $x$ is any element in $X$, $g \cdot x = x$ for all $g \in G$ and $x \in X$, so there is only one action.</p>
+<p>We call this the <strong>trivial action</strong>.</p>
+<p>Exercise: How many rotational symmetries does a tetrahedron have? (pyramid with triangular base)</p>
+<h2 id="application-of-group-actions">Application of Group Actions</h2>
+<p>e.g.
+How many $2\times 2$ chess boards can one build using black and white squares?</p>
+<p><img src="chess-board.png" alt="Chess Boards"></p>
+<p>Naive answer: total of $2^4 = 16$ boards. (We can choose black or white for each of the 4 squares)</p>
+<p>But wait&hellip; We should consider two boards to be the same if we can rotated one into the other:</p>
+<p><img src="same-chess-board.png" alt="Same chess board"></p>
+<p>Let $G$ be the rotational symmetry group of a square, and the $G$ acts on the set $X$ of all $2^4 = 16$ possible boards.</p>
+<p>We consider two boards to be the same if they’re in the same orbit. So we want to know the number of orbit of this action.</p>
+<p>We will accomplish this using Burnsides’s lemma, but first we need a proposition.</p>
+<dl>
+<dt>Proposition 8.4 - Orbit Partitioning</dt>
+<dd>If $G \curvearrowright X$ is a group action, then the orbits of the action partition $X$. That is:</dd>
+</dl>
+<ol>
+<li>$X = \cup_{x\in X} \orb_x$, and</li>
+<li>Given $x,y \in X$ either $\orb_x = \orb_y$ or $\orb_x \cap \orb_y = \emptyset$</li>
+</ol>
+<dl>
+<dt>Lemma 8.5 - Burside’s Lemma</dt>
+<dd>Let $G$ be a finite group acting on a finite set $X$. Then the number of orbits of this action, denoted $N$, is given by
+$$N = \frac{1}{|G|}\sum_{g\in G} |\fix(g)|$$
+where $\fix(g) = {x\in X : g\cdot x = x}$</dd>
+</dl>
+<p>Back to our example, the group is $G = {e, R_{90}, R_{180}, R_{270}}$. For each $g\in G$, we commute $|\fix(g)|$.</p>
+<ol>
+<li>$|\fix(e)| = 2^4$. All boards are fixed.</li>
+<li>$|\fix(R_{90})| = 2$. Either all white or all black.</li>
+<li>$|\fix(R_{270})| = 2$. Similar to (2).</li>
+<li>$|\fix(R_{180})| = 2^2$. Both pairs of diagonal tiles have to be same. Choose one of two colors for each pair.</li>
+</ol>
+<p>Then by lemma 8.5, the number of board is
+$$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{1}{4} (16 + 2 + 2 + 4) = 6$$</p>
+<p>To prove lemma 8.5, we use the proposition 8.4.</p>
+<blockquote>
+<p>Proof:</p>
+<p>Let $n$ be the number of pairs $(g,x) \in G \times X$ such that
+$g \cdot x = x$. Given a fixed $g \in G$, the number of such pairs
+$(g,x)$ is $|\fix(g)|$. Thus $n = \sum_{g\in G} |\fix(g)|$.</p>
+<p>Alternatively, given $x \in X$ the number of such pairs $(g,x)$ is
+$|\stab_x|$, so
+$$n = \sum_{x\in X}|\stab_x| = \sum_{x \in X}\frac{|G|}{|\orb_x|} =
+|G| \sum_{x\in X}\frac{1}{\orb_x}$$</p>
+<p>By proposition 8.4, $X$ is the union of its disjoint orbits, so we can
+sum over $1$ orbit at a time. Consider $\orb_x$. Given $y\in \orb_x$,
+we have $\orb_y = \orb_x$, and hence
+$$\sum_{y\in \orb_x} \frac{1}{|\orb_y|} = \frac{1}{|\orb_x|} + &hellip; +
+\frac{1}{|\orb_x|} = \frac{|\orb_x|}{|\orb_x|} = 1$$
+Thus,<br>
+$$n = |G| \sum_{x\in X} \frac{1}{|\orb_x|} = |G|N$$
+and
+$$\sum_{g \in G} |\fix(g)| = n = |G|N$$
+$$N = \frac{1}{|G|}\sum_{g\in G} |\fix(g)|$$</p>
+</blockquote>
+<h3 id="solving-burnside-problems">Solving Burnside Problems</h3>
+<ol>
+<li>Let $X$ be the set of objects ignoring symmetry.</li>
+<li>Find a group to act on $X$ that describes the symmetries.</li>
+<li>Use Burnside to find $N$, the number of orbits.</li>
+</ol>
+<p>e.g.(1) How many 6-bead necklaces can be made using $3$ black beads and $3$ white beads?</p>
+<ol>
+<li>
+<p>Choose $3$ locations for the black beads in $\begin{pmatrix}6\\3\end{pmatrix} = 20$ ways. $|X| = 20$</p>
+</li>
+<li>
+<p>Let $G = D_6$. We need to know the number of orbits when $G \curvearrowright X$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$g$</th>
+<th style="text-align:center">$\fix(g)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$r_0$</td>
+<td style="text-align:center">$20$</td>
+</tr>
+<tr>
+<td style="text-align:center">$r_1$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$r_2$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$r_3$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$r_4$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$r_5$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_0$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_1$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_2$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_3$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_4$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_5$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Thus,
+$$N = \frac{1}{|D_6|}\sum_{g\in G}|\fix(g)| = \frac{1}{12} (20+2+2+4+4+4) = 3$$</p>
+</li>
+</ol>
+<p>e.g.(2) How many ways can one label the faces of a six-sided die using the numbers 1-6 exactly once?</p>
+<ol>
+<li>Let $X$ be the set of all possible labelings of a cube using 1-6, ignoring symmetry. We choose one face for each number. $|X| = 6! = 720$.</li>
+<li>Let $G$ be the group of rotation of a cube . By the orbit-stabilizer theorem $|G| = 24$. We want to know the number of orbits when $G \curvearrowright X$.</li>
+<li>By Burnside, we must compute $|\fix(g)|$ for each $g \in G$. First, $|\fix(e)| = |X| = 720$. However, every other rotation will not fix some faces, and since all faces are distinct $|\fix(g)| = 0$ for any $g \ne e$.</li>
+<li>Thus,
+$$N = \frac{1}{|G|}\sum_{g\in G}|\fix(g)| = \frac{720}{24} = 30$$</li>
+</ol>
+<p>e.g.(3) How many ways can you color the edges of a tetrahedron using red, blue, and green?</p>
+<ol>
+<li>Let $X$ be the set of all possible tetrahedra. We can pick any of 3 colors for each edge. $|X| = 3^6$</li>
+<li>Let $G$ be the group of all rotations of the tetrahedron. By Orbit-Stabilizer, $|G| = 12$</li>
+<li>What do the rotations in $G$ actually look like?
+<ul>
+<li>First, there are 1 identity $e$. $|\fix(e)| = 3^6$.</li>
+<li>Then, for each face there are 2 rotations $\tau$ through the face and opposite vertex. For every such $\tau$, $|\fix(\tau) = 3^2$. In total there are $8$ such rotations. <img src="tetra-face-vertex-rotation.png" alt="Face-Vertex Rotation"></li>
+<li>There are rotation $\sigma$ about an axis through two opposite edges. $|\fix(\sigma)| = 3^4$. There are $3$ such rotations in total. <img src="tetra-edge-edge-rotation.png" alt="Edge-Edge Rotation"></li>
+</ul>
+</li>
+<li>Thus,
+$$N = \frac{1}{12}(1\times 3^6 + 8 \times 3^2+ 3 \times 3^4) = 87$$</li>
+</ol>
+<h2 id="class-equation">Class Equation</h2>
+<p>Let $G$ be a finite group and let $G$ act on itself by conjugation $a \cdot b = aba^{-1}$.</p>
+<p>Let $\orb_{g_1}, \orb_{g_2}, &hellip;, \orb_{g_r}$ be the disjoint orbits of $G$ that are hot contained in $Z(G)$</p>
+<p>Using proposition 8.4, one can prove that
+$$|G| = |Z(G)| + \sum_{i=1}^{r}|G:\stab_{g_i}|$$</p>
+<p>Note that
+$$\begin{aligned}
+\stab_{g_i}
+&amp;= { a \in G: a \cdot g_i = g_i } \\
+&amp;= { a \in G: a g_i a^{-1} = g_i } \\
+&amp;= { a \in G: a g_i = g_i a } \\
+&amp;= C(g_i)
+\end{aligned}$$</p>
+<p>We call $C(g_i)$ the <strong>centralizer</strong> of $g_i$. And the equation
+$$|G| = |Z(G)| + \sum_{i=1}^{r}|G:C(g_i)|$$
+is called the <strong>class equation</strong>.</p>
+<p>There are many important applications.</p>
+<dl>
+<dt>Corollary 8.6</dt>
+<dd>Let $p$ be a prime.</dd>
+</dl>
+<ol>
+<li>If $G$ is a group of order $p^k$ for some $k \ge 1$, then $\Z(G) \ne {e}$.</li>
+<li>If $G$ is a group of order $p^2$, then $G$ is Abelian.</li>
+</ol>
+<p>The details are left for A5.</p>
+<dl>
+<dt>Theorem 8.7 - Cauchy’s Theorem</dt>
+<dd>Let $G$ be any finite group and let $p$ be a prime that divides $|G|$. Then $G$ has an element of order $p$.</dd>
+</dl>
+<blockquote>
+<p>Proof:
+(By induction on $|G|$)</p>
+<p>Assume that the result holds for all group of order $&lt;|G|$.</p>
+<p>Case 1: $p$ divides $|Z(G)|$. By the Cauchy’s theorem in Abelian case.
+$Z(G)$ contains an element of order $p$, and hence so too does $G$.</p>
+<p>Case 2: $p$ does not divide $|Z(G)|$. Consider the class equation.
+$$|G| = |Z(G)| + \sum_{i=1}^{r}|G:C(g_i)|$$
+We have that $|Z(G)| = |G| - \sum_{i=1}^{r}\frac{|G|}{|C(g_i)|}$ by
+Lagrange theorem.
+Since $p$ divides $|G|$, but $p$ does not divide $|Z(G)|$, it must be
+that $p$ does not divide $\frac{|G|}{|C(g_k)}$ for some $k$.
+Thus, since $p$ divides $|G|$, but $p$ does not divides
+$\frac{|G|}{|C(g_k)}$, $p$ must divide $|C(g_k)|$.
+Since $g_k \notin Z(G)$, we have that $C(g_k) \neq G$.
+By induction hypothesis, $C(g_k)$ has an element of order $p$, so too
+does $G$.</p>
+</blockquote>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

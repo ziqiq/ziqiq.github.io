@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Cosets and Lagrange’s Theorem</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>Recall in A1 we proved the following theorem.</p>
+<dl>
+<dt>Theorem</dt>
+<dd>Let $G$ be a group and $a \in G$ be any element. The map $\phi_a: G \to G$ where $\phi_a(x) = ax$ is a bijection.</dd>
+</dl>
+<p>We can think of $\phi_a$ as “sliding” the group elements around a group $G$.</p>
+<p>Nature extension: “slide” and entire subgroup of $G$ by multiplying every element by a fixed group element.</p>
+<h2 id="cosets">Cosets</h2>
+<p>A coset of a subgroup $H$ of group $G$ is a set obtained by “translating” $H$ by a group element $a$.</p>
+<p>e.g.(1) $3\Z \le \Z$
+$$\begin{aligned}
+0+3\Z &amp;= { &hellip;, -6, -3, 0, 3, 6, &hellip;} \\
+1+3\Z &amp;= { &hellip;, -5, -2, 1, 4, 7, &hellip;} \\
+2+3\Z &amp;= { &hellip;, -4, -1, 2, 5, 8, &hellip;} \\
+\end{aligned}$$
+In total there are exactly $3$ different cosets of $3\Z$ in $\Z$. Note that two cosets are either identical or disjoint.</p>
+<p>e.g.(2) $\lang 3 \rang = {0,3} \le \Z_6$
+$$\begin{aligned}
+0+\lang 3 \rang &amp;= {0, 3} \\
+1+\lang 3 \rang &amp;= {1, 4} \\
+2+\lang 3 \rang &amp;= {2, 5} \\
+\end{aligned}$$
+The cosets cover all of $\Z_6$. We also see that all cosets have the same size. However, cosets are not necessarily subgroups.</p>
+<p>e.g.(3) $H = \lang (1 2 3) \rang = {e, (1 2 3), (1 3 2)} \le S_3$
+$$\begin{aligned}
+(1 2 3)H &amp;= {(1 2 3), (1 3 2), e} = H \\
+(1 2) H &amp;= {(1 2), (2 3), (1 3)} \\
+\end{aligned}$$</p>
+<p>Exercise: Show $eH = (1 2 3)H = (1 3 2)H = H$ and $(1 2)H={(1 2), (2 3), (1 3)}$.</p>
+<p>These are really left cosets because we are multiplying by $a$ on the left. We could just as easily discussed right cosets. Left and right cosets may not be the same when the group is non-Abelian. But the number of left cosets is always the number of right cosets. (see A3Q4)</p>
+<dl>
+<dt>Definition - Coset</dt>
+<dd>Let $G$ be a group and $H$ be a subgroup of $G$. Given $a \in G$ the set $aH = {ah: h \in H}$ is called a left coset of $H$ containing $a$. Similarly, $Ha = {ha: h\in H}$ is a right coset.</dd>
+<dd>We call $a$ a representative for $Ha$ or $aH$</dd>
+<dd>Finally, the index of $H$ in $G$ is the number of distinct left or right cosets of $H$ in $G$, denoted $|G:H|$.</dd>
+<dt>Proposition 5.1</dt>
+<dd>Let $a, b \in G$ and $H \le G$.<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>$a \in aH$.<!-- raw HTML omitted --></li>
+<li>$aH = bH \iff b \in aH$.<!-- raw HTML omitted --></li>
+<li>$aH = bH \iff a^{-1}b \in H$.<!-- raw HTML omitted --></li>
+<li>$aH = bH$ or $aH \cap bH = \emptyset$.<!-- raw HTML omitted --></li>
+<li>$|aH| = |H|$.<!-- raw HTML omitted --></li>
+<li>$aH = Ha \iff aHa^{-1} = H$.<!-- raw HTML omitted -->
+: Also, analogous statements hold for right cosets.</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<ol>
+<li>Since $H \le G$, $e \in H$. Then $a = ae \in aH$.</li>
+<li>If $aH = bH$, by 1, $b \in bH = aH$. If $b \in aH$, then $b=ah$
+for some $h \in H$, so $bH = (ah)H = a(hH) = aH$.</li>
+<li>$aH = bH \iff b \in aH \iff b=ah \iff a^{-1}b \in H$</li>
+<li>If $aH \cap bH = \emptyset$, we are done. Otherwise, there exists
+$c \in aH \cap bH$. Then $c \in aH$ and $c \in bH$.
+By 2, $aH = cH = bH$.</li>
+<li>Since $h \mapsto ah$ is a bijection, $|aH| = |H|$.</li>
+<li>$aH = Ha \iff (aH)a^{-1} = (Ha) a^{-1} \iff aHa^{-1} = H$.</li>
+</ol>
+</blockquote>
+<h2 id="lagranges-theorem">Lagrange’s Theorem</h2>
+<p>From proposition 5.1 we know:</p>
+<ol>
+<li>Every element is $G$ belongs to some coset (for some $H$).</li>
+<li>Any element in a coset is a representative for that coset. (e.g. for $H = \lang(1 2 3)\rang$, we showed that $(1 2)H = {(1 2), (1 3), (2 3)}$). By 2, $(1 2)H = (1 3)H = (2 3)H$.)</li>
+<li>Two left cosets are either identical or disjoint.</li>
+<li>All cosets are the same size.</li>
+</ol>
+<p>Let $G$ be a finite group and $H \le G$. If $a_1 H, a_2 H,&hellip;, a_k H$ are distinct left cosets of $H$, then by 1, $G = a_1 H \cup a_2 H \cup &hellip;\cup a_k H$. Since they are distinct,
+$$\begin{aligned}
+|G|
+&amp;= |a_1 H|+ |a_2 H|+&hellip;+ |a_k H| \\
+&amp;= |H|+|H|+&hellip;+|H| \\
+&amp;= k|H| \\
+&amp;= |G:H||H|
+\end{aligned}$$
+where $|G:H|$ is the index of $H$.</p>
+<dl>
+<dt>Theorem 5.2 - Lagrange’s Theorem</dt>
+<dd>Let $G$ be a finite group and $H \le G$, then $|H|$ divides $|G|$ and $|G:H| = |G|/|H|$.</dd>
+</dl>
+<h2 id="corollaries">Corollaries</h2>
+<dl>
+<dt>Corollary 5.3</dt>
+<dd>If $G$ is a finite group and $a \in G$, then $|a|$ divides $G$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Since $\lang a \rang \le G$, $|a| = |\lang a \rang|$ divides $|G|$
+by Lagrange.</p>
+</blockquote>
+<dl>
+<dt>Corollary 5.4</dt>
+<dd>If $G$ is a finite group and $a \in G$, then $a^{|G|} = e$</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>By corollary 5.3, $|a|$ divides $|G|$. Thus
+$a^{|G|} = a^{q|a|} = (a^{|a|})^q  = e$.</p>
+</blockquote>
+<dl>
+<dt>Corollary 5.5</dt>
+<dd>If $G$ is a group of order $p$ and $p$ is prime, then $G$ is cyclic.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Let $a \in G$ and $a \neq e$. By corollary 5.3, $|a|$ divides $|G| = p$. Since $p$ is a prime, either $|a| = 1$ or $|a| = p$. Since $a \neq e$, $|a| \neq 1$, so $|a| = p = |G|$. Thus, $G = \lang a \rang$.</p>
+</blockquote>
+<dl>
+<dt>Corollary 5.6 - Format’s Little Theorem</dt>
+<dd>If $a \in \Z$, $a \neq 0$, $p$ is a prime, and $p$ not divides $a$, then $a^{p-1} \equiv 1 \mod p$</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Consider $\Z_p^* ={ 1 ,2, 3, &hellip;, p-1}$.
+If $p$ does not divide $a$, then $\gcd(p,1) = 1$, so $a \in \Z_p^*$.
+By corollary 5.4, $e = a^{|G|} = a^{p-1}$.
+That is $a^{p-1} \equiv 1 \mod p$.</p>
+</blockquote>
+<p>Exercise: Let $G$ be a group of order $15$. Prove that if ${e} &lt; H &lt; G$, ${e} &lt; K &lt; G$, and $H \neq K$, then $H \cap K = {e}$.</p>
+<p>Solution:</p>
+<p>By Lagrange theorem, $|H|$ and $|K|$ divides $15$, but $H$ and $K$ are proper and non-trivial, $|H|$ and $|K|$ are either $3$ or $5$. Note that $H \cap K \le H$ and $H \cap K \le K$.</p>
+<ul>
+<li>If $|H| = |K| = 3$, then $|H \cap G| = 1 \text{or} 3$ by Lagrange. If $|H \cap K| = 3$, then $H = K$, contradiction. Thus $|H\cap K| = 1$</li>
+<li>If $|H| = |K| = 5$, similarly, $|H \cap K| = 1$.</li>
+<li>If one of $|H|$ and $|K|$ is $3$ and the other is $5$. $|H \cap K|$ has to divide both $3$ and $5$ by Lagrange. Thus $|H \cap K|= 1$.</li>
+</ul>
+<p>Thus $H \cap K = {e}$.</p>
+<h2 id="applications">Applications</h2>
+<p>Q: Does the converse to Lagrange’s theorem hold? That is, is there a subgroup of order $d$ for every positive divisor $d$ of $|G|$?</p>
+<p>No. There are groups without subgroups of order $d$.</p>
+<p>Consider $A_4$, the alternating subgroup of $S_4$. $|A_4| = \frac{4!}{2} = 12$. We claim that $A_4$ does not have subgroup of order $6$.</p>
+<p>In $S_4$, we have following cycle length configuration.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Cycle length configuration</th>
+<th style="text-align:center">Order</th>
+<th style="text-align:center">Parity</th>
+<th style="text-align:center">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">Odd</td>
+<td style="text-align:center">$6$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3, 1$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">Even</td>
+<td style="text-align:center">$8$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2, 2$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">Even</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2, 1, 1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">Odd</td>
+<td style="text-align:center">$6$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1, 1, 1, 1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">Even</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<p>Suppose to the contrary that $H$ is a subgroup of order $6$. We know that the number of left cosets of $H$ in $A_4$ is $|A_4:H| = \frac{12}{6} = 2$. Since $A_4$ contains $8$ $3$ -cycles, at lease one of them $\sigma$ is not in $H$. So $A_4 = H \cup \sigma H$.</p>
+<p>Which one contains $\sigma^2$?</p>
+<ul>
+<li>If $\sigma^2 \in H$, then $(\sigma^2)^2 = \sigma^{3+1}= \sigma \in H$, contradiction.</li>
+<li>If $\sigma^2 \in \sigma H$, then there exists $h\in H$ such that $\sigma^2 = \sigma h$, so $h = \sigma \in H$ contradiction.</li>
+</ul>
+<p>Therefore, there is no such subgroup.<!-- raw HTML omitted --></p>
+<p>Q: How many different legal operation can be done to the Rubik’s cube? Call this group of operations $R$?</p>
+<p>Note that $R$ is a subgroup of $R’$, the group of symmetries of the Rubik’s cube where you’re allowed to take it apart and rebuild. How many elements are there in $R’$?</p>
+<p>The cube has $8$ corners. We can mix them up in $8!$ ways. Each corner can be put on in $3$ different ways.</p>
+<p>There are $12$ edges pieces which can be mixed up in $12!$ ways. There are $2$ ways to put on each edge piece.</p>
+<p>Thus $|R’| = 8! \cdot 3^8 \cdot 12! \cdot 2^{12}$.</p>
+<p>By Lagrange’s theorem, $|R|$ divides $8! \cdot 3^8 \cdot 12! \cdot 2^{12}$. $R$ has $12$ cosets in $R’$, because there are 12 legal moves. i.e. $|R’:R| = 12$.</p>
+<p>Consequently, $|R| = \frac{|R’|}{|R’:R|} = 8! \cdot 3^8 \cdot 11! \cdot 2^{12}$, which is approximately 43 quintillion.</p>
+<p>Lagrange’s theorem significantly restricts the possible subgroups of a group $G$. Using the next result, we can say even more.</p>
+<dl>
+<dt>Theorem 5.7</dt>
+<dd>Let $G$ be a finite group and $H,K \le G$. Consider set $HK = {hk: h \in H, k\in K}$. Then $|HK| = \frac{|H||K|}{|H \cap K|}$</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>In total, we can build an element of $HK$ by choosing $h \in H$ and $k \in K$, in $|H||K|$ many ways. However, we may overcount as it could be that $hk=h’k’$ for some $h’ \in H, k’ \in K$.</p>
+<p>Suppose $hk = h’k’$, then $h’^{-1}h = k’k^{-1} = b$. Since $H, K$ are closed, $b \in H\cap K$. Then $h’ = hb^{-1},  k’ =bk$</p>
+<p>Thus for each pair of $h, k$, we can rewrite them as $(hb^{-1})(bk)$ in exactly $|H \cap K|$ ways. Hence $|HK| = \frac{|H||K|}{|H \cap K|}$</p>
+</blockquote>
+<p>Caution: In general $HK$ is just a set, not necessarily a subgroup.</p>
+<p>Consider the subgroup of $S_3$ given by $H = \lang (1 2) \rang = {e, (1 2)}$ and $K = \lang (1 3)\rang = {e, (1 3)}$.
+$$|HK| = \frac{|H||K|}{|H \cap K|} = \frac{2 \times 2}{1} = 4$$
+Since $|S_3| = 6$, by Lagrange, $HK$ is not a subgroup of $S_3$</p>
+<p>Exercise: Prove that a group $G$ of order $100$ has at most one subgroup of order $25$.</p>
+<p>Solution:</p>
+<p>Suppose we have two subgroups $H,K$ and $|H| = |K| = 25$. We know that $H \cap K \le H, K$. By Lagrange, $|H \cap K|$ divides $25$, so it is one of $1, 5, 25$. Then,
+$$|HK| = \frac{|H||K|}{|H \cap K|} = \begin{cases}
+625 &amp; |H\cap K| = 1 \\
+125 &amp; |H\cap K| = 5 \\
+25 &amp; |H\cap K| = 25 \\
+\end{cases}$$
+Since $HK \subseteq G$, $|HK| \le |G| = 100$. Thus, $|H \cap K| = 25$, and $H = K = H \cap K$. That is, there is at most one subgroup of order $25$.</p>
+<p>Exercise: Prove that if $G$ is a group of order $66$, then $G$ has at most one subgroup of order $33$.</p>
+<p>Solution:</p>
+<p>Let $H,K \le G$ and $|H| = |K| = 33$. By lagrange, since $H \cap K \le H, K$, $|H \cap K|$ is one of $1, 3, 11, 33$. Then,
+$$|HK| = \frac{33 \times 33}{|H \cap K|} = \begin{cases}
+1089 &amp; |H \cap K|=1 \\
+363 &amp; |H \cap K|=3 \\
+99 &amp; |H \cap K|=11 \\
+33 &amp; |H \cap K|=33 \\
+\end{cases}$$
+Since $HK \subseteq G$, $|HK| \le |G| = 66$. $|H \cap K|=33$, and $H = K = H \cap K$. Thus, there is at most one subgroup of order $33$.</p>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

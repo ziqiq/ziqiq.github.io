@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Homomorphisms and Isomorphisms</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>Up to now we have studied the structure of individual groups very carefully. In this section we will be interested in determining wither two different group essentially have same structure. (e.g. $\Z_2$ and $({\pm 1}, \times)$)</p>
+<p>Consider the groups $\Z_4={0,1,2,3}$ and $\Z_8^* = {1,3,5,7}$. They are obviously different (at least on the surface, they have different operations). Even beyond the surface, these groups differ structurally.</p>
+<ul>
+<li>$\Z_4$ is cyclic, but $\Z_8^*$ is not!</li>
+<li>$\Z_4$ has two element of order $4$ and one element of order $2$, whereas $\Z_8^*$ has three elements of order $2$.</li>
+<li>$\Z_8^*$ has three different subgroups of order $2$, but $\Z_4$ has only $1$.</li>
+</ul>
+<p>Therefore, they are <em>very</em> different!</p>
+<p>Now consider $\Z_4 = {0,1,3,2}$ and $\Z_{10}^* = {1,3,7,9}$. You can check that although these groups “look” different, beyond the surface, they are very similar.</p>
+<ul>
+<li>Both are cyclic.</li>
+<li>Both have the same number of elements of a given order.</li>
+<li>Same subgroup structure.</li>
+</ul>
+<p>Essentially there groups are “the same”. How can we make this claim rigorous? We should find a function $\phi: \Z_4 \to \Z_{10}^*$ that reliable our element and preserve the theoretical properties of these two groups.</p>
+<p>Such function must be <strong>bijictive</strong>, as it is relabelling. To preserve the group properties, we will also require that, for $a, b \in \Z_4$,
+$$\phi(a+b) =\phi(a)\times \phi(n)$$
+That is, $\phi$ preserve the group operation. For example, we can take:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$a$</th>
+<th style="text-align:center">$\phi(a)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$9$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$7$</td>
+</tr>
+</tbody>
+</table>
+<p>This is bijective and we have $\phi(a+b)=\phi(a)\times\phi(b)$ for all $a,b \in \Z_4$.</p>
+<h2 id="definition-properties-and-first-example">Definition, Properties, and First Example</h2>
+<p>Definition from A1 is:</p>
+<blockquote>
+<p>Two group $G, H$ are isomorphic if, after relabelling and reordering
+their elements, their Cayley tables are identical.</p>
+</blockquote>
+<dl>
+<dt>Definition - Homomorphism and Isomorphism</dt>
+<dd>Let $G, H$ be groups. If $\phi: G \to H$ satisfies $\phi(ab)=\phi(a)\phi(b)$ for all $a,b \in G$, then $\phi$ is called a <strong>homomorphism</strong>.</dd>
+<dd>If $\phi$ is a homomorphism and $\phi$ is bijective, we sat that $\phi$ is an <strong>isomorphism</strong>.</dd>
+<dd>If there is an isomorphism $\phi: G \to H$, we say that $G$ and $H$ are <strong>isomorphic</strong>, denoted $G \cong H$.</dd>
+</dl>
+<p>e.g. Consider the group $(\R, +)$ and $(\R_{&gt;0}, \times)$, where $R_{&gt;0}={x \in \R: x &gt; 0}$. We claim that they are isomorphic.</p>
+<p>Let’s take $\phi: \R \to \R_{&gt;0}$ by $\phi(a) = 2^a$. We know from calculus that this is a bijection. Is it operation preserving?
+$$\phi(a+b) = 2^{a+b} = 2^a 2^b = \phi(a) \phi(b)$$
+Thus $\phi$ is an isomorphism.</p>
+<p>e.g. If $G = \lang a \rang$ is any infinite cyclic group, then $G \cong \Z$.</p>
+<p>Indeed, consider $\phi: \Z \to G$ given by $\phi(k) = a^k$. This $\phi$ is definitely subjective. Is this injective? Recall from Ch.2, if $a \in G$ and $|a|=\infty$, then $a^i =a^j$ if and only if $i=j$. To see that $\phi$ is injective, suppose $\phi(k)=\phi(m)$. Then $a^k=a^m$, and hence $k=m$. Thus $\phi$ is bijective. Also, $\phi$ is a homomorphism as $\phi(k+m) = a^{k+m} = a^k a^m = \phi(k)\phi(m)$.</p>
+<p>e.g. If $G=\langle a\rangle$ is a cyclic group of order $n &lt; \infty$, then $G \cong \Z_n$.</p>
+<p>Exercise: Show the detail of this example.</p>
+<p>Consequences:</p>
+<ul>
+<li>$\Z_{18}^* \cong \Z_6$ as $\Z_{18}^*$ is cyclic and of order $6$.</li>
+<li>Nth roots of unity $\le \mathbb{C}^*$ and $\cong \Z_n$.</li>
+<li>$n\Z \cong \Z$ for any $n \neq 0$.</li>
+</ul>
+<dl>
+<dt>Proposition 7.1</dt>
+<dd>Let $G,H,K$ be groups.<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>If $G \cong H$, then $H \cong G$.<!-- raw HTML omitted --></li>
+<li>If $G \cong H$ and $H \cong K$, then $G \cong K$.</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>(1)
+If $\phi: G \to H$ is an isomorphism, then $\phi^{-1}: H \to G$
+is an isomorphism.
+<br>
+(2)
+Suppose that $\phi: G \to H$ is an isomorphism and $\psi: H \to K$.
+Consider $\psi \circ \phi: G \to K$. On A1, we have proved that
+$\psi \circ \phi$ is bijective, so we only need to check that it is a
+homomorphism.</p>
+</blockquote>
+<dl>
+<dt>Theorem 7.2 - Properties of Isomorphism</dt>
+<dd>Let $G,H$ be groups and $\phi: G \to H$ is an isomorphism.
+Let $a,b\in G$.<!-- raw HTML omitted -->
+<ol>
+<li>$\phi(e) = e’$ where $e$ is the identity for $G$ and $e’$ is the identity for $H$.<!-- raw HTML omitted --></li>
+<li>$\phi(a^{-1}) = [\phi(a)]^{-1}$<!-- raw HTML omitted --></li>
+<li>For all $n \in \Z$, $\phi(a^n) = [\phi(a)]^n$<!-- raw HTML omitted --></li>
+<li>$a, b$ commute if and only if $\phi(a), \phi(b)$ commute.</li>
+<li>$|a|=|\phi(a)|$<!-- raw HTML omitted --></li>
+<li>$G$ is Abelian if and only if $H$ is Abelian.<!-- raw HTML omitted --></li>
+<li>$G$ is cyclic if and only if $H$ is cyclic.<!-- raw HTML omitted --></li>
+<li>If $K \le G$ then $\phi(K) = {\phi(x): x \in G} \le H$.<!-- raw HTML omitted --></li>
+<li>$\phi(Z(G)) = Z(H)$</li>
+</ol>
+</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>(1)
+$\phi(e) = \phi(ee) = \phi(e) \phi(e)$. By cancellation,
+$\phi(e) = e’$.</p>
+<p>(2)
+$e’ = \phi(e) = \phi(aa^{-1}) = \phi(a)\phi(a^{-1})$. Thus,
+$\phi(a^{-1}) = [\phi(a)]^{-1}$.</p>
+<p>(3)
+If $n=0$, we’re done by (1).<!-- raw HTML omitted -->
+If $n&gt;0$,
+$$\phi(a^n) = \phi(aa&hellip;a) = \phi(a)\phi(a)&hellip;\phi(a) = [\phi(a)]^{n}$$
+If $n&lt;0$, then
+$$e’ = \phi(a^n a^{-n}) = \phi(a^n) \phi(a^{-n}) = \phi(a^n) [\phi(a)]^{-n}$$
+So $\phi(a^n) = [\phi(a)]^{n}$.</p>
+<p>(4)
+Suppose that $ab=ba$, then $\phi(ab) = \phi(a)\phi(b) = \phi(b)\phi(a)
+= \phi(ba)$. For the other direction use the inverse isomorphism
+$\phi^{-1}: H \to G$ and argue the same way.</p>
+<p>(5)
+Note that $a^n = e$, $\phi(a^n) = \phi(e)$, $[\phi(a)]^n = e’$. Thus
+the smallest $n$ such that $a^n=e$ is the same as the smallest such<!-- raw HTML omitted -->
+$n$ that $[\phi(a)]^n = e$, so $|a| = |\phi(a)|$.</p>
+<p>(6) Follows from (4).</p>
+<p>(7)(8) Exercise.</p>
+<p>(9) Follows from (4).</p>
+</blockquote>
+<p>Understanding there properties allow one to prove that certain groups are not isomorphic</p>
+<p>e.g. $(\Z, +) \ncong (\mathbb{Q}, +)$. Because $\Z$ is cyclic, but $\mathbb{Q}$ is not. We proved that in A2.</p>
+<p>e.g. $(\Z, +) \ncong (\mathbb{Q}, +)$. Because $-1 \in \mathbb{Q}^*$ has order $2$, but every $a\in \mathbb{Q}$ either has order $1$ ($a=0$) or infinite order ($a \neq 0$).</p>
+<p>An isomorphism preserves group structure perfectly. A homomorphism preserves some of the group structure.</p>
+<p>e.g. Consider $\phi: \Z \to \Z_2$ given by $\phi(n)=n \mod 2$. This is a homomorphism (but NOT isomorphism). $\phi(n+m) = (n+m) \mod 2 = n \mod 2 + m \mod 2 = \phi(n) + \phi(m)$. This $\phi$ ,however, forgets a lot about the structure of $\Z$ essentially. $\phi$ only cares of $n \in \Z$ is even or odd.</p>
+<dl>
+<dt>Definition - Kernel of Group Homomorphism</dt>
+<dd>Let $\phi: G \to H$ be a group homomorphism. The kernel of $\phi$ is the set $\ker(\phi) = { a\in G: \phi(a)=e}$.</dd>
+</dl>
+<p>In the previous example, the kernel of $\phi$ is ${n\in \Z: n = 0 \mod 2} = 2\Z$.</p>
+<dl>
+<dt>Definition - Image of Group Homomorphism</dt>
+<dd>Let $\phi: G \to H$ be a group homomorphism. The image of $\phi$ is the set $\im(\phi) = \phi(G) = {\phi(a)\in H: a \in G }$</dd>
+</dl>
+<p>In the previous example, $\im(\phi) = \Z_2$.</p>
+<p>e.g. If $\phi:G \to H$ is an isomorphism, them the kernel is $\ker(\phi) = {e}$ and the image is $\im(\phi)=H$.</p>
+<p>e.g. Consider the homomorphism $\phi:G \to G$, and $\phi(a) = e$ for all $a\in G$. Here, $\ker(\phi)=G$ and $\im(\phi)={e}$.</p>
+<dl>
+<dt>Definition - Trivial Homomorphism</dt>
+<dd>We call $\phi(a)=e$ <strong>trivial homomorphism</strong>.</dd>
+</dl>
+<p>e.g. For the absolute value $|\cdot|: \R^* \to \R^*$, $\ker(|\cdot|) = {\pm 1}$ and $\im(|\cdot|) = \R_{&gt;0}$.</p>
+<p>e.g. A vector space $V$ (e.g. $R^n$ or $\mathbb{C}^n$) is a group under addition. What are the homomorphisms $phi: V\to W$? It should satisfies $\phi(x+y) = \phi(x) + \phi(y)$. For example, all linear transformation $A:V\to W$ are homomorphisms. We can think of $\phi(x)=Ax$, multiplication by matrix. The image is ${Ax: x\in V} = \Range(A)$ and the kernel is ${x\in V : Ax=0} = \Null(A)$.</p>
+<p>e.g. Consider the map $\sgn: S_n \to \Z_2$ given by
+$$\sgn(\sigma) = \begin{cases} 0 &amp; \sigma \text{ is even} \\ 1 &amp; \sigma \text{ is odd} \end{cases}$$</p>
+<p>Note that $\sgn$ is a homomorphism because
+$$\begin{aligned}
+\sgn(\sigma\tau) &amp;=
+\begin{cases} 0 &amp; \sigma\tau \text{ is even} \\ 1 &amp; \sigma\tau \text{ is odd} \end{cases} \\
+&amp;= \begin{cases} 0 &amp; \sigma, \tau \text{ both even or odd} \\ 1 &amp; \sigma,\tau \text{ have different parity} \end{cases} \\
+&amp;= \begin{cases} 0 &amp; \sgn(\sigma)= \sgn(\tau) \\ 1 &amp; \sgn(\sigma) \neq \sgn(\tau) \end{cases} \\
+&amp;=\sgn(\sigma) + \sgn(\tau)
+\end{aligned}$$</p>
+<p>Here $\ker(\sgn) = A_n$, the even permutations and $\im(\sgn)=\Z_2$</p>
+<dl>
+<dt>Theorem 7.3 - Properties of Homomorphism</dt>
+<dd>Let $\phi: G \to H$ be a group homomorphism and $a,b \in G$<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>$\phi(e) = e$<!-- raw HTML omitted --></li>
+<li>$\phi(a^n) = [\phi(a)]^n$ for any $n \in \Z$<!-- raw HTML omitted --></li>
+<li>$|\phi(a)|$ divides $|a|$, if $|a| &lt; \infty$<!-- raw HTML omitted --></li>
+<li>$\ker(\phi) \trianglelefteq G$<!-- raw HTML omitted --></li>
+<li>$\phi(a) = \phi(b)$ if and only if $a \ker(\phi) = b \ker(\phi)$<!-- raw HTML omitted --></li>
+<li>$\phi$ is injective if and only if $\ker(\phi) = {e}$<!-- raw HTML omitted --></li>
+<li>$\im(\phi) \le H$<!-- raw HTML omitted --></li>
+<li>$\phi$ is subjective if and only if $\im(\phi) = H$</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>(1)(2)
+Proven in the same way as theorem 7.2.</p>
+<p>(3)
+If $|a|=n$, then by (1) and (2), $[\phi(a)]^n = \phi(a^n) = \phi(e) = e$. Thus $|\phi(a)|$ divides $n=|a|$.</p>
+<p>(4)
+As an exercise, prove that $\ker(\phi) \le G$. To see that $\ker(\phi) \trianglelefteq G$, we’ll use the normal subgroup test.
+Let $a \in G$ and $b\in \ker(\phi)$. Is $aba^{-1} \in \ker(\phi)$?
+We have $\phi(aba^{-1}) = \phi(a)\phi(b)[\phi(a)]^{-1} = \phi(a)e[\phi(a)]^{-1} = e$, so yes $aba^{-1} \in \ker(\phi)$. Thus, $a \ker(\phi) a^{-1} \subseteq \ker(\phi)$</p>
+<p>(7)(8) Exercise</p>
+</blockquote>
+<p>Remark: What does property 5 say in the vector space context? Here we have a linear map $A:V \to W$. Property 5 says that two vectors $x, y \in V$ satisfy $Ax = Ay \iff x + \Null(A) = y + \Null(A) \iff x-y \in \Null(A) \iff x \in y+ \Null(A)$</p>
+<p>Just like with isomorphism, knowing the properties of homomorphisms allows you to decide what homomorphism can exist between $G$ and $H$</p>
+<p>Q: What are the homomorphisms $\phi:\Z_8 \to \Z_6$?</p>
+<p>Note $\Z_8 = \langle 1 \rangle$, so if we know that $\phi(1)=a \in \Z_6$, then for any $k$,
+$$\phi(1^k) = \phi(1 \cdot &hellip;\cdot 1) = \phi(1) &hellip; \phi(1) = a^k$$
+The question becomes, what is $\phi(1)$?</p>
+<p>We know that $|\phi(1)|$ divides $|1| = 8$. But also, since $\phi(1) \in \Z_6$, by Lagrange’s theorem, $|\phi(1)|$ divides $|Z_6|=6$. Thus $|\phi(1)|$ divides $\gcd(6,8)$, so it is either $1$ or $2$.</p>
+<ul>
+<li>If $|\phi(1)| = 1$, $\phi(1) = 0$, and hence $\phi(k) = 0^k = 0$. Thus $\phi$ is the trivial homomorphism.</li>
+<li>If $|\phi(1)| = 2$, $\phi(1) = 3$, and hence $\phi(k) = 3^k$. (i.e. $3k \mod 6$)</li>
+</ul>
+<p>Is the second case really a homomorphism?</p>
+<p>If $k, m \in\Z_8$, then
+$$\begin{aligned}
+\phi(km) &amp;= 3(k+m) \mod 6 \\
+&amp;= 3k+ 3m \mod 6 \\
+&amp;= 3k \mod 6 + 3m \mod 6 \\
+&amp;= \phi(k) \phi(m)
+\end{aligned}$$</p>
+<p>We also must check that $\phi$ is well-defined in the sense that “ $x= y \mod 8 \Leftarrow \phi(x) = \phi(y) \mod 6$ “. To see that it is, suppose that $k=m \mod 8$. Then $8 \mid k-m$, so $k=m+8z$ for some $z\in\Z$. We have that<!-- raw HTML omitted -->
+$$\begin{aligned}
+\phi(k) &amp;= \phi(m+8z) \\
+&amp;= 3(m+8z) \mod 6 \\
+&amp;= 3m+24z \mod 8 \\
+&amp;= 3m \mod 6 \\
+&amp;= \phi(m) \\
+\end{aligned}$$</p>
+<p>This $\phi$ is indeed a homomorphism, but $\psi: \Z_8 \to \Z_6$ such that $\psi(1^k) = 2^k$ is NOT. You can check that $\psi(km) = \psi(k)\psi(m)$, but $\psi$ is not well-defined. Consider in $\Z_8$, $1^9 = 1$, but $\psi(1) = 2$, $\psi(1^9) = 2^9 = 1^{18} = 0$.</p>
+<p>Remark: We must check “well-definedness” whenever the input to $\phi$ can be written in multiple ways (e.g. for cosets).</p>
+<p>Q: What homomorphisms exists from $\Z_n \to \Z_m$?</p>
+<ol>
+<li>Every such homomorphism is of the form $\phi(1^i)= a^i$ where $a= \phi(1)$.</li>
+<li>All of these $\phi$ ’s satisfy $\phi(xy) = \phi(x)\phi(y)$ for any $x,y \in \Z_n$.</li>
+<li>Which of these $\phi$ ’s are well-defined? $\phi$ definitely has to satisfy $0 = \phi(0) = \phi(1^n) = a^n$. That is $a \times n \equiv 0 \mod m$.</li>
+</ol>
+<p>Exercise: Show that this is also sufficient: $\phi$ is well-defined when $a \times n \equiv 0 \mod m$.</p>
+<p>Remark: If $\phi: G \to H$ is a homomorphism, then $\ker(\phi) \trianglelefteq G$ (proved in theorem 7.3). In fact, every normal subgroup arises in the way.</p>
+<dl>
+<dt>Theorem 7.4</dt>
+<dd>Let $G$ be a group and $N \trianglelefteq G$. Then there is a group $H$ and homomorphism $\phi: G \to H$ such that $\ker(\phi) = N$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Let $H = G/N$ and define $\phi: G \to G/N$ by $\phi(a) = aN$.
+Then $\phi(ab) = (ab)N = (aN)(bN) = \phi(a) \phi(b)$. Thus $\phi$ is a<!-- raw HTML omitted -->
+homomorphism.
+$$\ker\phi = {a\in G: \phi(a) = N} = {a\in G: aN = N} = N$$</p>
+</blockquote>
+<h2 id="isomorphism-theorems">Isomorphism Theorems</h2>
+<p>If $\phi: G \to H$ is a group homomorphism, how can we “change” \phi into an isomorphism? A homomorphism may fail to be an isomorphism for two reasons:</p>
+<ol>
+<li>$\phi$ is not surjective.</li>
+<li>$\phi$ is not injective.</li>
+</ol>
+<p>To fix (1), we can replace $H$ with $\im \phi$. This makes $\phi: G \to \im \phi$ surjective.</p>
+<p>To fix (2), note that $\phi(a) = \phi(b) \iff a \ker \phi = b \ker \phi$ so the kernel may be preventing $\phi$ from being injective. Thus, we can replace $G$ with $G / \ker \phi$.</p>
+<dl>
+<dt>Theorem 7.5 - First Isomorphism Theorem</dt>
+<dd>If $\phi: G \to H$ is a group homomorphism, then $G / \ker \phi \cong \im \phi$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Define a map $\psi: G / \ker \phi \to \im \phi$ by $\psi(a \ker \phi) = \phi(a)$. We claim that $\psi$ is a isomorphism.</p>
+<p>First, note that $\psi(a \ker \phi) = \psi(b \ker \phi) \iff \phi(a) = \phi(b) \iff a \ker \phi = b \ker \phi$. Thus $\psi$ is well-defined and injective.</p>
+<p>To see that $\psi$ is surjective, note that $\im \psi = {\psi(a \ker \phi): a\in G} = {\phi(a): a \in G} = \im \phi$. Thus, $\psi$ is surjective.
+Finally we check that $\psi$ is a homomorphism: $\psi((a \ker \phi)(b \ker \phi)) = \psi(ab \ker \phi) = \phi(ab) = \phi(a)\phi(b) =\psi(a \ker \phi)\psi(b \ker \phi)$.
+Thus $\psi$ is a homomorphism.</p>
+<p>Thus $\psi$ is an isomorphism, so $G / \ker \phi \cong \im \phi$.</p>
+</blockquote>
+<p>e.g. Let $G=S_n$ and consider the normal subgroup $A_n \trianglelefteq G$. Recall that the map $\sgn: S_n \to \Z_2$ given by $\sgn(\sigma) = \begin{cases} 0 &amp; \sigma \text{ is even} \\ 1 &amp; \sigma \text{ is odd} \end{cases}$ is a homomorphism. $\ker \sgn = A_n$ and $\im \sgn = \Z_2$. By the first isomorphism theorem, $S_n / \ker \sgn \cong \im \sgn$.</p>
+<p>e.g. Prove that $\R^* / {\pm1} \cong \R_{&gt;0}^*$.</p>
+<p>Note that the absolute value function $|\cdot|: \R^* \to \R_{&gt;0}^<em>$ is a homomorphism with $\ker |\cdot| = {\pm 1}$ and $\im |\cdot| = \R_{&gt;0}^</em>$. Thus by the first isomorphism theorem, $\R^<em>/{\pm1} \cong \R_{&gt;0}^</em>$.</p>
+<p>If $G$ is a finite group, then by combining the first isomorphism theorem with Lagrange’s theorem, we get the following corollary.</p>
+<dl>
+<dt>Corollary 7.6</dt>
+<dd>Suppose that $G$ is a finite group and $\phi: G \to H$ is a group homomorphism. Then $|G| = |\ker \phi||\im \phi|$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>By the first isomorphism theorem, $G / \ker \phi \cong \im \phi$. Thus $|G / \ker \phi| = | \im \phi|$, and hence by Lagrange, $\frac{|G|}{|\ker \phi|} = |\im \phi|$.</p>
+</blockquote>
+<p>e.g. We showed that $S_n/A_n \cong \Z_2$ and thus $|S_n| = |A_n||\Z_2|$.
+$$|A_n| = \frac{n!}{2}$$</p>
+<p>e.g. What homomorphism can we have from $G$ to $H$ if $|G| = 9$ and $|H|= 4$?</p>
+<p>Suppose $\phi: G\to H$ is such a homomorphism. Since $\im \phi \le H$, we have that $|\im \phi|$ must divide $|H|=4$. But, since $|G| = |\ker \phi||\im \phi|$, we have that $|\im \phi|$ also divides $|G| = 9$. Thus , $|\im \phi| = 1$, so $\im \phi = {e}$. Thus $\phi$ is the trivial homomorphism.</p>
+<h2 id="correspondence-theorem">Correspondence Theorem</h2>
+<p>If $G$ is a group and $N \trianglelefteq G$, how do the subgroups of $G/N$ compare with the subgroups of $G$?</p>
+<p>Suppose that $G$ is a group and $N \trianglelefteq G$. We want to know if there is a connection between the subgroups of $G$ and the subgroup of $G/N$.</p>
+<p>Suppose that $H \le G$ and $N \subseteq H$. Convince yourself that $N \trianglelefteq H$. (Can you prove that?)</p>
+<p>We claim $H/N \le G/N$. Indeed, we have:</p>
+<ul>
+<li>$eN \in H/N$, so $H/N \neq \emptyset$</li>
+<li>If $h_1 N, h_2 N \in H/N$, then $(h_1 N)(h_2 N) = h_1 h_2 N \in H/N$</li>
+<li>If $h H \in H/N$, then $(h N)^{-1} = h^{-1}N \in H/N$</li>
+</ul>
+<p>By the subgroup test, $H/N \le G/N$.</p>
+<p>Thus if $H \le G$ and $N \subseteq H$, we get a subgroup of $G/N$ for free!</p>
+<p>Amazingly, every subgroup of $G/N$ arises in this way. That is, every subgroup $K \le G/N$ is given by $K = H/N$ for same $H \le G$ with $N \le H$.(Proof is in A5)</p>
+<dl>
+<dt>Theorem 7.7 - Correspondence Theorem</dt>
+<dd>Let $G$ be a group and $N \trianglelefteq G$. Then $K \le G/N$ if and only if $K = H/N$ for some $H \le G$ with $N \subseteq H$. Moreover, if $K_1 = H_1/N$ and $K_2 = H_2/N$ are subgroup of $G/N$, then $K_1 \subseteq K_2 \iff H_1 \subseteq H_2$.</dd>
+</dl>
+<p>e.g. Consider $G = S_n$ and $N = A_n$ what are the subgroups of $S_n/A_n$? By the correspondence theorem, the subgroups of $S_n/A_n$ are of the form $H/A_n$ where $H \le S_n$ and $A_n \subseteq H$. There are <em>two</em> options for $H$: $S_n$ and $A_n$. There are not other options because if $A_n \subsetneq H$ then $|H| &gt; \frac{n!}{2}$ get $|H|$ divides $|S_n| = n!$, so $H = S_n$. Thus the subgroups of $S_n/A_n$ are $S_n/A_n$ (whole quotient group) or $A_n/A_n={A_n}$ (trivial group).</p>
+<p>This makes sense because we showed that $S_n/A_n \cong \Z_2$ and $\Z_2$ has only ${0}$ and $\Z_2$ as subgroups!</p>
+<h2 id="automorphisms">Automorphisms</h2>
+<dl>
+<dt>Definition - Automorphism</dt>
+<dd>An automorphism is an isomorphism $\phi: G \to G$.</dd>
+</dl>
+<p>e.g. (1) Let $G$ be a gourd and define $\phi_e(a) = a$ for all $a \in G$. This is an automorphism of $G$, called the identity automorphism.</p>
+<p>e.g. (2) Consider the group $(\mathbb{C}, +)$ and the map $\phi: \mathbb{C} \to \mathbb{C}$ given by $\phi(z) = \overline{z}$ (i.e. $\phi(a+ib) = \overline{a+ib} = a - ib)$. This is and automorphism of $\mathbb{C}$.</p>
+<p>e.g. (3) Let $G$ be any group and $a\in G$. Define $\phi_a G \to G$ by $\phi_a(b) = aba^{-1}$. $\phi_a$ is called conjugation by $a$, and it is an automorphism. Indeed, if $b \in G$, then $\phi_a(bc) = a(bc)a^{-1} =   ab(a^{-1}a)ca^{-1} = \phi_a(b) \phi_a(c)$ Thus $\phi_a$ is a homomorphism.</p>
+<p>Since left multiplication by $a$ and right multiplication by $a^{-1}$ are bijection (proof in A1), $\phi_a$ is a bijection. Thus $\phi_a$ is an automorphism.</p>
+<p>For a concrete example, consider $G = GL_n(\R)$ and fix $A\in G$. Then $\phi_A(B) = ABA^{-1}$. From linear algebra, this is called a similarity (or change of basis).</p>
+<p>Remark: $\phi_a$ is what we call an <strong>inner automorphism</strong>.</p>
+<dl>
+<dt>Definition</dt>
+<dd>We define $\Inn(G)$ to be the set of all inner automorphism of a group $G$. More generally, $\Aut(G)$ denoted the set of all automorphisms $\phi: G \to G$</dd>
+</dl>
+<p>Note: Are all automorphisms inner? NO.</p>
+<p>For instance let $G$ be any Abelian group. In this case all inner automorphisms $\phi_a = \phi_e$ as $aba^{-1} = aa^{-1}b = b$. But we have seen an example of a non-trivial automorphism if Abelian group in e.g. (2). That automorphism is not inner.</p>
+<p>One thing we can de with automorphisms that we can’t do with arbitrary isomorphisms is composition.</p>
+<dl>
+<dt>Theorem 7.8</dt>
+<dd>Let $G$ be a group. Then $\Aut(G)$ is a group under composition of automorphisms. Moreover, $\Inn(G) \trianglelefteq \Aut(G)$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>First we need to show $\Inn(G) \le \Aut(G)$.
+Since $\phi_e = (x \mapsto exe^{-1}) \in \Inn(G)$,
+$\Inn(G)$ is not empty.</p>
+<ul>
+<li>$\phi_a \phi_b = (x \mapsto axa^{-1})(x \mapsto bxb^{-1})
+= (x \mapsto abxb^{-1}a^{-1}) = \phi_{ab} \in \Inn(G)$</li>
+<li>Consider $\phi_a^{-1} = \phi_{a^{-1}} \in \Inn(G)$.
+$\phi_a^{-1} \phi_a = (x \mapsto a^{-1}xa)(x \mapsto axa^{-1})
+= (x \mapsto a^{-1}axa^{-1}a) = \phi_{e}$</li>
+</ul>
+<p>Thus, $\Inn(G) \le \Aut(G)$ by the subgroup test.</p>
+<p>Let $\phi_a \in \Inn(G)$ be a inner automorphism and
+$\psi \in \Aut(G)$ be any automorphism.
+Then check $\psi \phi_a \psi^{-1}$ is an inner automorphism.
+$$\psi \phi_a \psi^{-1} = \psi (x \mapsto axa^{-1}) \psi^{-1} \\
+= \psi (x \mapsto a\psi^{-1}(x)a^{-1}) \\
+= x \mapsto \psi(a\psi^{-1}(x)a^{-1}) \\
+= x \mapsto \psi(a)\psi(\psi^{-1}(x))\psi(a^{-1}) \\
+= x \mapsto \psi(a)x\psi(a^{-1}) \\
+= \phi_{\psi(a)}$$
+Therefore, the composition $\psi \phi_a \psi^{-1}$ is also an inner automorphism $\in \Inn(G)$. Thus, $\psi \Inn(G) \psi^{-1} \subseteq \Inn(G)$, so $\Inn(G) \trianglelefteq \Aut(G)$ by the normal subgroup test.</p>
+</blockquote>
+<p>Q: What is the $\Aut(\Z_6)$?</p>
+<p>Note that if $\phi \in \Aut(\Z_6)$, then $|\phi(1)| = |1| = 6$, so $\phi(1)$ is a generator of $\Z_6$, so $\phi(1)$ is $1$ or $5$.</p>
+<p>Once we know $\phi(1)$, we know $\phi(k)$ for any $k$. $\phi(1^k) = \phi(1)^k$. Thus, our automorphism are either $x \mapsto x$ or $1^k \mapsto 5^k$.</p>
+<p>Recall A homomorphism $\phi: \Z_n \to \Z_m$ is of form $\phi(1^k) = a^k$ where $a = \phi(1)$, and this map is well-defined if and only if  $a^n = 0$.</p>
+<p>These maps $\phi: \Z_6 \to \Z_6$ are well-defined as $a^6 = 0$. Thus $\Aut(Z_6) = {x \mapsto x, 1^k \mapsto 5^k}$</p>
+<p>Note: this example suggests that there is a correspondence between $\Aut (\Z_n)$ and the elements of $\Z_n^<em>$. Namely, $\phi \in \Aut(\Z_n) \iff \phi(1) \in \Z_n^</em>$.</p>
+<dl>
+<dt>Theorem 7.9</dt>
+<dd>For any $n \ge 2$, $\Aut(Z_n) \cong \Z_n^*$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Define $\psi: \Aut(Z_n) \to \Z_n^<em>$ by $\psi(\phi) = \phi(1)$. Observe that since $|\psi(\phi)| = |\phi(1)| = |1| = n$, we have that $\psi(\phi)$ is a generator of $\Z_n$ and hence $\psi(\phi) \in \Z_n^</em>$
+Thus, the codon ain’t is correct.</p>
+<p>To see that $\psi$ is a homomorphism, let $\phi_1 \phi_2 \in \Aut(G_n)$. $\psi(\phi_1 \phi_2) = (\phi_1 \circ \phi_2)(1) = \phi_1(\phi_2(1)) = \phi_1(1^{\phi_2(1)}) = phi_1(1)^{\phi_2(1)} = \phi_1(1)\phi_2(1) = \psi(\phi_1) \psi(\psi_2)$</p>
+<p>Let’s show that $\psi$ is injective. If $\psi(\phi_1) = \psi(\phi_2)$, then $\phi_1(1) = \phi_2(1)$. It follows that $\phi_1(k) = k \phi_1(1) = k \phi_2(1) = \phi_2(k)$ for all $k \in \Z_n$. Hence $\phi_1 = \phi_2$, so $\psi$ is injective.</p>
+<p>To see that $\psi$ is surjective, let $a \in \Z_n^*$. Consider the map $\phi: \Z_n \to \Z_n$ given by $\phi(k) = ak \mod n$.</p>
+<p>Exercise: verify that $\phi$ is an automorphism of $\Z_n$ and $\psi(\phi) = a$ (so $\psi$ is surjective).</p>
+</blockquote>
+<p>Exercise: show that if $G \cong H$ then $\Aut(G) \cong \Aut(H)$</p>
+<p>In particular, if $G = \Z_n$ and $H$ is a cyclic group of order $n$, then $G \cong H$, and hence $\Aut(H) \cong \Aut(\Z_n) \cong \Z_n^*$</p>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

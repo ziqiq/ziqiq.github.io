@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ziqi&#39;s Home on Ziqi</title>
+    <link>/</link>
+    <description>Recent content in Ziqi&#39;s Home on Ziqi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cosets and Lagrange’s Theorem</title>
+      <link>/notes/pmath336-1199/05-cosets-lagrange-theorem/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/05-cosets-lagrange-theorem/</guid>
+      <description>Recall in A1 we proved the following theorem.
+ Theorem Let $G$ be a group and $a \in G$ be any element. The map $\phi_a: G \to G$ where $\phi_a(x) = ax$ is a bijection.  We can think of $\phi_a$ as “sliding” the group elements around a group $G$.
+Nature extension: “slide” and entire subgroup of $G$ by multiplying every element by a fixed group element.
+Cosets A coset of a subgroup $H$ of group $G$ is a set obtained by “translating” $H$ by a group element $a$.</description>
+    </item>
+    
+    <item>
+      <title>Group Actions</title>
+      <link>/notes/pmath336-1199/08-group-actions/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/08-group-actions/</guid>
+      <description>(see Papantonopoulou, Chapter 4)
+We can see the dull power of group theory by studying how a group acts on a set of objects.
+e.g. Consider the group $G = GL_n(\R)$, and the set $X = \R_n$. The group $G$ acts on $X$ by multiplying a vector $x \in X$ by a matrix $A\in G$. Moreover, we can see the group structure of $GL_n(\R)$ in the action.
+ Up to now our study of groups has been largely focused on the groups themselves.</description>
+    </item>
+    
+    <item>
+      <title>Homomorphisms and Isomorphisms</title>
+      <link>/notes/pmath336-1199/07-isomorphisms/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/07-isomorphisms/</guid>
+      <description>Up to now we have studied the structure of individual groups very carefully. In this section we will be interested in determining wither two different group essentially have same structure. (e.g. $\Z_2$ and $({\pm 1}, \times)$)
+Consider the groups $\Z_4={0,1,2,3}$ and $\Z_8^* = {1,3,5,7}$. They are obviously different (at least on the surface, they have different operations). Even beyond the surface, these groups differ structurally.
+ $\Z_4$ is cyclic, but $\Z_8^*$ is not!</description>
+    </item>
+    
+    <item>
+      <title>Quotients and Normal Subgroups</title>
+      <link>/notes/pmath336-1199/06-quotients-normal-subgroups/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/06-quotients-normal-subgroups/</guid>
+      <description>Let $G$ be a group and $H \le G$. Let $G/H$ be the set of all left cosets of $H$ in $G$.
+ Definition - $G/H$ $G/H = { aH : a \in G}$ is the set of all left cosets of $H$.  Q: Can we put an operation on $G/H$ to turn it into a group? How should we define $aH * bH$ for some $a,b \in G$?</description>
+    </item>
+    
+    <item>
+      <title>The Symmetric Group</title>
+      <link>/notes/pmath336-1199/04-symmetric-group/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/04-symmetric-group/</guid>
+      <description>The Cycle Notation Now that we have seen more about groups in general, we can take a closer look at $S_n$.
+Recall every $\sigma \in S_n$ can be describe using an array. e.g. $\sigma = \begin{pmatrix} 1&amp;amp;2&amp;amp;3&amp;amp;4&amp;amp;5&amp;amp;6 \\ 2&amp;amp;1&amp;amp;4&amp;amp;6&amp;amp;5&amp;amp;3 \end{pmatrix}$. If we look closely at $\sigma$, we notice something interesting.
+Each of these cycle can be written very compactly. $\sigma = (1 2)(3 4 6)(5)$.
+e.g.
+$\sigma = \begin{pmatrix} 1&amp;amp;2&amp;amp;3&amp;amp;4 \\ 4&amp;amp;3&amp;amp;2&amp;amp;1 \end{pmatrix} = (1 4)(2 3)$</description>
+    </item>
+    
+    <item>
+      <title>Finite Abelian Groups</title>
+      <link>/notes/pmath336-1199/09-finite-abelian-groups/</link>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/09-finite-abelian-groups/</guid>
+      <description>Theorem 9.1 - The Fundamental Theorem of Finite Abelian Groups Every finite Abelian group $G$ is isomorphic to $$\Z_{{p_1}^{n_1}} \times \Z_{{p_2}^{n_2}} \times &amp;hellip; \times \Z_{{p_k}^{n_k}}$$ where $p_1, p_2, &amp;hellip;, p_k$ are (not necessarily distinct) primes dividing $|G|$, and $n_1, n_2, &amp;hellip;, n_k$ are positive integers.Moreover, the group $G$ is uniquely determines the number of terms ($k$), as well as the intergers $n_1, n_2, &amp;hellip;, n_k$.  Example 1 Let $G$ be an Abelian group of order $8 = 2^3$.</description>
+    </item>
+    
+    <item>
+      <title>Subgroups and Cyclic Groups</title>
+      <link>/notes/pmath336-1199/02-subgroups-cyclic-groups/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/02-subgroups-cyclic-groups/</guid>
+      <description>We can find even mor examples of groups with the examples we already know.
+e.g. $\Z \subseteq \mathbb{Q} \subseteq \R \subseteq \mathbb{C}$. All of them form groups under $+$, addition.
+e.g. Recall $\Z^={1,-1}$, $\Z^ \subseteq { \pm 1, \pm i} \subseteq \mathbb{C}^*$. They form groups under $\times$ multiplication.
+e.g. ${r_0, r_1, r_2, r_3} \subseteq D_4$. It is a group under composition of symmetries (movements).
+Subgroup  Definition - Subgroup Let $(G, \cdot)$ be a group.</description>
+    </item>
+    
+    <item>
+      <title>Groups</title>
+      <link>/notes/pmath336-1199/01-groups/</link>
+      <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/pmath336-1199/01-groups/</guid>
+      <description>Informally, a group is a set in which we can “multiply” and “divide”.
+First Examples $(\Z, +)$ The integers ${ &amp;hellip;, -2, -1, 0, 1, 2, &amp;hellip;}$ form a group under addition.
+ $+$ takes two elements of $\Z$ and spits out another element of $\Z$. We say $\Z$ is closed under $+$.  e.g. $1+1=2$, $2+3=5$, $(-1)+1=0$, &amp;hellip;   $0$ is special. $0+a=a$ and $a+0=a$ for any $a \in \Z$.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/course-work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/course-work/</guid>
+      <description>Course Work   Javascript, SQL, Perfect PartyJul/2019
+Perfect Party is a company that organizes parties. It receives orders from customers who are willing to hold events and fulfills them with venues and foods/decors from suppliers. This project is about building a database web application for the business. We chose to develop with the most popular database MySQL and server-side runtime Node.js, which connects to the database through mysql Javascript driver and handles requests through Express.</description>
+    </item>
+    
+    <item>
+      <title>Final Review Note</title>
+      <link>/notes/cs454-1185/final_outline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/final_outline/</guid>
+      <description>Middleware  What is its role in distributed systems and advantages/disadvantages. What is its application in distributed system architectures.  Role Middleware contains commonly used component and functions in every nodes. Its role is to enhance the distribution transparency that is missing in networking. In other words, middleware aims at improving the single system view that a distributed system should have.
+Benefits  Provide abstraction and hide implementation details. Isolate application from complex OS interface.</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>/notes/cs454-1185/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/introduction/</guid>
+      <description>Distributed System A distributed system is a collection of autonomous computing elements(also known as node) that appears to its user as a single coherent system.
+Problems:
+ Each node has its own time, no global clock Group membership management and authorization  Overlay network is the organization of the distributed system. Nodes only communicates with its neighbours. There are 2 types of overlay network: structured and unstructured.
+ Example: peer-to-peer system</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Ziqi Qing Software Engineer at StackAdapt
+Email: zqing {at} pm.me | Phone: 650-272-1884 | Github: ziqiq | Web: ziqiq.github.io
+Summary  2 years of full-time and 1.5 years of intern experience as a solid software engineer in system and web development Familiar with the operating system, network, and fundamental cryptographic primitives  Education University of Waterloo, Bachelor of Mathematics
+Computer Science, joint Honours Combinatorics and Optimization, Average 85%
+May/2015 - Jun/2020, Ontario</description>
+    </item>
+    
+    <item>
+      <title>Time Ordering</title>
+      <link>/notes/cs454-1185/time_ordering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/time_ordering/</guid>
+      <description>A timestamp is a unique identifier created to identify a transaction. Typically, timestamp values are assigned in the order in which the transactions are submitted to the system. In this context, a timestamp can be thought of as the transaction start time. I&amp;rsquo;ll refer to the timestamp of a transaction T as ts(T) and all operations of T are assigned timestamp ts(T).
+The easiest way to think of how timestamps are generated is to think of a simple counter that is incremented each time the counter&amp;rsquo;s value is assigned to a transaction.</description>
+    </item>
+    
+  </channel>
+</rss>

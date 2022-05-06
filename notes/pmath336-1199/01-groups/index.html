@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Groups</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>Informally, a group is a set in which we can “multiply” and “divide”.</p>
+<h2 id="first-examples">First Examples</h2>
+<h3 id="z-">$(\Z, +)$</h3>
+<p>The integers ${ &hellip;, -2, -1, 0, 1, 2, &hellip;}$ form a group under addition.</p>
+<ol>
+<li>$+$ takes two elements of $\Z$ and spits out another element of $\Z$. We say $\Z$ is <strong>closed</strong> under $+$.
+<ul>
+<li>e.g. $1+1=2$, $2+3=5$, $(-1)+1=0$, &hellip;</li>
+</ul>
+</li>
+<li>$0$ is special. $0+a=a$ and $a+0=a$ for any $a \in \Z$. We say $0$ is the <strong>identity</strong> of $(\Z,+)$.
+<ul>
+<li>Are there other identity in $(\Z,+)$?</li>
+</ul>
+</li>
+<li>$a$ and $-a$ have a special relationship. $a+(-a)=0$ where $0$ is the identity. We say $a$  and $-a$ are the <strong>inverse</strong> of each other.</li>
+<li>$+$ is <strong>associative</strong>. $(a+b)+c=a+(b+c)$</li>
+<li>$+$ is commutative. $a+b=b+a$. We say $(\Z, +)$ is a commutative, or <strong>Abelian</strong> group.</li>
+</ol>
+<h3 id="q">$(\Q,+)$</h3>
+<p>The rational numbers under $+$ form a group.</p>
+<ol>
+<li>$+$ takes two rational number and spits out another.</li>
+<li>Identity is again $0$.</li>
+<li>Inverse of $\frac{a}{b}$ is $-\frac{a}{b}$</li>
+<li>$+$ is still associative.
+$$(\frac{a}{b} + \frac{c}{d}) + \frac{e}{f} = \frac{a}{b} + (\frac{c}{d} + \frac{e}{f})$$</li>
+<li>$+$ is commutative.
+$$\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd} = \frac{c}{d} + \frac{a}{b}$$
+We say $(\Q,+)$ is a Abelian group.</li>
+</ol>
+<h3 id="q-times">$(\Q^*, \times)$</h3>
+<p>Q: Is $(\Q, \times)$ a group?</p>
+<ul>
+<li>Closed? Yes. $\frac{a}{b} \times \frac{c}{d} = \frac{ac}{bd}$</li>
+<li>Identity? $1$. $\frac{a}{b} \times 1 = \frac{a}{b}$</li>
+<li>Inverse?
+<ul>
+<li>$0 \times \frac{a}{b} = 1$, then $\frac{a}{b}=?$. $0$ does not have a inverse!</li>
+</ul>
+</li>
+<li>Associative? Yes.
+$(\frac{a}{b} \times \frac{c}{d}) \times \frac{e}{f} = \frac{a}{b} \times (\frac{c}{d} \times \frac{e}{f})$</li>
+<li>Abelian? Yes.
+$\frac{a}{b} \times \frac{c}{d} = \frac{c}{d} \times \frac{a}{b}$</li>
+</ul>
+<p>Consider $\Q^* = \Q \setminus {0}$, then every $\frac{a}{b} \in \Q$ has an inverse $\frac{b}{a}$ now.</p>
+<h3 id="r-times">$(\R^*, \times)$</h3>
+<p>$\R^* = \R \setminus {0}$. The non-zero real numbers form a group under $\times$.</p>
+<ul>
+<li>Closed? Yes.</li>
+<li>Identity: $1$.</li>
+<li>Inverse: $\frac{1}{a}$</li>
+<li>Associative? Yes.</li>
+<li>Abelian? Yes.</li>
+</ul>
+<h3 id="ctimes">$(\C^*,\times)$</h3>
+<p>$\C^* = \C \setminus {0+0i}$. Non-zero complex numbers form a group under $\times$.</p>
+<h3 id="ztimes">$(\Z,\times)$</h3>
+<p>Q: Can we do the same thing with $\Z$?</p>
+<p>We have to throw more elements away. e.g. $2 \times a \neq 1$. In fact, we have to throw out everything except $1$ and $-1$. Thus, $\Z^* = {1, -1}$.</p>
+<p>This group is small, so we can write down the structure in a table.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\times$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$-1$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$-1$</td>
+</tr>
+<tr>
+<td style="text-align:center">$-1$</td>
+<td style="text-align:center">$-1$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<p>This table is called the <strong>Cayley table</strong> of the group. We can make Cayley table for any finite group. We can list the group elements along the top and left.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\cdot$</th>
+<th style="text-align:center">$g_1$</th>
+<th style="text-align:center">$g_2$</th>
+<th style="text-align:center">$&hellip;$</th>
+<th style="text-align:center">$g_n$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$g_1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$g_2$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$&hellip;$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$g_n$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gl_nr-cdot">$(GL_n(\R), \cdot)$</h3>
+<p>All $n \times n$ invertible matrixes form a group under matrix multiplication. GL stands for general linear. $GL_n(\R) = {A \in \R^{n \times n} : det(A) \neq 0 }$.</p>
+<ul>
+<li>Closed? Yes. $det(AB) = det(A) det(B) \neq 0$</li>
+<li>Identity: $I = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$. $AI=IA=A$</li>
+<li>Inverse: $AA^{-1} = I$</li>
+<li>Associative? Yes. $(AB)C=A(BC)$ by linear algebra theorem.</li>
+<li>Abelian? No. $AB \neq BA$, so it is NOT an Abelian group.</li>
+</ul>
+<h2 id="definition">Definition</h2>
+<p>Formally, what is a group?</p>
+<dl>
+<dt>Definition - Group</dt>
+<dd>A <strong>Group</strong> is a set $G$ together with a binary operation $\cdot : G \times G \to G$ satisfies:</dd>
+</dl>
+<ol>
+<li>$\cdot$ is associative. $\forall a, b, c \in G ; (a \cdot b) \cdot c = a \cdot (b \cdot c)$.</li>
+<li>$G$ contains an element $e$ such that $\forall a \in G ; a \cdot e = e \cdot a = a$.</li>
+<li>For any element $a \in G$, there exists an element $a^{-1} \in G$ such that $a \cdot a^{-1} = a^{-1} \cdot a = e$.</li>
+</ol>
+<p>Note we are implicitly saying that a group is closed under the operation by writing $\cdot : G \times G \to G$.</p>
+<p>Let $a, b \in G$. We say $a$, $b$ are commutative under operation $\cdot$ if $a \cdot b = b \cdot a$</p>
+<p>A commutative, or <strong>Abelian</strong> group is a group such that $\forall a,b \in G ; a \cdot b = b \cdot a$.</p>
+<dl>
+<dt>Definition - Order</dt>
+<dd>The <strong>order</strong> of group $G$ is the number of elements in $G$,
+denoted by $|G|$.</dd>
+</dl>
+<p>For example,</p>
+<ol>
+<li>$\Z,\Q,\R,\C$ have infinite order.</li>
+<li>$|{1,i,-1,-i}| = 4$</li>
+<li>$|\Z^*| = 2$</li>
+</ol>
+<h2 id="properties-of-groups">Properties of Groups</h2>
+<p>Let $G$ be a group under operation $\cdot$. Then the following properties hold.</p>
+<dl>
+<dt>Proposition 1.1</dt>
+<dd>The identity element $e \in G$ is unique.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Suppose there are two identities $e, f \in G$.
+Then $e = e \cdot f = f \cdot e = f$.
+Hence $e=f$ is unique.</p>
+</blockquote>
+<dl>
+<dt>Proposition 1.2</dt>
+<dd>If $a \in G$, then the inverse of $a$, $a^{-1}$ is unique.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Suppose $a \cdots b = b \cdots a = e$ and
+$a \cdot a = c \cdot a = e$.
+Then $c = c \cdot e = c \cdot (a \cdot b) =
+(c \cdot a) \cdot b = e \cdot b = b$.
+Hence $a^{-1} = c = b$ is unique.</p>
+</blockquote>
+<dl>
+<dt>Proposition 1.3</dt>
+<dd>If $a, b, c \in G$ and $ab = ac$, then $b=c$</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Since $a$ has an inverse, $a^{-1} \in G$,
+$$\begin{aligned}
+ab &amp;= ac  \\
+a^{-1}(ab) &amp;= a^{-1}(ac)  &amp; \text{inverse}  \\
+(a^{-1}a)b &amp;= (a^{-1}a)c  &amp; \text{associativity}  \\
+eb &amp;= ec  &amp; \text{inverse}  \\
+b &amp;= c  &amp; \text{identity}  \\
+\end{aligned}$$</p>
+</blockquote>
+<p>Q: What is $(a^{-1})^{-1}$?
+$$\begin{aligned}
+(a^{-1})^{-1}
+&amp;= (a^{-1})^{-1} \cdot e \\
+&amp;= (a^{-1})^{-1} \cdot (a^{-1} \cdot a) \\
+&amp;= ((a^{-1})^{-1} \cdot a^{-1}) \cdot a \\
+&amp;= e \cdot a \\
+&amp;= a \\
+\end{aligned}$$</p>
+<dl>
+<dt>Definition - $a^n$</dt>
+<dd>If $a \in G$ and $n \in \Z$ then
+$$a^n = \begin{cases}
+a \cdot &hellip;\cdot a \ \text{for n times} &amp; n &gt; 0 \\
+e &amp; n = 0 \\
+a^{-1} \cdot &hellip;\cdot a^{-1} \ \text{for -n times} &amp; n &lt; 0 \\
+\end{cases}$$</dd>
+<dt>Proposition 1.4</dt>
+<dd>For any $m,n \in \Z$, $a^m \cdot a^n = a^{m+n}$,
+and $(a^m)^n = a^{mn}$</dd>
+</dl>
+<p>Remark: We usually write $a \cdot b$ as $ab$</p>
+<h2 id="more-examples">More Examples</h2>
+<h3 id="z_n-">$(\Z_n, +)$</h3>
+<p>$\Z_n = {[0], [1], &hellip; ,[n-1]}$ and $[a] = {b \in \Z : n \mid b-a }$. $[a]$ is the set of all integers with same remainder as $a$ after divided by $n$.</p>
+<p>e.g. $\Z_3 = {[0], [1], [2]}$ where $[0] = {0,3,6,9,&hellip;}$, $[1] = {1,4,7,10,&hellip;}$, and $[2] = {2,5,8,11,&hellip;}$</p>
+<p>We simply write $[a]$ as $a$, that is $\Z_3 = {1,2,3}$.</p>
+<p>We know that for $[a], [b] \in \Z_n$, $[a] + [b] = [a+b] \mod n$.</p>
+<p>e.g. $1+2=0 \mod 3$, $2+2=1 \mod 3$</p>
+<p>With this operation, addition modulo $n$, elements in $\Z_n$ form a group.</p>
+<p>e.g. $(\Z_3, +)$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$+$</th>
+<th style="text-align:center">$0$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Closed? Yes</li>
+<li>Identity: $0$</li>
+<li>Inverse: $n-a$</li>
+<li>Associative? Yes</li>
+<li>Abelian? Yes</li>
+<li>Order: $n$</li>
+</ul>
+<h3 id="z_n-times">$(\Z_n^*, \times)$</h3>
+<p>Can we turn $(\Z_n, +)$ into a multiplicative group? Consider $\Z_4={0, 1, 2, 3}$. The Cayley table looks like:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\times$</th>
+<th style="text-align:center">$0$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$0$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<p>From the table we observe that:</p>
+<ul>
+<li>The identity has to be $1$.</li>
+<li>$0$ and $2$ do not have inverses.</li>
+<li>$1$ and $3$ are fine.</li>
+</ul>
+<blockquote>
+<p>Why $[a] \times [b] = [ab] \mod n$?
+$$\begin{aligned}
+(q_1 n + r_1)(q_2 n + r_2)
+&amp;= k_1 k_2 n^2 + k_1 r_2 n + k_2 r_1 n + r_1 r_2 \\
+&amp;= s n + r_1 r_2 \\
+\end{aligned}$$</p>
+</blockquote>
+<dl>
+<dt>Corollary</dt>
+<dd>An integer $a$ has a solution to equation $ax = 1 \mod n$ if and only if $a$ and $n$ are coprime.</dd>
+</dl>
+<p>We can turn $\Z_n$ into a multiplicative group by keeping those coprime to $n$. Thus,
+$$\begin{aligned}
+\Z_n^*
+&amp;= {a \in \Z_n : ax = 1 \mod n ; \exists x \in \Z_n } \\
+&amp;= {a \in \Z_n : gcd(a,n) = 1} \\
+\end{aligned}$$</p>
+<p>e.g. $\Z_{12}^* = {1, 5, 7, 11}$ where $|\Z_{12}^*| = 4$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\times$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$5$</th>
+<th style="text-align:center">$7$</th>
+<th style="text-align:center">$11$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">$11$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$11$</td>
+<td style="text-align:center">$7$</td>
+</tr>
+<tr>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">$11$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$5$</td>
+</tr>
+<tr>
+<td style="text-align:center">$11$</td>
+<td style="text-align:center">$11$</td>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<p>e.g. $\Z_5^* = {1, 2, 3, 4}$ where $|\Z_5^*| = 4$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\times$</th>
+<th style="text-align:center">$1$</th>
+<th style="text-align:center">$2$</th>
+<th style="text-align:center">$3$</th>
+<th style="text-align:center">$4$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$4$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$5$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Closed? Yes</li>
+<li>Identity: $1$</li>
+<li>Inverse: $aa^{-1} = 1 \mod n$</li>
+<li>Associative? Yes</li>
+<li>Abelian? Yes</li>
+<li>Order: $\phi (n)$ - the Euler’s totient function.</li>
+</ul>
+<h3 id="the-symmetric-group-s_n">The Symmetric Group $S_n$</h3>
+<p>For each integer $n \ge 1$, define the symmetric group $S_n$ to be set of all permutations $\sigma: {1,2,&hellip;,n} \to {1,2,&hellip;,n}$. That is, $S_n = { \sigma : {1,&hellip;,n} \to {1,&hellip;,n}: \sigma \text{ is bijective}}$.</p>
+<p>e.g. Let $\sigma, \tau, \pi: {1,2,3} \to {1,2,3}$ and define</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$\sigma$</th>
+<th style="text-align:center">$\tau$</th>
+<th style="text-align:center">$\pi$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+</tbody>
+</table>
+<p>Then, $\sigma$ and $\tau$ are elements of $S_3$, but $\pi$ is NOT.</p>
+<p>$S_n$ forms a group under $\cdot$, function composition.</p>
+<p>e.g. Consider $\sigma \cdot \tau$</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$\sigma \cdot \tau$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$1$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$3$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$2$</td>
+</tr>
+</tbody>
+</table>
+<p>A more compact way to write $\sigma$ and $\tau$ is to use an array.
+$$\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 1 &amp; 3 \end{pmatrix} \qquad
+\tau = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix}$$
+In general,
+$$\pi = \begin{pmatrix} 1 &amp; 2 &amp; &hellip; &amp; n \\ \pi(1) &amp; \pi(2) &amp; &hellip; &amp; \pi(n) \end{pmatrix}$$</p>
+<p>$(S_n, \cdot)$ is not Abelian for all $n \ge 3$. We already have $n=3$. To see $n &gt; 3$, let $\sigma, \tau$ be permutations in $S_n$ that fix $4,5,..,n$ (i.e. $\sigma(4)=\tau(4)=4, &hellip;, \sigma(n)=\tau(n)=n$). Since we know that these are permutations on ${1,2,3}$ that don’t commute, we can pick values for $\sigma(1), \sigma(2), \sigma(3), \tau(1), \tau(2), \tau(3)$ so that $\sigma$ and $\tau$ don’t commute.</p>
+<p>What is the order of $S_n$? $|S_n| = n \times (n-1) \times &hellip; \times 1 = n!$.</p>
+<ul>
+<li>Closed? Yes. <em>CHECK!</em></li>
+<li>Identity: $e(x) = x$, the identity function.</li>
+<li>Inverse: $\sigma^{-1}$, the inverse function.</li>
+<li>Associative? Yes.</li>
+<li>Abelian? No, for all $n \ge 3$.</li>
+<li>Order: $n!$</li>
+</ul>
+<h3 id="the-dihedral-group-d_n">The Dihedral Group $D_n$</h3>
+<p>The set $D_n$ ($n \ge 3$) is the set of symmetries of a regular n-gon. Here a symmetry is any movement that can be comes to the object while you’re looking away, that you won’t know has happened. Let’s start by looking at $D_4$, the symmetries of a square $\Box$. We will put imaginary labels on the square to keep track of the symmetries.</p>
+<p><img src="elements-in-D4.png" alt="Elements in D4"></p>
+<p>There are at most $8$ symmetries ($|D_4|=8$). Why? We have 4 choice for the top-left corner (a fixed vertex), then 2 choices for the “direction” of A, B, C, D, (an orientation). In general, $|D_n| = 2n$.</p>
+<p>What is operation on this group? Composition of symmetries (movements).</p>
+<p>e.g.</p>
+<ul>
+<li>$R_0 R_0 = R_0$</li>
+<li>$R_{90} R_{90} = R_{180}$</li>
+<li>$DD’ = R_{180}$</li>
+<li>$R_{270}H=D’$</li>
+<li>$HR_{270}=D$.</li>
+</ul>
+<p>$D_4$ can be built using just a $90 \degree$ counter-clockwise rotation (or clockwise) and a diagonal flip (or, vertical, horizontal). $D_4 = { R_{90}^k, R_{90}^k F: 0 \le k &lt; 4}$. In general, $D_n = { R^k, R^k F: 0 \le k &lt; n}$, where $R$ is the counter-clockwise $\frac{2\pi}{n}$ rotation and $F$ is the flip over a fixed axis. We sometimes denote $R^k = r_k$ and $R_k F = s_k$.</p>
+<p>Some useful algebra:</p>
+<ol>
+<li>$r_i r_j = r_{i+j}$</li>
+<li>$r_i s_j = s_{i+j}$</li>
+<li>$s_i r_j = s_{i-j}$</li>
+<li>$s_i s_j = r_{i-j}$</li>
+</ol>
+<p>$D_4$ is non-Abelian. $r_3 s_3 = s_2$, but $s_3 r_3 = s_0$. In general, $D_n$ is non-Abelian. (can you prove that?)</p>
+<ul>
+<li>Closed? Yes</li>
+<li>Identity: $r_0$</li>
+<li>Inverse: $s_i^{-1}=s_i$, $r_i^{-1} = r_{-i}$</li>
+<li>Associative? Yes</li>
+<li>Abelian? No, for all $n \ge 3$.</li>
+<li>Order: $2n$</li>
+</ul>
+<h2 id="direct-product">Direct Product</h2>
+<dl>
+<dt>Definition - Direct Product</dt>
+<dd>Let $(G,*)$, $(H, \star)$ be groups. We define the direct product of $G$ and $H$ by $(G \times H, \cdot)$ where
+$$G \times H = {(g,h) : g \in G, h \in H}$$
+and
+$$(g,h) \cdot (g’,h,) = (g * g’, h \star h’)$$</dd>
+</dl>
+<p>e.g. $GL_2(\R) \times \Z_2$
+$$(\begin{bmatrix}1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix}, 0) \cdot (\begin{bmatrix}1 &amp; 0 \\ 1 &amp; 1\end{bmatrix}, 1) = (\begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 1 \end{bmatrix}, 1)$$</p>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

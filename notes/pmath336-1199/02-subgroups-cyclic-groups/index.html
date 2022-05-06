@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Subgroups and Cyclic Groups</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            macros: {
+                "\\degree": "^{\\circ}",
+                "\\Z": "\\mathbb{Z}",
+                "\\N": "\\mathbb{N}",
+                "\\Q": "\\mathbb{Q}",
+                "\\R": "\\mathbb{R}",
+                "\\C": "\\mathbb{C}",
+                "\\lcm": "\\mathit{lcm}",
+                "\\Null": "\\mathit{Null}",
+                "\\Range": "\\mathit{Range}",
+                "\\Inn": "\\mathit{Inn}",
+                "\\Aut": "\\mathit{Aut}",
+                "\\im": "\\mathit{im}",
+                "\\orb": "\\mathit{orb}",
+                "\\stab": "\\mathit{stab}",
+                "\\fix": "\\mathit{fix}",
+                "\\sgn": "\\mathit{sgn}",
+                "\\lang": "\\langle",
+                "\\rang": "\\rangle"
+            }
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <p>We can find even mor examples of groups with the examples we already know.</p>
+<p>e.g. $\Z \subseteq \mathbb{Q} \subseteq \R \subseteq \mathbb{C}$. All of them form groups under $+$, addition.</p>
+<p>e.g. Recall $\Z^<em>={1,-1}$, $\Z^</em> \subseteq { \pm 1, \pm i} \subseteq \mathbb{C}^*$. They form groups under $\times$ multiplication.</p>
+<p>e.g. ${r_0, r_1, r_2, r_3} \subseteq D_4$. It is a group under composition of symmetries (movements).</p>
+<h2 id="subgroup">Subgroup</h2>
+<dl>
+<dt>Definition - Subgroup</dt>
+<dd>Let $(G, \cdot)$ be a group. A subset $H$ of $G$ is called a subgroup of $G$ if $(H, \cdot)$ is a group.</dd>
+<dd>We write $H \le G$ under operation $\cdot$.</dd>
+</dl>
+<p>Remarks:</p>
+<ul>
+<li>The operation on $G$ and $H$ must be the same one.</li>
+<li>If $G$ is a group under operation $\cdot$ and $e \in G$ is its identity, then $G \le G$ and ${e} \le G$.</li>
+</ul>
+<dl>
+<dt>Definition - Trivial and Proper Subgroup</dt>
+<dd>Let $G$ be a group. ${e}$ is called the <strong>trivial subgroup</strong>. Any subgroup that is neither ${e}$ nor $G$ is called a <strong>proper subgroup</strong>, denoted $H &lt; G$</dd>
+</dl>
+<p>e.g. $2\Z = {&hellip;, -4, -2, 0, 2, 4, &hellip;}$ is a subgroup of $\Z$ under addition.</p>
+<p>For any $n \in \Z$, $n\Z = {&hellip;, -2n, -n, 0, n, 2n, &hellip;}$ is a subgroup of $\Z$ under addition.</p>
+<p>Is $\Z_n={0, 1, &hellip;, n-1}$ a subgroup of $\Z$? No. Because the operation of $\Z_n$ is modular addition but for $\Z$ it’s addition. Besides, $\Z_n \nsubseteq \Z$. Elements in $\Z$ are integers, but those in $\Z_n$ are $[0], [1], &hellip;$, classes or sets of integers.</p>
+<p>Is $\Z_8^*$ a subgroup of $\Z$ under multiplication? No, for similar reasons.</p>
+<dl>
+<dt>Proposition 2.1</dt>
+<dd>If $G$ is a group and $H$ is a subgroup of $G$ then the identity of $G$ is the identity of $H$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Suppose $e$ is the identity of $G$ and $f$ is the identity of $H$,
+then $f = ff$. Since $f \in G$, it has inverse $f^{-1} \in G$ and
+$ff^{-1} = e$. Then $e = ff^{-1} = (ff)f^{-1} = f(ff^{-1}) = fe = f$</p>
+</blockquote>
+<h2 id="subgroup-test">Subgroup Test</h2>
+<dl>
+<dt>Theorem 2.2 - Subgroup Test</dt>
+<dd>Let $(G, \cdot)$ be a group. A non-empty subset $H$ of $G$ is a subgroup of $G$ if and only if:<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>$\forall a,b \in H ; a \cdot b \in H$<!-- raw HTML omitted --></li>
+<li>$\forall a \in H ; a^{-1} \in H$</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>Let $H \subseteq G$.</p>
+<p>($\Rightarrow$)
+Suppose $H$ is a subgroup of $(G, \cdot)$. Since $H$ is a group, by
+definition, $\cdot$ is closed in $H$, so (1) holds. And the inverse
+exists for all elements in $H$, so (2) holds.</p>
+<p>($\Leftarrow$)
+Suppose $H \neq \emptyset$ and (1), (2) holds.</p>
+<ul>
+<li>Closure: (1) shows that $\cdot$ is closed in $H$</li>
+<li>Associativity: Since $(G, \dot)$ is a group, $\cdot$ is associative.</li>
+<li>Identity: Let $a \in H$. By (2), $a^{-1} \in H$.
+By (1), $a \cdot a^{-1} = e \in H$.</li>
+<li>Inverse: (2) shows that $a^{-1} \in H$ for any $a \in H$.</li>
+</ul>
+<p>Thus $H$ is a group and hence a subgroup of $G$.</p>
+</blockquote>
+<p>e.g. Show that $SL_n(\R)={A \in M_{n \times n}(\R) : \det(A) = 1 }$ is a subgroup of $GL_n(\R)={A \in M_{n \times n}(\R) : \det(A) \neq 0 }$</p>
+<blockquote>
+<p>Proof:</p>
+<p>Let $A \in SL_n(R)$, then $\det(A) = 1 \neq 0$. Thus $A \in GL_n(\R)$,<!-- raw HTML omitted -->
+and $SL_n(\R) \subseteq GL_n$.</p>
+<p>Consider $I_{n \times n}$. $\det(I)=1$. Thus $I \in SL_n(\R)$, and
+$SL_n(\R) \neq \emptyset$.</p>
+<p>Let $A, B \in SL_n(\R)$, then $\det(A)=\det(B)=1$.
+$\det(AB) = \det(A)\det(B) = 1 \times 1 = 1$.
+Hence, $AB \in SL_n(\R)$. (1) holds.</p>
+<p>Let $A \in SL_n(\R)$, then $\det(A)=1$. Consider $A^{-1}$.
+$\det(A^{-1}) = \frac{1}{\det(A)} = \frac{1}{1} = 1$.
+Hence, $A^{-1} \in SL_n(\R)$. (2) holds.</p>
+<p>By the subgroup test, $SL_n(R)$ is a subgroup of $GL_n(\R)$.</p>
+</blockquote>
+<h2 id="cyclic-groups">Cyclic Groups</h2>
+<dl>
+<dt>Theorem 2.3 - Generated Subgroup</dt>
+<dd>Let $(G, \cdot)$ be a group and $a \in G$. The set $\langle a \rangle = {a^k : k\in\Z}$ is a subgroup of $G$.</dd>
+<dd>We call it the subgroup generated by $a$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Clearly, $\langle a \rangle \subseteq G$ and it is non-empty because
+$e=a^0 \in \langle a\rangle$.</p>
+<p>Let $a^i \in \langle a \rangle$, then $a^i a^j =
+a^{i+j} \in \langle a\rangle$. (1) holds.</p>
+<p>Let $a^i \in \langle a \rangle$, then $a^{-i} \in \langle a \rangle$
+and $a^{-i}a^{i} = a^0 = e$. (2) holds.</p>
+<p>By the subgroup test, $\langle a \rangle \le G$.</p>
+</blockquote>
+<p>e.g. Consider $(\Z, +)$ and $n \in \Z$. What is $\langle n \rangle$?</p>
+<p>If $n=0$, $\langle n\rangle = {0}$. Otherwise $\langle n \rangle = {&hellip;, -3n, -2n, -n, 0, n, 2n, 3n, &hellip;}$.</p>
+<p>e.g. Consider $(\Z_6, +)$. What is $\langle 3 \rangle, \langle 4 \rangle, \langle 5 \rangle$?</p>
+<ul>
+<li>$\langle 3 \rangle = {0, 3}$</li>
+<li>$\langle 4 \rangle = {0, 4, 2}$</li>
+<li>$\langle 5 \rangle = {0, 5, 4, 3, 2, 1}$</li>
+</ul>
+<p>e.g. Consider $(\Z_{10}^<em>, \times)$, where $\Z_{10}^</em> = {1, 3, 7, 9}$. What are its generated subgroups?</p>
+<ul>
+<li>$\langle 1 \rangle = {1}$</li>
+<li>$\langle 3 \rangle = {1, 3, 9, 7}$</li>
+<li>$\langle 7 \rangle = {1, 7, 9, 3}$</li>
+<li>$\langle 9 \rangle = {1, 9}$</li>
+</ul>
+<p>If $a^k=e$ for some $k &gt; 0$ then it looks like $\langle a \rangle$ contains only ${e, a, a^2, &hellip;, a^{k-1}}$, and then our elements start to repeat. Also negative power of $a$ gave us nothing new. Indeed, if $a^k=e$ for some $k&gt;0$ then $a^{k-1}a=e$, $a^{-1} = a^{k-1}$, so the negative power of $a$ are really just positive power. It is therefore interesting to ask: what is the smallest positive integer $k&gt;0$ such that $a^k=e$?</p>
+<dl>
+<dt>Definition - Order of Element</dt>
+<dd>Let $(G, \cdot)$ be a group and $a \in G$. The <strong>order of element $a$</strong>, denoted $|a|$, is the smallest positive integer $k$ such that $a^k = e$. If no such $k$ exists, then $|a|=\infty$.</dd>
+</dl>
+<p>e.g. In $\Z$, for $n \neq 0$, we have $|n|=\infty$.</p>
+<p>e.g. In $\Z_6$, $|4|=3$, and $|5|=6$.</p>
+<p>e.g. In $\Z_{10}^*$ $|3|=|7|=4$, and $|9|=2$.<!-- raw HTML omitted --></p>
+<p>It looks like $|a|=|\langle a\rangle|$. This is actually true in general.</p>
+<dl>
+<dt>Lemma 2.4</dt>
+<dd>Let $G$ be a group and $a \in G$.<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>If $|a|=\infty$, then $a^i = a^j$ if and only of $i=j$.<!-- raw HTML omitted --></li>
+<li>If $|a|=n$, then $\langle a \rangle = {e, a, a^2, &hellip;, a^{n-1}}$, and $a^i=a^j$ if and only if $n \mid (i-j)$.</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>(1)
+Assume $|a|=\infty$. Then there is not positive integer $k$ such that
+$a^k=e$. If $i=j$, then $a^i = a^j$. If $a^i = a^j$, then
+$a^{i-j} = e$. Without loss of generality, assume  $i \ge j$, so
+$i-j$ is positive or zero, but there is no $i-j$ for $a^{i-j}=e$.
+Hence $i-j=0$, and $i=J$.</p>
+<p>(2)
+Assume $|a| = n$.</p>
+<p>(2a)
+Clearly, ${e, a, &hellip;, a^{n-1}} \subseteq \langle a \rangle$.
+Let $a^k \in \langle a \rangle$. There exists $q\in \Z$ and
+$r \in {0,&hellip;,n-1}$ such that $k=nq+r$.
+Then $a^k= a^{nq+r}= (a^n)^q a^r = e^q a^r = a^r$.
+Thus $a^k=a^r \in {e, a, &hellip;, a^{n-1}}$, and
+$\langle a \rangle \subseteq {e, a, &hellip;, a^{n-1}}$.
+Hence, $\langle a \rangle = {e, a, &hellip;, a^{n-1}}$</p>
+<p>(2b)
+Suppose $a^i = a^j$, then $e = a^{i-j}$. There exists $q\in \Z$
+and $r \in {0,&hellip;,n-1}$ such that $i-j=nq+r$.
+Then $e=(a^n)^q a^r = a^r$.
+But $n$ is the smallest positive number for $a^{\Box}=0$, so $r=0$.<!-- raw HTML omitted -->
+Hence, $n \mid i-j$.</p>
+</blockquote>
+<dl>
+<dt>Corollary 2.5</dt>
+<dd>Let $G$ be a group and $a \in G$. Then $|a| = |\langle a \rangle|$</dd>
+<dt>Corollary 2.6</dt>
+<dd>Let $G$ be a group and $a \in G$. If an integer $k$ satisfies $a^k=e$, then $|a| \mid k$.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Assume $a^k=e$. Then $a^k=a^0$. By lemma 2.4 (2), $|a|$ divides $k-0=k$.</p>
+</blockquote>
+<p>e.g. In $\Z_6$, consider $4$. $4^6=0$. Then $|4| \mid 6$.</p>
+<p>In general, for $a \in \Z_n$, $a^n = 0$, so $|a|$ divides $n$.</p>
+<dl>
+<dt>Definition - Cyclic Group and Generator</dt>
+<dd>A group $G$ is cyclic if $G=\langle a \rangle$ for some $a \in G$.</dd>
+<dd>This $a$ is a generator of $G$.</dd>
+</dl>
+<p>e.g. Recall $n\Z = {&hellip;, -2n, -n, 0, n, 2n, &hellip;}$. Since $n\Z = \langle n \rangle$, it is a cyclic group and $n$ is a generator. One of other generators of $n\Z$ is $-n$.</p>
+<p>e.g. ${\pm 1, \pm i}$ is cyclic with generator $i$ or $-i$.</p>
+<p>e.g. $\Z_n$ is cyclic for all $n$ with generator $1$.</p>
+<p>e.g. The set of rotation $\langle r_1 \rangle = {r_k : k \in \Z}$ in the dihedral group $D_n$.</p>
+<p>e.g. $\Z_8^* = {1, 3, 5, 7}$ is NOT cyclic.</p>
+<h2 id="properties-of-cyclic-groups">Properties of Cyclic Groups</h2>
+<dl>
+<dt>Proposition 2.7</dt>
+<dd>If a group $G$ is cyclic, it is also Abelian.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Let $G=\langle a \rangle$ and $a^i, a^j \in G$. Then $a^i a^j = a^{i+j} = a^j a^i$.</p>
+</blockquote>
+<p>Consider a cyclic group $G = \langle a \rangle$.
+If $|a|=\infty$, then $G={&hellip;, a^{-2}, a^{-1}, a^0, a^1, a^2, &hellip;}$ and the group operation is $a^i a^j = a^{i+j}$. The group is isomorphic to $(\Z, +)$. If $|a|=n$, then $G={a^0, a^1, &hellip;, a^{n-1}}$. The group is isomorphic to $(\Z_n,+)$.</p>
+<p>Q: How many generators are there is a cyclic group? What are they?</p>
+<p>Q: Are subgroups of cyclic group also cyclic? Yes.</p>
+<p>Q: What is the order of an element in a cyclic group?</p>
+<dl>
+<dt>Theorem 2.8</dt>
+<dd>If a group is cyclic, then its subgroup are also cyclic.</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>Let $H$ be a subgroup of $G = \langle a \rangle$.</p>
+<p>If $H={e}$, then $H = \langle e \rangle$ is cyclic.</p>
+<p>Let $H \supseteq {e}$. Then there exists $a^t \in H$ and
+$a^t \neq e$. Since $H$ is a group, $a^{-t} \in H$. Therefore, there
+is a positive power of $a$ inside $H$. Thus, there is a smallest
+positive integer $m$ such that $a^m \in H$.
+We guess $H=\langle a^m \rangle$.</p>
+<p>Let $b=a^k \in H$. Then we have $k=mq+r$ for some $q \in \Z$ and
+$r \in {0, &hellip;, m-1}$. Then $b=a^{mq+r}$ and $a^r = ba^{-mq}$.
+Since $b, (a^m)^{-q} \in H$, $a^r \in H$. We defined $m$ is the
+smallest positive, so $r$ has to be $0$. Consequently $b=(a^m)^q$,
+and $H = \langle a^m \rangle$.</p>
+</blockquote>
+<p>The theorem implies that for a cyclic group it subgroup looks like $\langle a^k \rangle$.</p>
+<p>e.g. What are subgroups of $\Z=\langle 1 \rangle$? Every subgroup looks like $\langle a^n \rangle = \langle n \rangle = n\Z$.</p>
+<p>e.g. What are subgroups of $\Z_n=\langle 1 \rangle$? They are $\langle 1^0 \rangle, &hellip;, \langle 1^{n-1} \rangle$</p>
+<p>For $n=6$, they are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Generator</th>
+<th style="text-align:center">Subgroup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">${0}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">${0,1,2,3,4,5}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">${0,2,4}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">${0,3}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">${0,4,2}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">${0,5,4,3,2,1}$</td>
+</tr>
+</tbody>
+</table>
+<p>For $n=8$, they are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Generator</th>
+<th style="text-align:center">Subgroup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$0$</td>
+<td style="text-align:center">${0}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">${0,1,2,3,4,5,6,7}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">${0,2,4,6}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">${0,3,6,1,4,7,2,5}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">${0,4}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">${0,5,2,7,4,1,6,3}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$6$</td>
+<td style="text-align:center">${0,6,4,2}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$7$</td>
+<td style="text-align:center">${0,7,6,5,4,3,2,1}$</td>
+</tr>
+</tbody>
+</table>
+<p>We observed that the content and order of subgroups are related with $\gcd$.</p>
+<dl>
+<dt>Theorem 2.9</dt>
+<dd>Let $G$ be a group and $a \in G$. If $|a| = n &lt; \infty$, then for any $k\in \N$:<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>$\langle a^k \rangle = \langle a^{\gcd(k,n)} \rangle$<!-- raw HTML omitted --></li>
+<li>$|a^k| = \frac{n}{\gcd(k,n)}$<!-- raw HTML omitted --></li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>Let $|a| = n$ and $d = \gcd(k,n)$.</p>
+<p>(1)
+Since $d \mid k$, $k = dt$ for some $t\in \Z$.
+Then $a^k = a^{dt} = (a^d)^t \in \langle a^d \rangle$
+Therefore $\langle a^k \rangle \subseteq \langle a^d \rangle$.
+By Bézout&rsquo;s identity, $d=\gcd(k,n)=xk+yn$ for some $x,y \in \Z$.
+Then $a^d = a^{xk+yn} = (a^k)^x (a^n)^y= (a^k)^x e^y = (a^k)^x
+\in \langle a^k \rangle$.
+Therefore, $\langle a^d \rangle \subseteq \langle a^k \rangle$.</p>
+<p>(2)
+Consider $|a^d|$. Let $j$ be the smallest integer such that
+$(a^d)^j = a^{dj} = e$. Observe that $(a^d)^\frac{n}{d} = a^n = e$,
+then $j \le \frac{n}{d}$. Since $n$ is the smallest number that
+$a^{\Box}=e$, $dj \ge n$, so $j \ge \frac{n}{d}$.
+Thus, $j = |a^d| = |a^k| = \frac{n}{d}$.</p>
+</blockquote>
+<dl>
+<dt>Corollary 2.10</dt>
+<dd>Let $G$ be a group, $a \in G$, and $|a|=n &lt; \infty$. Then for any $i,j \in \Z$, $\langle a^i \rangle = \langle a^j \rangle$ if and only if $\gcd(i,n) = \gcd(j,n)$</dd>
+</dl>
+<blockquote>
+<p>Proof:</p>
+<p>($\Leftarrow$) Assume $\gcd(i,n) = \gcd(j,n)$. By theorem 2.9 (1),
+$\langle a^i \rangle = \langle a^{\gcd(i,n)} \rangle =
+\langle a^{\gcd(j,n)} \rangle = \langle a^j \rangle$.<!-- raw HTML omitted --></p>
+<p>($\Rightarrow$) Assume $\langle a^i \rangle = \langle a^j \rangle$.
+By theorem 2.9 (2), $\gcd(i,n) = \frac{n}{|a^i|} = \frac{n}{|a^j|} =
+\gcd(j,n)$.</p>
+</blockquote>
+<p>One can show that $\Z_{18}^*={1, 5, 7, 11, 13, 17}$ is generated by $5$.</p>
+<p>Q: What is another generator?</p>
+<p>$\Z_{18}^* = {5^0, 5^1, 5^2, 5^3, 5^4, 5^5}$. All generators are given by $5^k$ where $\gcd(6, k)=1$. They are $5^1 = 5$ and $5^5=11$.</p>
+<p>Q: For which components $k$ is $|5^k|=3$?</p>
+<p>$|5^k|=3=\frac{6}{\gcd(k,6)}$. Thus, $\gcd(k,6)=2$, which implies $k=4$ or $k=2$.</p>
+<h2 id="fundamental-theorem-of-cyclic-group">Fundamental Theorem of Cyclic Group</h2>
+<p>Using previous result, we can prove a useful theorem about subgroups of cyclic groups.</p>
+<dl>
+<dt>Theorem 2.11 - the Fundamental Theorem of Cyclic Group</dt>
+<dd>Let $G=\langle a \rangle$ be a cyclic group and $|G|=n &lt; \infty$. Then:<!-- raw HTML omitted --></dd>
+</dl>
+<ol>
+<li>If $H \le G$, then $|H| \mid n$.<!-- raw HTML omitted --></li>
+<li>For each positive divisor $k$ of $n$, there is a unique subgroup $\langle a^{\frac{n}{k}} \rangle$ of $G$ of order $k$.</li>
+</ol>
+<blockquote>
+<p>Proof:</p>
+<p>(1)
+Let $H \le G$. Then $H$ is cyclic, so $H=\langle a^k\rangle$ for some
+$k \in \N$. By theorem 2.9 (2), $|H|=|a^k|=\frac{n}{\gcd(k,n)}$.
+Thus, $|H| \mid n$.</p>
+<p>(2a)
+Consider subgroup $\langle a^{\frac{n}{k}} \rangle$ where $k \mid n$.
+By theorem 2.9 (1), $|\langle a^{\frac{n}{k}} \rangle| =
+|a^{\frac{n}{k}}| = \frac{n}{\gcd(n,n/k)}= \frac{n}{n/k} = k$.</p>
+<p>(2b)
+Let $H$ be another subgroup of order $k$. Then $H$ is also cyclic,
+so $H=\langle a^j \rangle$ for some $j \in N$. By theorem 2.9 (2),
+$|H|=|a^j|=\frac{n}{\gcd(j,n)} = k$. Then $\gcd(j,n)=\frac{n}{k}$.
+Again by theorem 2.9 (1), $H=\langle a^j \rangle=
+\langle a^{\gcd(j,n)}\rangle= \langle a^{\frac{n}{k}} \rangle$.
+Hence, the subgroup is unique.</p>
+</blockquote>
+<p>e.g. Find all subgroups of $\Z_{12} = \langle 1 \rangle$. Since $|\Z_{12}|=12$, its divisors are $1, 2, 3, 4, 6, 12$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Divisor(Order)</th>
+<th style="text-align:center">Subgroup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{1}}\rangle={0}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{2}}\rangle={0,6}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$3$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{3}}\rangle={0,4,8}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{4}}\rangle={0,3,6,9}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$6$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{6}}\rangle={0,2,4,6,8,10}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$12$</td>
+<td style="text-align:center">$\langle 1^{\frac{12}{12}}\rangle={0,1,2,&hellip;,12}$</td>
+</tr>
+</tbody>
+</table>
+<p>e.g. Let $G=\langle a \rangle$ and $|G|=20$. What are subgroups of $G$? The divisors of $20$ are $1, 2, 4, 5, 10, 20$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Divisor(Order)</th>
+<th style="text-align:center">Subgroup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$1$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{1}}\rangle$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{2}}\rangle$</td>
+</tr>
+<tr>
+<td style="text-align:center">$4$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{4}}\rangle$</td>
+</tr>
+<tr>
+<td style="text-align:center">$5$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{5}}\rangle$</td>
+</tr>
+<tr>
+<td style="text-align:center">$10$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{10}}\rangle$</td>
+</tr>
+<tr>
+<td style="text-align:center">$20$</td>
+<td style="text-align:center">$\langle 1^{\frac{20}{20}}\rangle$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="subgroup-lattices">Subgroup Lattices</h2>
+<p>For any group $G$. We can visually depict its subgroups in a lattice. This is particular easy for cyclic group as we can easily fin all subgroup. We connect a subgroup $K$ to a subgroup $H$ at a higher level if and only if $K$ is properly contained in $H$.</p>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>

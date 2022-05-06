@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS 454 - Distributed System on Ziqi</title>
+    <link>/notes/cs454-1185/</link>
+    <description>Recent content in CS 454 - Distributed System on Ziqi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/notes/cs454-1185/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Final Review Note</title>
+      <link>/notes/cs454-1185/final_outline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/final_outline/</guid>
+      <description>Middleware  What is its role in distributed systems and advantages/disadvantages. What is its application in distributed system architectures.  Role Middleware contains commonly used component and functions in every nodes. Its role is to enhance the distribution transparency that is missing in networking. In other words, middleware aims at improving the single system view that a distributed system should have.
+Benefits  Provide abstraction and hide implementation details. Isolate application from complex OS interface.</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>/notes/cs454-1185/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/introduction/</guid>
+      <description>Distributed System A distributed system is a collection of autonomous computing elements(also known as node) that appears to its user as a single coherent system.
+Problems:
+ Each node has its own time, no global clock Group membership management and authorization  Overlay network is the organization of the distributed system. Nodes only communicates with its neighbours. There are 2 types of overlay network: structured and unstructured.
+ Example: peer-to-peer system</description>
+    </item>
+    
+    <item>
+      <title>Time Ordering</title>
+      <link>/notes/cs454-1185/time_ordering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/cs454-1185/time_ordering/</guid>
+      <description>A timestamp is a unique identifier created to identify a transaction. Typically, timestamp values are assigned in the order in which the transactions are submitted to the system. In this context, a timestamp can be thought of as the transaction start time. I&amp;rsquo;ll refer to the timestamp of a transaction T as ts(T) and all operations of T are assigned timestamp ts(T).
+The easiest way to think of how timestamps are generated is to think of a simple counter that is incremented each time the counter&amp;rsquo;s value is assigned to a transaction.</description>
+    </item>
+    
+  </channel>
+</rss>

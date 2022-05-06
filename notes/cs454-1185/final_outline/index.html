@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang=""><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Final Review Note</title>
+    <meta name="description" content="">
+    <meta name="author" content=''>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../../../sass/researcher.min.css">
+
+    
+
+    
+        
+    
+</head>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../../../" title="Ziqi">
+          
+          Ziqi
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../../../notes" title="Notes">
+                        Notes
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../../../resume" title="Resume">
+                        Resume
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    <h1 id="middleware">Middleware</h1>
+<ol>
+<li>What is its role in distributed systems and advantages/disadvantages.</li>
+<li>What is its application in distributed system architectures.</li>
+</ol>
+<h2 id="role">Role</h2>
+<p>Middleware contains commonly used component and functions in every nodes. Its
+role is to enhance the distribution transparency that is missing in networking.
+In other words, middleware aims at improving the single system view that a
+distributed system should have.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li>Provide abstraction and hide implementation details.</li>
+<li>Isolate application from complex OS interface.</li>
+<li>Provide transparency for message passing, data marshaling, and security.</li>
+<li>Increase protablility of applications over the distributed system.</li>
+</ul>
+<h2 id="disadvantage">Disadvantage</h2>
+<ul>
+<li>Create a latency on the middleware layer.</li>
+<li>Hide detailed error from application.</li>
+<li>Decreases the flexibility of the interface.</li>
+<li>May introduce secureity problems.</li>
+</ul>
+<h2 id="applicatons">Applicatons</h2>
+<ul>
+<li>1-on-1: requires $O(n^2)$ wrappers</li>
+<li>Broker: requres $O(n)$ wrappers</li>
+</ul>
+<blockquote>
+<p>Adaptivity can be increased with interceptor</p>
+</blockquote>
+<h1 id="networks">Networks</h1>
+<ol>
+<li>Differences between circuit-switched and packet-switched networks</li>
+<li>ISO/OSI layers/reference model</li>
+<li>TCP vs UDP</li>
+</ol>
+<h2 id="circuit-and-packet-network">Circuit and Packet Network</h2>
+<hr>
+<p>Circuit-switched                     Packet-switched</p>
+<hr>
+<p>End to end resources reserved for    End to end data stream is divided
+data transmission.                   into packets.</p>
+<p>The number of current users is       Allow more users to use network.
+limited.</p>
+<p>Requires a call setup to start.      No call setup required.</p>
+<p>Line is reserved. Data transmission  Line is shared. It may encounter
+is reliable.                         congestion and loss or delay of
+packets.</p>
+<hr>
+<h2 id="isoosi-model-layers">ISO/OSI Model Layers</h2>
+<ol>
+<li>Physical: bits get transfered on the circuit and hardware.</li>
+<li>Link: data transfer between neighboring network elements.(ATM, Ethernet)</li>
+<li>Network: routing of packets from source to destination.(IP)</li>
+<li>Transport: message handling and control.(TCP, UDP)</li>
+<li>Application: protocol implemented by user processes.(HTTP, FTP)</li>
+</ol>
+<h2 id="tcp-and-udp">TCP and UDP</h2>
+<hr>
+<p>Transmission Control Prorocol        User Datagram Protocol</p>
+<hr>
+<p>Connection-oriented: need handshake. Connectionless: no setup requried.</p>
+<p>Reliable transport: arrival of       Unreliable transport: arrival status
+message is guaranteed.               is unknown.</p>
+<p>Flow control: order of messages is   No flow control: message order maybe
+guaranteed.                          reversed.</p>
+<p>Header is large. Process is slow.    Header is small. Process is fast.</p>
+<hr>
+<h1 id="rpcs">RPCs</h1>
+<blockquote>
+<p>Client/Server computing is generally based on a model of <em>transient
+synchronous communication</em>.</p>
+</blockquote>
+<ol>
+<li>Mechanisms, request-reply protocol</li>
+<li>Fault tolerance?</li>
+<li>Semantics</li>
+<li>Differences between presistent and transient messaging.</li>
+</ol>
+<h2 id="semantics">Semantics</h2>
+<blockquote>
+<p>Copy in/copy out semantics: while procedure is executed, nothing can be
+assumed about parameter values.</p>
+</blockquote>
+<h2 id="transient-and-persistent">Transient and Persistent</h2>
+<ul>
+<li>Transient: server discards message when it cannot be dilivered at next
+server or at the reviever.</li>
+<li>Persistent: a message is stored at a communication server as long as it
+takes to deliver it.</li>
+</ul>
+<h1 id="name-resolution">Name Resolution</h1>
+<ol>
+<li>Pros/cons of iterative and revursive name resolution</li>
+<li>What kind of protocol does DNS use?</li>
+</ol>
+<h2 id="iterative-and-recursive-resolution">Iterative and Recursive Resolution</h2>
+<ul>
+<li>
+<p>Recursive: name server is responsible for returning the requested name
+attribute to the client by contacting other name servers. It has lower
+communications costs and can benefit from caching. Name server within a
+subdomain of a given server are geographically close together.</p>
+</li>
+<li>
+<p>Iterative: The name server can return the next lower level of name server to
+the client and the client will send another request. It reduced the load on
+the name server. The server does not need to hold state if the name is not
+resolved.</p>
+</li>
+</ul>
+<h2 id="dns-protocol">DNS Protocol</h2>
+<p>DNS uses both recursive and iterative resolution protocols.</p>
+<h1 id="dfs">DFS</h1>
+<ol>
+<li>Models (upload/download, remote access)</li>
+<li>How is transparency achieved</li>
+<li>How are update semantics maintained/provided</li>
+</ol>
+<h2 id="models">Models</h2>
+<ul>
+<li>Remote access: pass the file operations directly to the server</li>
+<li>Upload/download: preform operations on local cache</li>
+</ul>
+<h2 id="transparency">Transparency</h2>
+<p>Transparency is achieved by mounting remote file system to local. File
+operations are passed to server via RPC. Clients may preform operations on
+remote files just like local files, so the distrubuted implementation is hidden
+from clients.</p>
+<h2 id="semantics-of-file-sharing">Semantics of File Sharing</h2>
+<ul>
+<li>UNIX semantics: every operations on a file are instantly visible to all
+processes.</li>
+<li>Session semantics: no changes are visible to other processes until the file
+is closed.</li>
+<li>Immutable files: no updates are possible; simplifies sharing and replication.</li>
+<li>Transactions: all changes occur atomatically.</li>
+</ul>
+<h1 id="synchronization">Synchronization</h1>
+<ul>
+<li>Logical and physical clock synchronization</li>
+<li>Elections of coordinator</li>
+<li>ACID properties</li>
+<li>2PL/S-2PL similarities/differences</li>
+<li>Serializability and distributed transactions</li>
+</ul>
+<p>Given distributed transaction, is each local history serializable?
+what is each local history&rsquo;s serial order?
+Are the histories globally serializable?
+What is the global serial order?
+If not, why not?</p>
+<ul>
+<li>Timestamp-baesd concurrency control protocols</li>
+</ul>
+<h2 id="clocks">Clocks</h2>
+<p>Pysical clock: Universal Coordinated Time(UTC), is synchronized with a time
+server.</p>
+<ul>
+<li>Precision: the deviation between two clocks on any two machines has a bound</li>
+<li>Accuracy: the differnce between a clock and the actual time has a bound.</li>
+</ul>
+<p>Logic clock: Lamport&rsquo;s, is updated when an event happens and syncronized when
+a message is sent/recieved. It does not guarantee causal order.</p>
+<h2 id="election-algorithms">Election Algorithms</h2>
+<ul>
+<li>Bullying: each process sent election message to nodes with higher ID; the
+node does not recieve any response becomes coordinator.</li>
+<li>Ring: a list contains the members is passed around circularly; at the end the
+member with highest priority on the list becomes coordinator.</li>
+</ul>
+<h2 id="acid">ACID</h2>
+<p>ACID are properties of transactions.</p>
+<ul>
+<li>Atomicity: all or nothing.</li>
+<li>Consistency: no integrity constraints violated.</li>
+<li>Isolation: concurrent transactions are invisible.</li>
+<li>Durability: committed transactions are persist.</li>
+</ul>
+<h2 id="2pl-and-s-2pl">2PL and S-2PL</h2>
+<p>2PL is 2-Phase Locking. 2PL requires a transaction acquires lock before using
+resource. The transaction cannot request another lock after it has released a
+lock.</p>
+<ul>
+<li>Non-strict: the transaction may release lock before end.</li>
+<li>Strict: the transaction must hold lock until the end.</li>
+</ul>
+<h2 id="serializability">Serializability</h2>
+<p>An execution of serveral concurrent transactions are serializable if and only
+if there is an equivalent serial execution of those transactions.</p>
+<p>Two operations from different transactions are conflict if the one happen first
+is write operation.</p>
+<h2 id="timestamp-based-protocol">Timestamp-based Protocol</h2>
+<p>Let <code>X</code> be an object and <code>T</code> be current transaction.</p>
+<ul>
+<li>Read: success if <code>write_ts(X) &lt;= ts(T)</code></li>
+<li>Write: success if <code>write_ts(X) &lt;= ts(T)</code> AND <code>read_ts(X) &lt;= ts(T)</code></li>
+</ul>
+<h1 id="replication">Replication</h1>
+<ol>
+<li>Lazy vs. eager?</li>
+<li>Data-centric vs client-centric</li>
+<li>Quorum protocols, conditions for forming read/write quorum</li>
+</ol>
+<h2 id="data-centric-and-client-centric">Data-centric and Client-centric</h2>
+<ul>
+<li>Client-centric: guarantee for a single client the consistency of access to
+a data store; propagate updates; be consistant eventually.</li>
+<li>Data-centric: strict consistency; linearlizability; sequential consistency</li>
+</ul>
+<h1 id="fault-tolerance">Fault tolerance</h1>
+<ul>
+<li>Differences between availability and reliability</li>
+<li>Local recovery</li>
+<li>2PC different failure scenarios and how component recovers for 2PC</li>
+<li>Site can unilaterally abort</li>
+</ul>
+<h1 id="cloud-and-data-intensive-systems">Cloud and Data-Intensive Systems</h1>
+<ul>
+<li>What are the key characteristics/enabling technologies for cloud environments</li>
+<li>Map-Reduce, understand computational model of how to write Map-Reduce function
+(given a problem to solve)</li>
+</ul>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+</body>
+</html>
