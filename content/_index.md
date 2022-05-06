@@ -1,4 +1,7 @@
-# Ziqi's Index
+---
+title: Ziqi's Home
+draft: false
+---
 
 Software Engineer at [StackAdapt](https://stackadapt.com/careers)
 
@@ -17,5 +20,5 @@ I graduated from [University of Waterloo](https://uwaterloo.ca/admissions/) with
 * [Resume](resume/)
 * [Course Projects](course-work/)
 * Course Note
-    * [PMATH 336 - Group Theory](1199-pmath336/)
-    * [CS 454 - Distributed System](1185-cs454/)
+    * [PMATH 336 - Group Theory](notes/pmath336-1199/)
+    * [CS 454 - Distributed System](notes/cs454-1185/)

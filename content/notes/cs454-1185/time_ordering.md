@@ -1,5 +1,7 @@
-
-# Time Ordering
+---
+title: Time Ordering
+author: Ziqi Qing
+---
 
 A timestamp is a unique identifier created to identify
 a transaction.  Typically, timestamp values are assigned in the order in

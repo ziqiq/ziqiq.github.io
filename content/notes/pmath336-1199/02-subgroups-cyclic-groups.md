@@ -1,4 +1,8 @@
-# Subgroups and Cyclic Groups
+---
+title: Subgroups and Cyclic Groups
+date: 2019-10-30
+math: true
+---
 
 We can find even mor examples of groups with the examples we already know.
 

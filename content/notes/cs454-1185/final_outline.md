@@ -1,10 +1,7 @@
 ---
-title: CS454 Final Review Note
+title: Final Review Note
 author: Ziqi Qing
-numbersections: true
-...
-
-
+---
 
 # Middleware
 
@@ -30,7 +27,7 @@ distributed system should have.
 - Create a latency on the middleware layer.
 - Hide detailed error from application.
 - Decreases the flexibility of the interface.
-- May introduce secureity problems. 
+- May introduce secureity problems.
 
 ## Applicatons
 
@@ -61,7 +58,7 @@ limited.
 Requires a call setup to start.      No call setup required.
 
 Line is reserved. Data transmission  Line is shared. It may encounter
-is reliable.                         congestion and loss or delay of 
+is reliable.                         congestion and loss or delay of
                                      packets.
 
 -------------------------------------------------------------------------
@@ -84,7 +81,7 @@ Connection-oriented: need handshake. Connectionless: no setup requried.
 Reliable transport: arrival of       Unreliable transport: arrival status
 message is guaranteed.               is unknown.
 
-Flow control: order of messages is   No flow control: message order maybe 
+Flow control: order of messages is   No flow control: message order maybe
 guaranteed.                          reversed.
 
 Header is large. Process is slow.    Header is small. Process is fast.
@@ -112,7 +109,7 @@ Header is large. Process is slow.    Header is small. Process is fast.
 
 - Transient: server discards message when it cannot be dilivered at next
   server or at the reviever.
-- Persistent: a message is stored at a communication server as long as it 
+- Persistent: a message is stored at a communication server as long as it
   takes to deliver it.
 
 # Name Resolution
@@ -186,12 +183,12 @@ If not, why not?
 
 Pysical clock: Universal Coordinated Time(UTC), is synchronized with a time
 server.
- 
+
 - Precision: the deviation between two clocks on any two machines has a bound
 - Accuracy: the differnce between a clock and the actual time has a bound.
 
 Logic clock: Lamport's, is updated when an event happens and syncronized when
-a message is sent/recieved. It does not guarantee causal order. 
+a message is sent/recieved. It does not guarantee causal order.
 
 ## Election Algorithms
 
@@ -213,7 +210,7 @@ ACID are properties of transactions.
 
 2PL is 2-Phase Locking. 2PL requires a transaction acquires lock before using
 resource. The transaction cannot request another lock after it has released a
-lock. 
+lock.
 
 - Non-strict: the transaction may release lock before end.
 - Strict: the transaction must hold lock until the end.
@@ -224,7 +221,7 @@ An execution of serveral concurrent transactions are serializable if and only
 if there is an equivalent serial execution of those transactions.
 
 Two operations from different transactions are conflict if the one happen first
-is write operation. 
+is write operation.
 
 ## Timestamp-based Protocol
 

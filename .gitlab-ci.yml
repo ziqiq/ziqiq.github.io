@@ -1,17 +1,12 @@
-stages:
-  - deploy
+image: klakegg/hugo:ext-alpine-ci
 
 pages:
   stage: deploy
-  image:
-    name: pandoc/latex
-    entrypoint: [""]
-  variables:
-    OUT_DIR: public
   script:
-    - ". ./make.sh"
+    - git submodule update --init --recursive
+    - hugo
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master

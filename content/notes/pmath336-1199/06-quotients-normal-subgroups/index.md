@@ -1,4 +1,8 @@
-# Quotients and Normal Subgroups
+---
+title: Quotients and Normal Subgroups
+date: 2019-12-18
+math: true
+---
 
 Let $G$ be a group and $H \le G$. Let $G/H$ be the set of all left cosets of $H$ in $G$.
 
@@ -17,7 +21,7 @@ What would this mean for $H$?
 
 If $h \in H$ and $a \in G$, then
 $$\begin{aligned}
-haH &= hH * aH \\ &= eH * aH  \\ &= eaH \\ &= aH \\
+haH &= hH * aH \\\\ &= eH * aH  \\\\ &= eaH \\\\ &= aH \\\\
 \end{aligned}$$
 Thus, $haH = aH \; \forall h \in H \, a \in G$, so $Ha \subseteq aH \; \forall a\in G$.
 
@@ -156,13 +160,13 @@ e.g. Last time we showed that $\{e, r_1, r_2, r_3\} = \langle r_1 \rangle$ is a 
 
 We can see the Cayley table for $D_4/ \langle r_1 \rangle$ inside the table for $D_4$.
 
-![Cayley table of $D_4/ \langle r_1 \rangle$](./image/cayley-table-D4-r1.png)
-‌![Cayley table of $D_4$](./image/cayley-table-D4.png)
+![Cayley table of $D_4/ \langle r_1 \rangle$](cayley-table-D4-r1.png)
+‌![Cayley table of $D_4$](cayley-table-D4.png)
 
 e.g. Last time we said that $Z(G) \trianglelefteq G$ (recall $Z(G)$ is the center of $G$) and that $Z(D_4) = \{r_0, r_2\}$. Let’s investigate $D_4/Z(D_4)$. For convenience, let $\mathcal{K} = Z(D_4)$. $|D_4/\mathcal{K}| = \frac{|D_4|}{|\mathcal{K}|} = \frac{8}{2} = 4$. The elements are $\mathcal{K}$, $r_1\mathcal{K} = \{r_1, r_3\}$, $s_3\mathcal{K} = \{ s_3, s_1\}$, and $s_0\mathcal{K} = \{s_0, s_2\}$. Again we can write the Cayley table:
 
-![Cayley table of $D_4/ Z(D_4)$](./image/cayley-table-D4-ZD4.png)
-![Cayley table of $D_4$](./image/cayley-table-D4-2.png)
+![Cayley table of $D_4/ Z(D_4)$](cayley-table-D4-ZD4.png)
+![Cayley table of $D_4$](cayley-table-D4-2.png)
 
 Once again, by rewriting the table for $D_4$ starting with $e$, we can see that Cayley table for $D_4/K$ as “block” in the Cayley table for $D_4$.
 

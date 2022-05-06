@@ -1,4 +1,8 @@
-# Group Actions
+---
+title: Group Actions
+date: 2019-12-18
+math: true
+---
 
 (see Papantonopoulou, Chapter 4)
 
@@ -15,8 +19,8 @@ For instance how should the group identity $e$ permute the elements of $X$? We w
 It would also be reasonable to ask that for elements $g_1, g_2 \in G$, if we permute $X$ using $g_2$ and then permute using $g_1$, that this be same as permitting with the product $g_1 g_2$.
 
 Definition - Group Action
-: Let $G$ be a group and $X$ be a set. An action of $G$ on $X$ is map $\cdot: G \times X \to X$ that satisfied the following properties.<br/>
-1. $e\cdot x = x$ for all $x \in X$.<br/>
+: Let $G$ be a group and $X$ be a set. An action of $G$ on $X$ is map $\cdot: G \times X \to X$ that satisfied the following properties.
+1. $e\cdot x = x$ for all $x \in X$.
 2. Given $g_1 g_2 \in G$, then $g_1 \cdot (g_2 \cdot x) = (g_1 g_2) \cdot x$ for all $x \in X$.
 : We write $G \curvearrowright X$ to indicate that $G$ is acting on $X$.
 
@@ -37,11 +41,11 @@ e.g.(3) The group $D_4$ acts on the set $X= \{1,2,3,4\}$ by thinking of the elem
 
 For instance if $v \in D_4$ is the vertical flip then $v \cdot 2 = 1$.
 
-![D4 acts on corner](./image/D4-acts-on-corner.png)
+![D4 acts on corner](D4-acts-on-corner.png)
 
 We could also interpret this as the action of $D_4$ on the edges of the square.
 
-![D4 acts on edge](./image/D4-acts-on-edge.png)
+![D4 acts on edge](D4-acts-on-edge.png)
 
 e.g.(4) Let $G$ be a group and consider the set $X = G$ itself $G$ acts on $X$ be left multiplication. Given $a,b \in G$, we define $a \cdot b = ab$. Exercise: check this is an action.
 
@@ -91,8 +95,8 @@ Let $G \curvearrowright X$ be a group action and fix $x \in X$.
 - Which elements of $G$ leave $x$ unchanged?
 
 Definition - Orbit and Stabilizer
-: Let $G \curvearrowleft X$ be a group action and fix $x \in X$. Define:<br/>
-1. The orbit of $x$ to be the set $\orb_x \{g \cdot x \in X: g \in G\}$.<br/>
+: Let $G \curvearrowleft X$ be a group action and fix $x \in X$. Define:
+1. The orbit of $x$ to be the set $\orb_x \{g \cdot x \in X: g \in G\}$.
 2. The stabilizers of $x$ to be the set $\stab_x = \{g \in G: g\cdot x =x\}$
 
 Remark $\stab_x \subseteq G$ and $\orb_x \subseteq X$
@@ -137,7 +141,7 @@ In all cases, we saw that if $x \in X$ the $|\orb_x| \cdot |\stab_x| = 24$. It t
 ## Orbit-Stabilizer Theorem
 
 Theorem 8.3 - Orbit-Stabilizer Theorem
-: Let $G \curvearrowright X$ be a group action. Given any $x\in X$ then |G:\stab_x| = $\orb_x$. In particular, if $|G| < \infty$, then $|G|=|\stab_x| \cdot |\orb_x|$.
+: Let $G \curvearrowright X$ be a group action. Given any $x\in X$ then $|G:\stab_x| = \orb_x$. In particular, if $|G| < \infty$, then $|G|=|\stab_x| \cdot |\orb_x|$.
 
 > Proof:
 >
@@ -146,10 +150,10 @@ Theorem 8.3 - Orbit-Stabilizer Theorem
 >
 > Define $f: G/\stab_x \to \orb_X$ by $f(g\stab_x) = g \cdot x$.
 > First, given $g_1, g_2 \in G$, then
-> $$g_1 \stab_x = g_2 \stab_x \\
-> \iff g_2^{-1}g_1 \in \stab_x \\
-> \iff (g_2^{-1}g_1)\cdot x = x \\
-> \iff g_1 \cdot x = g_2 \cdot x \\
+> $$g_1 \stab_x = g_2 \stab_x \\\\
+> \iff g_2^{-1}g_1 \in \stab_x \\\\
+> \iff (g_2^{-1}g_1)\cdot x = x \\\\
+> \iff g_1 \cdot x = g_2 \cdot x \\\\
 > \iff f(g_1 \stab_x) = f(g_2 \stab_x)$$
 > So $f$ is well-defined and injective.
 >
@@ -165,7 +169,7 @@ By the orbit-stabilizer theorem, there are indeed 24 rotational symmetries of a 
 e.g.
 How many rotational symmetries does a soccer ball have?
 
-![Soccer Ball](./image/soccer-ball.png)
+![Soccer Ball](soccer-ball.png)
 
 Let $G$ be the group of rotations of this soccer ball, and let $G$ act on the set of all the black pentagon faces $X$. Note that $|X| = 12$.
 
@@ -186,13 +190,13 @@ Exercise: How many rotational symmetries does a tetrahedron have? (pyramid with 
 e.g.
 How many $2\times 2$ chess boards can one build using black and white squares?
 
-![Chess Boards](./image/chess-board.png)
+![Chess Boards](chess-board.png)
 
 Naive answer: total of $2^4 = 16$ boards. (We can choose black or white for each of the 4 squares)
 
 But wait... We should consider two boards to be the same if we can rotated one into the other:
 
-![Same chess board](./image/same-chess-board.png)
+![Same chess board](same-chess-board.png)
 
 Let $G$ be the rotational symmetry group of a square, and the $G$ acts on the set $X$ of all $2^4 = 16$ possible boards.
 
@@ -201,8 +205,8 @@ We consider two boards to be the same if they’re in the same orbit. So we want
 We will accomplish this using Burnsides’s lemma, but first we need a proposition.
 
 Proposition 8.4 - Orbit Partitioning
-: If $G \curvearrowright X$ is a group action, then the orbits of the action partition $X$. That is:<br/>
-1. $X = \cup_{x\in X} \orb_x$, and<br/>
+: If $G \curvearrowright X$ is a group action, then the orbits of the action partition $X$. That is:
+1. $X = \cup_{x\in X} \orb_x$, and
 2. Given $x,y \in X$ either $\orb_x = \orb_y$ or $\orb_x \cap \orb_y = \emptyset$
 
 Lemma 8.5 - Burside’s Lemma
@@ -238,7 +242,7 @@ To prove lemma 8.5, we use the proposition 8.4.
 > we have $\orb_y = \orb_x$, and hence
 > $$\sum_{y\in \orb_x} \frac{1}{|\orb_y|} = \frac{1}{|\orb_x|} + ... +
 > \frac{1}{|\orb_x|} = \frac{|\orb_x|}{|\orb_x|} = 1$$
-> Thus,<br/>
+> Thus,\
 > $$n = |G| \sum_{x\in X} \frac{1}{|\orb_x|} = |G|N$$
 > and
 > $$\sum_{g \in G} |\fix(g)| = n = |G|N$$
@@ -252,7 +256,7 @@ To prove lemma 8.5, we use the proposition 8.4.
 
 e.g.(1) How many 6-bead necklaces can be made using $3$ black beads and $3$ white beads?
 
-1. Choose $3$ locations for the black beads in $\begin{pmatrix}6\\3\end{pmatrix} = 20$ ways. $|X| = 20$
+1. Choose $3$ locations for the black beads in $\begin{pmatrix}6\\\\3\end{pmatrix} = 20$ ways. $|X| = 20$
 2. Let $G = D_6$. We need to know the number of orbits when $G \curvearrowright X$.
 
 	| $g$   | $\fix(g)$ |
@@ -289,8 +293,8 @@ e.g.(3) How many ways can you color the edges of a tetrahedron using red, blue, 
 2. Let $G$ be the group of all rotations of the tetrahedron. By Orbit-Stabilizer, $|G| = 12$
 3. What do the rotations in $G$ actually look like?
 	- First, there are 1 identity $e$. $|\fix(e)| = 3^6$.
-	- Then, for each face there are 2 rotations $\tau$ through the face and opposite vertex. For every such $\tau$, $|\fix(\tau) = 3^2$. In total there are $8$ such rotations. ![Face-Vertex Rotation](./image/tetra-face-vertex-rotation.png)
-	- There are rotation $\sigma$ about an axis through two opposite edges. $|\fix(\sigma)| = 3^4$. There are $3$ such rotations in total. ![Edge-Edge Rotation](./image/tetra-edge-edge-rotation.png)
+	- Then, for each face there are 2 rotations $\tau$ through the face and opposite vertex. For every such $\tau$, $|\fix(\tau) = 3^2$. In total there are $8$ such rotations. ![Face-Vertex Rotation](tetra-face-vertex-rotation.png)
+	- There are rotation $\sigma$ about an axis through two opposite edges. $|\fix(\sigma)| = 3^4$. There are $3$ such rotations in total. ![Edge-Edge Rotation](tetra-edge-edge-rotation.png)
 4. Thus,
    $$N = \frac{1}{12}(1\times 3^6 + 8 \times 3^2+ 3 \times 3^4) = 87$$
 
@@ -306,9 +310,9 @@ $$|G| = |Z(G)| + \sum_{i=1}^{r}|G:\stab_{g_i}|$$
 Note that
 $$\begin{aligned}
 \stab_{g_i}
-&= \{ a \in G: a \cdot g_i = g_i \} \\
-&= \{ a \in G: a g_i a^{-1} = g_i \} \\
-&= \{ a \in G: a g_i = g_i a \} \\
+&= \{ a \in G: a \cdot g_i = g_i \} \\\\
+&= \{ a \in G: a g_i a^{-1} = g_i \} \\\\
+&= \{ a \in G: a g_i = g_i a \} \\\\
 &= C(g_i)
 \end{aligned}$$
 
@@ -319,8 +323,8 @@ is called the **class equation**.
 There are many important applications.
 
 Corollary 8.6
-: Let $p$ be a prime.<br/>
-1. If $G$ is a group of order $p^k$ for some $k \ge 1$, then $\Z(G) \ne \{e\}$.<br/>
+: Let $p$ be a prime.
+1. If $G$ is a group of order $p^k$ for some $k \ge 1$, then $\Z(G) \ne \{e\}$.
 2. If $G$ is a group of order $p^2$, then $G$ is Abelian.
 
 The details are left for A5.
