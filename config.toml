@@ -1,9 +1,10 @@
 title = 'Ziqi'
 languageCode = 'en-us'
-relativeurls = true
-baseUrl = '/'
-
 theme = "researcher"
+baseUrl = '/'
+relativeurls = true
+enableGitInfo = true
+
 [params]
   [params.style]
     fontFamily = "Helvetica, sans-serif"
