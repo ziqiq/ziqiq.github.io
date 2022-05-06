@@ -1,0 +1,41 @@
+name: build-gh-pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{github.workspace}}
+    steps:
+      - name: Prepare source
+        run: |
+          git init &&
+          git remote add origin 'https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git' &&
+          git fetch origin ${{github.sha}} &&
+          git checkout ${{github.sha}} &&
+          git submodule update --init --recursive
+      - name: Prepare hugo
+        run: |
+          mkdir -p bin &&
+          curl -L https://github.com/gohugoio/hugo/releases/download/v0.98.0/hugo_extended_0.98.0_Linux-64bit.tar.gz | tar -C bin -xzf - hugo
+      - name: Prepare build directory
+        run: |
+          git worktree add --detach public &&
+          git -C public checkout --orphan gh-pages &&
+          git -C public reset --hard
+      - name: Build
+        run: bin/hugo
+      - name: Push
+        run: |
+          touch public/.nojekyll &&
+          git -C public add --all &&
+          git -C public config user.name '${{github.actor}}' &&
+          git -C public config user.email '${{github.actor}}@users.noreply.github.com' &&
+          git -C public commit --message 'build ${{github.sha}}' &&
+          git -C public push --force origin gh-pages

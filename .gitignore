@@ -1,7 +1,7 @@
-*.html
 .DS_Store
 Thumbs.db
-.aleph/
-dist/
+.hugo_build.lock
+.vscode/
+bin/
 public/
 resources/
